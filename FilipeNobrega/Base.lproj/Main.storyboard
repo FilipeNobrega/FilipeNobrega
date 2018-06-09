@@ -29,7 +29,7 @@
                                 <rect key="frame" x="164.5" y="76" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-YI-EiB">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-YI-EiB" customClass="InfoView" customModule="FilipeNobrega" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-kT-6j0">
@@ -92,40 +92,91 @@
                                     <constraint firstItem="zLK-Qg-fP8" firstAttribute="leading" secondItem="LwZ-YI-EiB" secondAttribute="leading" constant="25" id="hWk-Vq-F7k"/>
                                     <constraint firstItem="zLK-Qg-fP8" firstAttribute="top" secondItem="Nbk-kT-6j0" secondAttribute="bottom" constant="15" id="hcV-r7-ohZ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="infoTableView" destination="zLK-Qg-fP8" id="X53-PF-wno"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snu-Wr-Q1S" userLabel="Container">
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-Un-KPJ">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="366"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-bV-8Eo" userLabel="MainView" customClass="MainView" customModule="FilipeNobrega" customModuleProvider="target">
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="403"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-od-LpV">
+                                                <rect key="frame" x="167.5" y="366" width="39" height="37"/>
+                                            </pageControl>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-Un-KPJ">
+                                                <rect key="frame" x="-0.5" y="0.0" width="375" height="366"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="17t-tF-LzI">
+                                                    <size key="itemSize" width="326" height="352"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="collectionCell" id="vrl-Kj-rNC">
+                                                        <rect key="frame" x="20" y="7" width="326" height="352"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="352"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </view>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="17t-tF-LzI">
-                                            <size key="itemSize" width="326" height="352"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="vrl-Kj-rNC">
-                                                <rect key="frame" x="20" y="7" width="326" height="352"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="352"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-od-LpV">
-                                        <rect key="frame" x="168" y="366" width="39" height="37"/>
-                                    </pageControl>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSu-Ag-DSb">
-                                        <rect key="frame" x="-0.5" y="413" width="375" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="gmC-Un-KPJ" firstAttribute="bottom" secondItem="u0J-od-LpV" secondAttribute="top" id="5RK-e7-prO"/>
+                                            <constraint firstItem="gmC-Un-KPJ" firstAttribute="centerX" secondItem="Cqh-bV-8Eo" secondAttribute="centerX" id="NlW-x9-Wy7"/>
+                                            <constraint firstAttribute="bottom" secondItem="u0J-od-LpV" secondAttribute="bottom" id="Pgd-Ja-5aa"/>
+                                            <constraint firstItem="gmC-Un-KPJ" firstAttribute="width" secondItem="Cqh-bV-8Eo" secondAttribute="width" id="Szh-gS-kCp"/>
+                                            <constraint firstItem="u0J-od-LpV" firstAttribute="centerX" secondItem="Cqh-bV-8Eo" secondAttribute="centerX" id="kiP-h5-Bas"/>
+                                            <constraint firstItem="gmC-Un-KPJ" firstAttribute="top" secondItem="Cqh-bV-8Eo" secondAttribute="top" id="uWn-kY-E47"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="collectionView" destination="gmC-Un-KPJ" id="Grs-td-7pz"/>
+                                            <outlet property="pageControl" destination="u0J-od-LpV" id="tmo-jm-BZv"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSu-Ag-DSb" customClass="FooterView" customModule="FilipeNobrega" customModuleProvider="target">
+                                        <rect key="frame" x="-0.5" y="413" width="375" height="128"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmy-h0-hxn">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Ylx-ZH-XgG">
+                                                    <size key="itemSize" width="115" height="115"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footerCell" id="NHF-Cf-dTo">
+                                                        <rect key="frame" x="20" y="6.5" width="115" height="115"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </view>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="rmy-h0-hxn" firstAttribute="centerY" secondItem="nSu-Ag-DSb" secondAttribute="centerY" id="02r-TY-mge"/>
+                                            <constraint firstItem="rmy-h0-hxn" firstAttribute="width" secondItem="nSu-Ag-DSb" secondAttribute="width" id="NPC-lH-oif"/>
+                                            <constraint firstItem="rmy-h0-hxn" firstAttribute="height" secondItem="nSu-Ag-DSb" secondAttribute="height" id="TJ8-gq-eCE"/>
+                                            <constraint firstItem="rmy-h0-hxn" firstAttribute="centerX" secondItem="nSu-Ag-DSb" secondAttribute="centerX" id="ZCw-9k-kB7"/>
                                             <constraint firstAttribute="width" secondItem="nSu-Ag-DSb" secondAttribute="height" multiplier="375:128" id="luT-ms-JeZ"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="footerCollectionView" destination="rmy-h0-hxn" id="DIz-mI-4Xo"/>
+                                        </connections>
                                     </view>
                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXF-7q-o9s">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
@@ -134,19 +185,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Cqh-bV-8Eo" firstAttribute="top" secondItem="Snu-Wr-Q1S" secondAttribute="top" id="20s-FT-evy"/>
                                     <constraint firstItem="nXF-7q-o9s" firstAttribute="centerX" secondItem="Snu-Wr-Q1S" secondAttribute="centerX" id="6ji-5V-N0q"/>
                                     <constraint firstAttribute="bottom" secondItem="nSu-Ag-DSb" secondAttribute="bottom" id="ABl-xX-UHb"/>
-                                    <constraint firstItem="gmC-Un-KPJ" firstAttribute="centerX" secondItem="Snu-Wr-Q1S" secondAttribute="centerX" id="DDZ-xy-EIY"/>
-                                    <constraint firstItem="gmC-Un-KPJ" firstAttribute="top" secondItem="Snu-Wr-Q1S" secondAttribute="top" id="DxI-Zf-ZKt"/>
-                                    <constraint firstItem="nSu-Ag-DSb" firstAttribute="top" secondItem="u0J-od-LpV" secondAttribute="bottom" constant="10" id="Id7-bO-fWw"/>
                                     <constraint firstItem="nXF-7q-o9s" firstAttribute="height" secondItem="Snu-Wr-Q1S" secondAttribute="height" id="JK2-oc-4YF"/>
                                     <constraint firstItem="nXF-7q-o9s" firstAttribute="width" secondItem="Snu-Wr-Q1S" secondAttribute="width" id="OV8-US-PUJ"/>
                                     <constraint firstItem="nSu-Ag-DSb" firstAttribute="centerX" secondItem="Snu-Wr-Q1S" secondAttribute="centerX" id="RIm-WW-Hcu"/>
-                                    <constraint firstItem="u0J-od-LpV" firstAttribute="centerX" secondItem="Snu-Wr-Q1S" secondAttribute="centerX" id="TW5-iJ-bOj"/>
-                                    <constraint firstItem="u0J-od-LpV" firstAttribute="top" secondItem="gmC-Un-KPJ" secondAttribute="bottom" id="Y1p-Mw-gi2"/>
+                                    <constraint firstItem="Cqh-bV-8Eo" firstAttribute="width" secondItem="Snu-Wr-Q1S" secondAttribute="width" id="WsN-cP-Q86"/>
                                     <constraint firstItem="nXF-7q-o9s" firstAttribute="centerY" secondItem="Snu-Wr-Q1S" secondAttribute="centerY" id="a2y-ZP-S5P"/>
-                                    <constraint firstItem="gmC-Un-KPJ" firstAttribute="width" secondItem="Snu-Wr-Q1S" secondAttribute="width" id="jUv-VO-pXK"/>
+                                    <constraint firstItem="Cqh-bV-8Eo" firstAttribute="centerX" secondItem="Snu-Wr-Q1S" secondAttribute="centerX" id="d7N-QL-tV3"/>
                                     <constraint firstItem="nSu-Ag-DSb" firstAttribute="width" secondItem="Snu-Wr-Q1S" secondAttribute="width" id="vz6-xK-79s"/>
+                                    <constraint firstItem="nSu-Ag-DSb" firstAttribute="top" secondItem="Cqh-bV-8Eo" secondAttribute="bottom" constant="10" id="wpC-Kb-ILC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -168,13 +217,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="gmC-Un-KPJ" id="YCg-80-dcw"/>
                         <outlet property="containerBottomConstraint" destination="9aM-JU-rri" id="KcQ-zA-scX"/>
                         <outlet property="containerTopConstraint" destination="5cn-9S-wxx" id="DJh-jz-vQf"/>
                         <outlet property="expandButton" destination="Id3-ed-rmR" id="rU6-te-kka"/>
-                        <outlet property="infoTableView" destination="zLK-Qg-fP8" id="Xzq-fT-Sy4"/>
                         <outlet property="infoView" destination="LwZ-YI-EiB" id="zJY-qR-4mh"/>
-                        <outlet property="pageControl" destination="u0J-od-LpV" id="zr0-CQ-ah2"/>
                         <outlet property="touchContractView" destination="nXF-7q-o9s" id="1Lv-VT-MZd"/>
                     </connections>
                 </viewController>

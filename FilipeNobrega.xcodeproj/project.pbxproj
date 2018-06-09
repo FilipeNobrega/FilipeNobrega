@@ -10,6 +10,8 @@
 		8EBD15D4F837F9316A7FEE45 /* Pods_FilipeNobregaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */; };
 		A34C6E56A62511B2416F3A9A /* Pods_FilipeNobregaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */; };
 		BA7FE05450D8548DB7EEC16F /* Pods_FilipeNobrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1C6B7A02F489B2BC6DE43 /* Pods_FilipeNobrega.framework */; };
+		D72178A620CC56F2000D819A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A520CC56F2000D819A /* InfoView.swift */; };
+		D72178A820CC5818000D819A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A720CC5818000D819A /* FooterView.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* ViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
@@ -17,6 +19,7 @@
 		D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */; };
 		D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */; };
 		D74D153520CBDFC300400F7C /* FilipeNobregaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */; };
+		D74D158420CC540A00400F7C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 		7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78FA5477E89249E8D8ACD57 /* Pods-FilipeNobregaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D72178A520CC56F2000D819A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		D72178A720CC5818000D819A /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		D74D153020CBDFC300400F7C /* FilipeNobregaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilipeNobregaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaUITests.swift; sourceTree = "<group>"; };
 		D74D153620CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D74D158320CC540A00400F7C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +149,9 @@
 				D74D151B20CBDFC300400F7C /* Assets.xcassets */,
 				D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */,
 				D74D152020CBDFC300400F7C /* Info.plist */,
+				D74D158320CC540A00400F7C /* MainView.swift */,
+				D72178A520CC56F2000D819A /* InfoView.swift */,
+				D72178A720CC5818000D819A /* FooterView.swift */,
 			);
 			path = FilipeNobrega;
 			sourceTree = "<group>";
@@ -377,7 +386,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72178A620CC56F2000D819A /* InfoView.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
+				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
+				D72178A820CC5818000D819A /* FooterView.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +567,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -571,7 +586,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -587,7 +605,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -604,7 +626,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -620,7 +646,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -636,7 +666,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
