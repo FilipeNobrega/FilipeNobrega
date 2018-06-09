@@ -12,9 +12,13 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var pageControl: UIPageControl!
+  @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var infoView: UIView!
 
   fileprivate var scrollVelocity: CGFloat?
   fileprivate let numberOfPages = 5
+  fileprivate var expanded = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,9 +30,15 @@ class ViewController: UIViewController {
     pageControl.numberOfPages = numberOfPages
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  @IBAction func expandButtonPressed(_ sender: Any) {
+    let expansion = expanded ? CGFloat(-350) : CGFloat(350)
+    expanded = !expanded
+    self.containerTopConstraint.constant += expansion
+    self.containerBottomConstraint.constant += expansion
+    UIView.animate(withDuration: 0.25, animations: {
+      self.view.layoutIfNeeded()
+      self.infoView.isHidden = !self.expanded
+    })
   }
 }
 
