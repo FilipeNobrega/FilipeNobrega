@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ViewController: UIViewController {
 
@@ -15,10 +17,14 @@ class ViewController: UIViewController {
   @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var infoView: UIView!
+  @IBOutlet weak var infoTableView: UITableView!
+  @IBOutlet weak var touchContractView: UIView!
+  @IBOutlet weak var expandButton: UIButton!
 
   fileprivate var scrollVelocity: CGFloat?
   fileprivate let numberOfPages = 5
   fileprivate var expanded = false
+  fileprivate let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,14 +33,40 @@ class ViewController: UIViewController {
     collectionView.showsVerticalScrollIndicator = false
     collectionView.showsHorizontalScrollIndicator = false
 
+    infoTableView.dataSource = self
+    infoTableView.delegate = self
+    infoTableView.showsVerticalScrollIndicator = false
+    infoTableView.showsHorizontalScrollIndicator = false
+    infoTableView.isUserInteractionEnabled = false
+
+    let tapGesture = UITapGestureRecognizer()
+    touchContractView.addGestureRecognizer(tapGesture)
+
+    tapGesture.rx.event.subscribe(onNext: { [unowned self] _ in
+      self.showHideInfoView()
+    }).disposed(by: disposeBag)
+
+    expandButton.rx.tap.subscribe(onNext: { [unowned self] _ in
+      self.showHideInfoView()
+    }).disposed(by: disposeBag)
+
     pageControl.numberOfPages = numberOfPages
+    pageControl.isUserInteractionEnabled = false
   }
 
-  @IBAction func expandButtonPressed(_ sender: Any) {
-    let expansion = expanded ? CGFloat(-350) : CGFloat(350)
+  func showHideInfoView() {
+    if expanded {
+      containerTopConstraint.constant = 20
+      containerBottomConstraint.constant = 0
+    } else {
+      let expandHeight = infoTableView.contentSize.height + infoTableView.frame.origin.y
+      containerTopConstraint.constant += expandHeight
+      containerBottomConstraint.constant += expandHeight
+    }
     expanded = !expanded
-    self.containerTopConstraint.constant += expansion
-    self.containerBottomConstraint.constant += expansion
+
+    touchContractView.isUserInteractionEnabled = expanded
+
     UIView.animate(withDuration: 0.25, animations: {
       self.view.layoutIfNeeded()
       self.infoView.isHidden = !self.expanded
@@ -120,5 +152,24 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     let indexPath = IndexPath(item: index, section: 0)
     collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     pageControl.currentPage = indexPath.row
+  }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return CGFloat(44)
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 3
+  }
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+    return cell
   }
 }

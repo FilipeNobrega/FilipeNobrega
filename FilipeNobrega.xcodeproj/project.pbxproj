@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EBD15D4F837F9316A7FEE45 /* Pods_FilipeNobregaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */; };
+		A34C6E56A62511B2416F3A9A /* Pods_FilipeNobregaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */; };
+		BA7FE05450D8548DB7EEC16F /* Pods_FilipeNobrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1C6B7A02F489B2BC6DE43 /* Pods_FilipeNobrega.framework */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* ViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B169811BCADF0371A63D61 /* Pods-FilipeNobrega.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobrega.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobrega/Pods-FilipeNobrega.release.xcconfig"; sourceTree = "<group>"; };
+		06A1C6B7A02F489B2BC6DE43 /* Pods_FilipeNobrega.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobrega.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		107FDEFAD4B9885E5A62D90E /* Pods-FilipeNobregaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests.release.xcconfig"; sourceTree = "<group>"; };
+		26677A67FFC5481EC55D381E /* Pods-FilipeNobregaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		58508E4DA8AD3805AE8C467F /* Pods-FilipeNobrega.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobrega.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobrega/Pods-FilipeNobrega.debug.xcconfig"; sourceTree = "<group>"; };
+		7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78FA5477E89249E8D8ACD57 /* Pods-FilipeNobregaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		D74D153020CBDFC300400F7C /* FilipeNobregaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilipeNobregaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaUITests.swift; sourceTree = "<group>"; };
 		D74D153620CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7FE05450D8548DB7EEC16F /* Pods_FilipeNobrega.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBD15D4F837F9316A7FEE45 /* Pods_FilipeNobregaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34C6E56A62511B2416F3A9A /* Pods_FilipeNobregaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		904DAEE010B3536EDBB78B7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58508E4DA8AD3805AE8C467F /* Pods-FilipeNobrega.debug.xcconfig */,
+				04B169811BCADF0371A63D61 /* Pods-FilipeNobrega.release.xcconfig */,
+				B78FA5477E89249E8D8ACD57 /* Pods-FilipeNobregaTests.debug.xcconfig */,
+				107FDEFAD4B9885E5A62D90E /* Pods-FilipeNobregaTests.release.xcconfig */,
+				26677A67FFC5481EC55D381E /* Pods-FilipeNobregaUITests.debug.xcconfig */,
+				EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8508F181959000F0E6B2016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06A1C6B7A02F489B2BC6DE43 /* Pods_FilipeNobrega.framework */,
+				8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */,
+				7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D74D150820CBDFC200400F7C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				D74D152820CBDFC300400F7C /* FilipeNobregaTests */,
 				D74D153320CBDFC300400F7C /* FilipeNobregaUITests */,
 				D74D151220CBDFC200400F7C /* Products */,
+				904DAEE010B3536EDBB78B7B /* Pods */,
+				B8508F181959000F0E6B2016 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D74D153920CBDFC300400F7C /* Build configuration list for PBXNativeTarget "FilipeNobrega" */;
 			buildPhases = (
+				8931D1E824561A515BEE4BDF /* [CP] Check Pods Manifest.lock */,
 				D74D150D20CBDFC200400F7C /* Sources */,
 				D74D150E20CBDFC200400F7C /* Frameworks */,
 				D74D150F20CBDFC200400F7C /* Resources */,
+				417B5CDB2408EF30034E1FB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D74D153C20CBDFC300400F7C /* Build configuration list for PBXNativeTarget "FilipeNobregaTests" */;
 			buildPhases = (
+				EF79A809299DCB6B5978158C /* [CP] Check Pods Manifest.lock */,
 				D74D152120CBDFC300400F7C /* Sources */,
 				D74D152220CBDFC300400F7C /* Frameworks */,
 				D74D152320CBDFC300400F7C /* Resources */,
@@ -167,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D74D153F20CBDFC300400F7C /* Build configuration list for PBXNativeTarget "FilipeNobregaUITests" */;
 			buildPhases = (
+				1FEC22F664CE1A317601ECB7 /* [CP] Check Pods Manifest.lock */,
 				D74D152C20CBDFC300400F7C /* Sources */,
 				D74D152D20CBDFC300400F7C /* Frameworks */,
 				D74D152E20CBDFC300400F7C /* Resources */,
@@ -250,6 +294,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FEC22F664CE1A317601ECB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilipeNobregaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		417B5CDB2408EF30034E1FB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FilipeNobrega/Pods-FilipeNobrega-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilipeNobrega/Pods-FilipeNobrega-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8931D1E824561A515BEE4BDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilipeNobrega-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF79A809299DCB6B5978158C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilipeNobregaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D74D150D20CBDFC200400F7C /* Sources */ = {
@@ -428,15 +549,13 @@
 		};
 		D74D153A20CBDFC300400F7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58508E4DA8AD3805AE8C467F /* Pods-FilipeNobrega.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -446,15 +565,13 @@
 		};
 		D74D153B20CBDFC300400F7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04B169811BCADF0371A63D61 /* Pods-FilipeNobrega.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -464,16 +581,13 @@
 		};
 		D74D153D20CBDFC300400F7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78FA5477E89249E8D8ACD57 /* Pods-FilipeNobregaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -484,16 +598,13 @@
 		};
 		D74D153E20CBDFC300400F7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107FDEFAD4B9885E5A62D90E /* Pods-FilipeNobregaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -504,15 +615,12 @@
 		};
 		D74D154020CBDFC300400F7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26677A67FFC5481EC55D381E /* Pods-FilipeNobregaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -523,15 +631,12 @@
 		};
 		D74D154120CBDFC300400F7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
