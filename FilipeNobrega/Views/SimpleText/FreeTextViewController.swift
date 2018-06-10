@@ -1,5 +1,5 @@
 //
-//  SimpleTextViewController.swift
+//  FreeTextViewController.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 10/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimpleTextViewController: UIViewController {
+class FreeTextViewController: UIViewController {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var headerImageView: UIImageView!
 

@@ -9,11 +9,15 @@
 import UIKit
 
 enum FilipeNib: String {
-  case simpleTextCell = "SimpleTextCell"
+  case freeTextCollectionViewCell = "FreeTextCollectionViewCell"
+  case educationCollectionViewCell = "EducationCollectionViewCell"
+  case experienceCollectionViewCell = "ExperienceCollectionViewCell"
 }
 
 enum FilipeStoryboard: String {
   case simpleText = "SimpleText"
+  case education = "Education"
+  case experience = "Experience"
 }
 
 class StoryboardUtils {

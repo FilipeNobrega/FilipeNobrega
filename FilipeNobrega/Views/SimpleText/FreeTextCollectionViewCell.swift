@@ -1,5 +1,5 @@
 //
-//  SimpleTextCell.swift
+//  FreeTextCollectionViewCell.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 10/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimpleTextCell: UICollectionViewCell {
+class FreeTextCollectionViewCell: UICollectionViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     layer.cornerRadius = 5

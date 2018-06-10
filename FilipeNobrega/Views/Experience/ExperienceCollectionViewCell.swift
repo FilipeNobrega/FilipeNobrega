@@ -1,5 +1,5 @@
 //
-//  EducationCell.swift
+//  ExperienceCollectionViewCell.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 10/06/18.
@@ -8,5 +8,5 @@
 
 import UIKit
 
-class EducationCell: UICollectionViewCell {
+class ExperienceCollectionViewCell: UICollectionViewCell {
 }

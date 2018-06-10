@@ -27,7 +27,8 @@ class MainView: UIView {
     pageControl.numberOfPages = numberOfPages
     pageControl.isUserInteractionEnabled = false
 
-    collectionView.register(UINib(nibName: "SimpleTextCell", bundle: nil), forCellWithReuseIdentifier: "collectionCell")
+    collectionView.register(StoryboardUtils.nib(for: .FreeTextCollectionViewCell), forCellWithReuseIdentifier: "FreeTextCollectionViewCell")
+    collectionView.register(StoryboardUtils.nib(for: .EducationCollectionViewCell), forCellWithReuseIdentifier: "EducationCollectionViewCell")
   }
 }
 
@@ -41,8 +42,12 @@ extension MainView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
-
+    let cell: UICollectionViewCell
+    if indexPath.row % 2 == 0 {
+      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreeTextCollectionViewCell", for: indexPath)
+    } else {
+      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EducationCollectionViewCell", for: indexPath)
+    }
     return cell
   }
 

@@ -1,5 +1,5 @@
 //
-//  EducationViewController.swift
+//  ExperienceViewController.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 10/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EducationViewController: UIViewController {
+class ExperienceViewController: UIViewController {
   @IBOutlet weak var headerImageView: UIImageView!
   @IBOutlet weak var tableView: UITableView!
 
@@ -39,7 +39,7 @@ class EducationViewController: UIViewController {
 }
 
 
-extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
+extension ExperienceViewController: UITableViewDataSource, UITableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
@@ -49,7 +49,7 @@ extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "experienceTableViewCell", for: indexPath)
     return cell
   }
 }

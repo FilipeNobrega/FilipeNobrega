@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     mainView.collectionView.rx.itemSelected.subscribe(onNext: { [unowned self] indexPath in
       self.cell = self.mainView.collectionView.cellForItem(at: indexPath)
-      guard let vc = StoryboardUtils.viewController(for: .simpleText) as? SimpleTextViewController else { return }
+      guard let vc = StoryboardUtils.viewController(for: .education) else { return }
       vc.transitioningDelegate = self
       vc.modalPresentationStyle = .custom
       self.present(vc, animated: true, completion: nil)
