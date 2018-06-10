@@ -13,6 +13,11 @@
 		D72178A620CC56F2000D819A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A520CC56F2000D819A /* InfoView.swift */; };
 		D72178A820CC5818000D819A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A720CC5818000D819A /* FooterView.swift */; };
 		D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178AA20CCB638000D819A /* GrowthTransition.swift */; };
+		D72178AF20CD2F3A000D819A /* SimpleText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72178AE20CD2F3A000D819A /* SimpleText.storyboard */; };
+		D72178B120CD3126000D819A /* SimpleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178B020CD3126000D819A /* SimpleTextCell.swift */; };
+		D72178B320CD3139000D819A /* SimpleTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178B220CD3139000D819A /* SimpleTextViewController.swift */; };
+		D72178B620CD33F2000D819A /* SimpleTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72178B520CD33F2000D819A /* SimpleTextCell.xib */; };
+		D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178B720CD353B000D819A /* StoryboardUtils.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* ViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
@@ -52,6 +57,11 @@
 		D72178A520CC56F2000D819A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D72178A720CC5818000D819A /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		D72178AA20CCB638000D819A /* GrowthTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTransition.swift; sourceTree = "<group>"; };
+		D72178AE20CD2F3A000D819A /* SimpleText.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleText.storyboard; sourceTree = "<group>"; };
+		D72178B020CD3126000D819A /* SimpleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextCell.swift; sourceTree = "<group>"; };
+		D72178B220CD3139000D819A /* SimpleTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextViewController.swift; sourceTree = "<group>"; };
+		D72178B520CD33F2000D819A /* SimpleTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleTextCell.xib; sourceTree = "<group>"; };
+		D72178B720CD353B000D819A /* StoryboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardUtils.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,11 +133,23 @@
 		D72178A920CCB25B000D819A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D72178B420CD33DC000D819A /* SimpleText */,
 				D74D158320CC540A00400F7C /* MainView.swift */,
 				D72178A520CC56F2000D819A /* InfoView.swift */,
 				D72178A720CC5818000D819A /* FooterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D72178B420CD33DC000D819A /* SimpleText */ = {
+			isa = PBXGroup;
+			children = (
+				D72178AE20CD2F3A000D819A /* SimpleText.storyboard */,
+				D72178B020CD3126000D819A /* SimpleTextCell.swift */,
+				D72178B220CD3139000D819A /* SimpleTextViewController.swift */,
+				D72178B520CD33F2000D819A /* SimpleTextCell.xib */,
+			);
+			path = SimpleText;
 			sourceTree = "<group>";
 		};
 		D74D150820CBDFC200400F7C = {
@@ -163,6 +185,7 @@
 				D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */,
 				D74D152020CBDFC300400F7C /* Info.plist */,
 				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
+				D72178B720CD353B000D819A /* StoryboardUtils.swift */,
 			);
 			path = FilipeNobrega;
 			sourceTree = "<group>";
@@ -293,9 +316,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72178B620CD33F2000D819A /* SimpleTextCell.xib in Resources */,
 				D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */,
 				D74D151C20CBDFC300400F7C /* Assets.xcassets in Resources */,
 				D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */,
+				D72178AF20CD2F3A000D819A /* SimpleText.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +424,13 @@
 			files = (
 				D72178A620CC56F2000D819A /* InfoView.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
+				D72178B120CD3126000D819A /* SimpleTextCell.swift in Sources */,
 				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
 				D72178A820CC5818000D819A /* FooterView.swift in Sources */,
+				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,
+				D72178B320CD3139000D819A /* SimpleTextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

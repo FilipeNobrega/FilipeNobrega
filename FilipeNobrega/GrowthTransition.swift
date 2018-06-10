@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
+enum TransitionType {
+  case dismiss
+  case present
+}
+
 class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
   var startFrame: CGRect = .zero
   var duration = 0.3
+  var transitionType: TransitionType = .present
 
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return duration
@@ -20,37 +26,45 @@ class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let containerView = transitionContext.containerView
 
-    guard let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
+    let animatingView: UIView
 
-    let viewCenter = presentedView.center
-    presentedView.backgroundColor = .white
+    if transitionType == .present {
+      guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
+      animatingView = toView
+    } else {
+      guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from) else { return }
+      animatingView = fromView
+    }
 
-    let scaleX = startFrame.size.width / presentedView.frame.size.width
-    let scaleY = startFrame.size.height / presentedView.frame.size.height
+    let viewCenter = animatingView.center
+    animatingView.backgroundColor = .white
 
-    presentedView.center = CGPoint(x: startFrame.origin.x + startFrame.size.width / 2,
-                                   y: startFrame.origin.y + startFrame.size.height / 2)
-    presentedView.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
-    presentedView.alpha = 0
-    containerView.addSubview(presentedView)
+    let scaleX = startFrame.size.width / animatingView.frame.size.width
+    let scaleY = startFrame.size.height / animatingView.frame.size.height
+
+    if transitionType == .present {
+      animatingView.center = CGPoint(x: startFrame.origin.x + startFrame.size.width / 2,
+                                     y: startFrame.origin.y + startFrame.size.height / 2)
+      animatingView.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+      animatingView.alpha = 0
+    } else {
+      animatingView.alpha = 1
+    }
+    containerView.addSubview(animatingView)
 
     UIView.animate(withDuration: duration, animations: {
-      presentedView.transform = CGAffineTransform.identity
-      presentedView.alpha = 1
-      presentedView.center = viewCenter
+      if self.transitionType == .present {
+        animatingView.transform = CGAffineTransform.identity
+        animatingView.alpha = 1
+        animatingView.center = viewCenter
+      } else {
+        animatingView.center = CGPoint(x: self.startFrame.origin.x + self.startFrame.size.width / 2,
+                                       y: self.startFrame.origin.y + self.startFrame.size.height / 2)
+        animatingView.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+        animatingView.alpha = 0
+      }
     }, completion: { success in
       transitionContext.completeTransition(success)
     })
-  }
-
-  func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
-    let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
-    let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
-
-    let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
-    let size = CGSize(width: offestVector, height: offestVector)
-
-    return CGRect(origin: CGPoint.zero, size: size)
-
   }
 }

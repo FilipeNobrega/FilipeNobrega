@@ -26,6 +26,8 @@ class MainView: UIView {
     collectionView.showsHorizontalScrollIndicator = false
     pageControl.numberOfPages = numberOfPages
     pageControl.isUserInteractionEnabled = false
+
+    collectionView.register(UINib(nibName: "SimpleTextCell", bundle: nil), forCellWithReuseIdentifier: "collectionCell")
   }
 }
 

@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     mainView.collectionView.rx.itemSelected.subscribe(onNext: { [unowned self] indexPath in
       self.cell = self.mainView.collectionView.cellForItem(at: indexPath)
-      let vc = UIViewController()
+      guard let vc = StoryboardUtils.viewController(for: .simpleText) as? SimpleTextViewController else { return }
       vc.transitioningDelegate = self
       vc.modalPresentationStyle = .custom
       self.present(vc, animated: true, completion: nil)
@@ -76,25 +76,18 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 //    let rect = CGRect(origin: mainView.frame.origin, size: mainView.collectionView.frame.size)
     guard let frame = cell?.frame else { return nil }
     let transition = GrowthTransition()
+    transition.transitionType = .present
     transition.startFrame = CGRect(origin: CGPoint(x: frame.origin.x, y: infoView.frame.origin.y),
                                    size: frame.size)
     return transition
   }
 
-//  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//    let transition = GrowthTransition()
-//    transition.transitionMode = .dismiss
-//    transition.startingPoint = menuBtn.center
-//    transition.circleColor = menuBtn.backgroundColor!
-//
-//    transition.transitionMode = .dismiss
-//    transition.startingPoint = mobileMafiaBtn.center
-//    transition.circleColor = mobileMafiaBtn.backgroundColor!
-//
-//    transition.transitionMode = .dismiss
-//    transition.startingPoint = antiGBtn.center
-//    transition.circleColor = antiGBtn.backgroundColor!
-//
-//    return transition
-//  }
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    guard let frame = cell?.frame else { return nil }
+    let transition = GrowthTransition()
+    transition.transitionType = .dismiss
+    transition.startFrame = CGRect(origin: CGPoint(x: frame.origin.x, y: infoView.frame.origin.y),
+                                   size: frame.size)
+    return transition
+  }
 }
