@@ -9,4 +9,8 @@
 import UIKit
 
 class SimpleTextCell: UICollectionViewCell {
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    layer.cornerRadius = 5
+  }
 }

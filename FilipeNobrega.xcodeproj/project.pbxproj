@@ -62,6 +62,10 @@
 		D72178B220CD3139000D819A /* SimpleTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextViewController.swift; sourceTree = "<group>"; };
 		D72178B520CD33F2000D819A /* SimpleTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleTextCell.xib; sourceTree = "<group>"; };
 		D72178B720CD353B000D819A /* StoryboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardUtils.swift; sourceTree = "<group>"; };
+		D72178BA20CD4D28000D819A /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
+		D72178BB20CD4D28000D819A /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		D72178BC20CD4D28000D819A /* EducationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationCell.xib; sourceTree = "<group>"; };
+		D72178BD20CD4D28000D819A /* Education.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		D72178A920CCB25B000D819A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D72178B920CD4D19000D819A /* Education */,
 				D72178B420CD33DC000D819A /* SimpleText */,
 				D74D158320CC540A00400F7C /* MainView.swift */,
 				D72178A520CC56F2000D819A /* InfoView.swift */,
@@ -150,6 +155,17 @@
 				D72178B520CD33F2000D819A /* SimpleTextCell.xib */,
 			);
 			path = SimpleText;
+			sourceTree = "<group>";
+		};
+		D72178B920CD4D19000D819A /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				D72178BD20CD4D28000D819A /* Education.storyboard */,
+				D72178BA20CD4D28000D819A /* EducationCell.swift */,
+				D72178BB20CD4D28000D819A /* EducationViewController.swift */,
+				D72178BC20CD4D28000D819A /* EducationCell.xib */,
+			);
+			path = Education;
 			sourceTree = "<group>";
 		};
 		D74D150820CBDFC200400F7C = {
