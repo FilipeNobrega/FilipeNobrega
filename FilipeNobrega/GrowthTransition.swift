@@ -16,7 +16,7 @@ enum TransitionType {
 
 class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
   var startFrame: CGRect = .zero
-  var duration = 0.3
+  var duration = 0.25
   var transitionType: TransitionType = .present
 
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
