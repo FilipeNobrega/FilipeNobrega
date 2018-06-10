@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MainView: UIView {
   @IBOutlet weak var collectionView: UICollectionView!
@@ -14,6 +15,7 @@ class MainView: UIView {
 
   fileprivate var scrollVelocity: CGFloat?
   fileprivate let numberOfPages = 5
+  fileprivate let disposeBag = DisposeBag()
 
   override func awakeFromNib() {
     super.awakeFromNib()

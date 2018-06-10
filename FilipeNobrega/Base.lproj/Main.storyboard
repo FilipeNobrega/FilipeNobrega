@@ -221,6 +221,7 @@
                         <outlet property="containerTopConstraint" destination="5cn-9S-wxx" id="DJh-jz-vQf"/>
                         <outlet property="expandButton" destination="Id3-ed-rmR" id="rU6-te-kka"/>
                         <outlet property="infoView" destination="LwZ-YI-EiB" id="zJY-qR-4mh"/>
+                        <outlet property="mainView" destination="Cqh-bV-8Eo" id="FOx-53-NX3"/>
                         <outlet property="touchContractView" destination="nXF-7q-o9s" id="1Lv-VT-MZd"/>
                     </connections>
                 </viewController>

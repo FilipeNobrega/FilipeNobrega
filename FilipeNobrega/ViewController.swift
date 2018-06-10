@@ -14,16 +14,21 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var mainView: MainView!
   @IBOutlet weak var infoView: InfoView!
   @IBOutlet weak var touchContractView: UIView!
   @IBOutlet weak var expandButton: UIButton!
 
   fileprivate var expanded = false
   fileprivate let disposeBag = DisposeBag()
+  var cell: UICollectionViewCell?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    prepareSubscriptions()
+  }
 
+  func prepareSubscriptions() {
     let tapGesture = UITapGestureRecognizer()
     touchContractView.addGestureRecognizer(tapGesture)
 
@@ -33,6 +38,14 @@ class ViewController: UIViewController {
 
     expandButton.rx.tap.subscribe(onNext: { [unowned self] _ in
       self.showHideInfoView()
+    }).disposed(by: disposeBag)
+
+    mainView.collectionView.rx.itemSelected.subscribe(onNext: { [unowned self] indexPath in
+      self.cell = self.mainView.collectionView.cellForItem(at: indexPath)
+      let vc = UIViewController()
+      vc.transitioningDelegate = self
+      vc.modalPresentationStyle = .custom
+      self.present(vc, animated: true, completion: nil)
     }).disposed(by: disposeBag)
   }
 
@@ -54,4 +67,34 @@ class ViewController: UIViewController {
       self.infoView.isHidden = !self.expanded
     })
   }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController,
+                           presenting: UIViewController,
+                           source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//    let rect = CGRect(origin: mainView.frame.origin, size: mainView.collectionView.frame.size)
+    guard let frame = cell?.frame else { return nil }
+    let transition = GrowthTransition()
+    transition.startFrame = CGRect(origin: CGPoint(x: frame.origin.x, y: infoView.frame.origin.y),
+                                   size: frame.size)
+    return transition
+  }
+
+//  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//    let transition = GrowthTransition()
+//    transition.transitionMode = .dismiss
+//    transition.startingPoint = menuBtn.center
+//    transition.circleColor = menuBtn.backgroundColor!
+//
+//    transition.transitionMode = .dismiss
+//    transition.startingPoint = mobileMafiaBtn.center
+//    transition.circleColor = mobileMafiaBtn.backgroundColor!
+//
+//    transition.transitionMode = .dismiss
+//    transition.startingPoint = antiGBtn.center
+//    transition.circleColor = antiGBtn.backgroundColor!
+//
+//    return transition
+//  }
 }
