@@ -48,6 +48,10 @@ extension ExperienceViewController: UITableViewDataSource, UITableViewDelegate {
     return 3
   }
 
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "experienceTableViewCell", for: indexPath)
     return cell

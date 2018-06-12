@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,47 +26,24 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Ig-noA">
-                        <rect key="frame" x="10" y="61" width="329" height="80.5"/>
+                        <rect key="frame" x="10" y="61" width="329" height="50.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="jMr-Vi-zQM">
-                        <rect key="frame" x="50" y="156.5" width="99.5" height="99.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="jMr-Vi-zQM" secondAttribute="height" multiplier="1:1" id="1f2-G0-2PI"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MST" translatesAutoresizingMaskIntoConstraints="NO" id="DGf-ep-vT2">
-                        <rect key="frame" x="199.5" y="156.5" width="99.5" height="99.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="DGf-ep-vT2" secondAttribute="height" multiplier="1:1" id="y7a-oD-2ce" userLabel="aspect = 1:1"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="agt-nj-YEX" firstAttribute="bottom" secondItem="jMr-Vi-zQM" secondAttribute="bottom" constant="30" id="Cpg-j6-grj"/>
-                <constraint firstItem="jMr-Vi-zQM" firstAttribute="top" secondItem="M6U-Ig-noA" secondAttribute="bottom" constant="15" id="G3S-Z0-125"/>
-                <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="DGf-ep-vT2" secondAttribute="trailing" constant="50" id="I5a-wC-GkD"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="centerX" secondItem="agt-nj-YEX" secondAttribute="centerX" id="MSi-N5-YJN"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="M6U-Ig-noA" secondAttribute="trailing" constant="10" id="SBa-4x-sNJ"/>
-                <constraint firstItem="DGf-ep-vT2" firstAttribute="leading" secondItem="jMr-Vi-zQM" secondAttribute="trailing" constant="50" id="cIG-C1-DQp"/>
-                <constraint firstItem="DGf-ep-vT2" firstAttribute="centerY" secondItem="jMr-Vi-zQM" secondAttribute="centerY" id="gjk-Bi-RAe"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="top" secondItem="Nd3-p7-XzR" secondAttribute="bottom" constant="30" id="i1a-Tr-hKS"/>
-                <constraint firstItem="jMr-Vi-zQM" firstAttribute="width" secondItem="DGf-ep-vT2" secondAttribute="width" id="l0Z-VI-uKQ"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="oNd-Y7-qjK"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="leading" secondItem="agt-nj-YEX" secondAttribute="leading" constant="10" id="q23-Es-rDO"/>
-                <constraint firstItem="jMr-Vi-zQM" firstAttribute="leading" secondItem="agt-nj-YEX" secondAttribute="leading" constant="50" id="umk-bV-YnC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="agt-nj-YEX"/>
             <size key="customSize" width="349" height="286"/>
             <point key="canvasLocation" x="-70.5" y="-30"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="MST" width="100" height="100"/>
-        <image name="UFRN" width="100" height="100"/>
-    </resources>
 </document>

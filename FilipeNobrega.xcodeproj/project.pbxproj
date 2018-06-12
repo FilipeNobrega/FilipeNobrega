@@ -21,11 +21,13 @@
 		D72178BE20CD85AA000D819A /* EducationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178BA20CD4D28000D819A /* EducationCollectionViewCell.swift */; };
 		D72178BF20CD85AD000D819A /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178BB20CD4D28000D819A /* EducationViewController.swift */; };
 		D72178C220CD8A3C000D819A /* EducationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72178C020CD8A09000D819A /* EducationCollectionViewCell.xib */; };
-		D72178C320CD8A3F000D819A /* EducationCollectionViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72178C120CD8A09000D819A /* EducationCollectionViewCell.storyboard */; };
+		D72178C320CD8A3F000D819A /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72178C120CD8A09000D819A /* Education.storyboard */; };
 		D72178C920CDB453000D819A /* Experience.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72178C520CDB3C1000D819A /* Experience.storyboard */; };
 		D72178CA20CDB453000D819A /* ExperienceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72178C720CDB3C1000D819A /* ExperienceCollectionViewCell.xib */; };
 		D72178CB20CDB453000D819A /* ExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178C620CDB3C1000D819A /* ExperienceCollectionViewCell.swift */; };
 		D72178CC20CDB453000D819A /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178C820CDB3C2000D819A /* ExperienceViewController.swift */; };
+		D73ECC5F20D0618C0074E1D7 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */; };
+		D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* ViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
@@ -73,11 +75,13 @@
 		D72178BA20CD4D28000D819A /* EducationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D72178BB20CD4D28000D819A /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		D72178C020CD8A09000D819A /* EducationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationCollectionViewCell.xib; sourceTree = "<group>"; };
-		D72178C120CD8A09000D819A /* EducationCollectionViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EducationCollectionViewCell.storyboard; sourceTree = "<group>"; };
+		D72178C120CD8A09000D819A /* Education.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
 		D72178C520CDB3C1000D819A /* Experience.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Experience.storyboard; sourceTree = "<group>"; };
 		D72178C620CDB3C1000D819A /* ExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
 		D72178C720CDB3C1000D819A /* ExperienceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCollectionViewCell.xib; sourceTree = "<group>"; };
 		D72178C820CDB3C2000D819A /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
+		D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				D74D158320CC540A00400F7C /* MainView.swift */,
 				D72178A520CC56F2000D819A /* InfoView.swift */,
 				D72178A720CC5818000D819A /* FooterView.swift */,
+				D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +178,7 @@
 		D72178B920CD4D19000D819A /* Education */ = {
 			isa = PBXGroup;
 			children = (
-				D72178C120CD8A09000D819A /* EducationCollectionViewCell.storyboard */,
+				D72178C120CD8A09000D819A /* Education.storyboard */,
 				D72178C020CD8A09000D819A /* EducationCollectionViewCell.xib */,
 				D72178BA20CD4D28000D819A /* EducationCollectionViewCell.swift */,
 				D72178BB20CD4D28000D819A /* EducationViewController.swift */,
@@ -188,6 +193,7 @@
 				D72178C720CDB3C1000D819A /* ExperienceCollectionViewCell.xib */,
 				D72178C620CDB3C1000D819A /* ExperienceCollectionViewCell.swift */,
 				D72178C820CDB3C2000D819A /* ExperienceViewController.swift */,
+				D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */,
 			);
 			path = Experience;
 			sourceTree = "<group>";
@@ -358,7 +364,7 @@
 			files = (
 				D72178B620CD33F2000D819A /* FreeTextCollectionViewCell.xib in Resources */,
 				D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */,
-				D72178C320CD8A3F000D819A /* EducationCollectionViewCell.storyboard in Resources */,
+				D72178C320CD8A3F000D819A /* Education.storyboard in Resources */,
 				D74D151C20CBDFC300400F7C /* Assets.xcassets in Resources */,
 				D72178C920CDB453000D819A /* Experience.storyboard in Resources */,
 				D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */,
@@ -467,6 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72178A620CC56F2000D819A /* InfoView.swift in Sources */,
+				D73ECC5F20D0618C0074E1D7 /* BaseCollectionViewCell.swift in Sources */,
+				D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
 				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
@@ -584,7 +592,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -638,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

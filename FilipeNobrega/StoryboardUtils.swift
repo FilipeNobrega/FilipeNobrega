@@ -15,7 +15,7 @@ enum FilipeNib: String {
 }
 
 enum FilipeStoryboard: String {
-  case simpleText = "SimpleText"
+  case freeText = "FreeText"
   case education = "Education"
   case experience = "Experience"
 }

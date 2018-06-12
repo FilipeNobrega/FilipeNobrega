@@ -8,5 +8,5 @@
 
 import UIKit
 
-class EducationCollectionViewCell: UICollectionViewCell {
+class EducationCollectionViewCell: BaseCollectionViewCell {
 }

@@ -21,7 +21,6 @@ class ViewController: UIViewController {
 
   fileprivate var expanded = false
   fileprivate let disposeBag = DisposeBag()
-  var cell: UICollectionViewCell?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,11 +40,20 @@ class ViewController: UIViewController {
     }).disposed(by: disposeBag)
 
     mainView.collectionView.rx.itemSelected.subscribe(onNext: { [unowned self] indexPath in
-      self.cell = self.mainView.collectionView.cellForItem(at: indexPath)
-      guard let vc = StoryboardUtils.viewController(for: .education) else { return }
-      vc.transitioningDelegate = self
-      vc.modalPresentationStyle = .custom
-      self.present(vc, animated: true, completion: nil)
+      let viewController: UIViewController
+      if indexPath.row % 3 == 0 {
+        guard let vc = StoryboardUtils.viewController(for: .freeText) else { return }
+        viewController = vc
+      } else if indexPath.row % 3 == 1 {
+        guard let vc = StoryboardUtils.viewController(for: .education) else { return }
+        viewController = vc
+      } else {
+        guard let vc = StoryboardUtils.viewController(for: .experience) else { return }
+        viewController = vc
+      }
+      viewController.transitioningDelegate = self
+      viewController.modalPresentationStyle = .custom
+      self.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
   }
 
@@ -54,7 +62,7 @@ class ViewController: UIViewController {
       containerTopConstraint.constant = 20
       containerBottomConstraint.constant = 0
     } else {
-      let expandHeight = infoView.getHeight()
+      let expandHeight = infoView.getHeight() + 10
       containerTopConstraint.constant += expandHeight
       containerBottomConstraint.constant += expandHeight
     }
@@ -73,21 +81,20 @@ extension ViewController: UIViewControllerTransitioningDelegate {
   func animationController(forPresented presented: UIViewController,
                            presenting: UIViewController,
                            source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//    let rect = CGRect(origin: mainView.frame.origin, size: mainView.collectionView.frame.size)
-    guard let frame = cell?.frame else { return nil }
+    let frame = mainView.collectionView.frame
     let transition = GrowthTransition()
     transition.transitionType = .present
-    transition.startFrame = CGRect(origin: CGPoint(x: frame.origin.x, y: infoView.frame.origin.y),
-                                   size: frame.size)
+    transition.startFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
+                                   size: CGSize(width: frame.width - 40, height: frame.height))
     return transition
   }
 
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard let frame = cell?.frame else { return nil }
+    let frame = mainView.collectionView.frame
     let transition = GrowthTransition()
     transition.transitionType = .dismiss
-    transition.startFrame = CGRect(origin: CGPoint(x: frame.origin.x, y: infoView.frame.origin.y),
-                                   size: frame.size)
+    transition.startFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
+                                   size: CGSize(width: frame.width - 40, height: frame.height))
     return transition
   }
 }

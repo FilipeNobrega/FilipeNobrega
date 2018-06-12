@@ -14,7 +14,7 @@ class MainView: UIView {
   @IBOutlet weak var pageControl: UIPageControl!
 
   fileprivate var scrollVelocity: CGFloat?
-  fileprivate let numberOfPages = 5
+  fileprivate let numberOfPages = 4
   fileprivate let disposeBag = DisposeBag()
 
   override func awakeFromNib() {
@@ -27,8 +27,9 @@ class MainView: UIView {
     pageControl.numberOfPages = numberOfPages
     pageControl.isUserInteractionEnabled = false
 
-    collectionView.register(StoryboardUtils.nib(for: .FreeTextCollectionViewCell), forCellWithReuseIdentifier: "FreeTextCollectionViewCell")
-    collectionView.register(StoryboardUtils.nib(for: .EducationCollectionViewCell), forCellWithReuseIdentifier: "EducationCollectionViewCell")
+    collectionView.register(StoryboardUtils.nib(for: .freeTextCollectionViewCell), forCellWithReuseIdentifier: "FreeTextCollectionViewCell")
+    collectionView.register(StoryboardUtils.nib(for: .educationCollectionViewCell), forCellWithReuseIdentifier: "EducationCollectionViewCell")
+    collectionView.register(StoryboardUtils.nib(for: .experienceCollectionViewCell), forCellWithReuseIdentifier: "ExperienceCollectionViewCell")
   }
 }
 
@@ -43,10 +44,12 @@ extension MainView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: UICollectionViewCell
-    if indexPath.row % 2 == 0 {
+    if indexPath.row % 3 == 0 {
       cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreeTextCollectionViewCell", for: indexPath)
-    } else {
+    } else if indexPath.row % 3 == 1 {
       cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EducationCollectionViewCell", for: indexPath)
+    } else {
+      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExperienceCollectionViewCell", for: indexPath)
     }
     return cell
   }

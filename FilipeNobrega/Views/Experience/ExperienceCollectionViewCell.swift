@@ -8,5 +8,5 @@
 
 import UIKit
 
-class ExperienceCollectionViewCell: UICollectionViewCell {
+class ExperienceCollectionViewCell: BaseCollectionViewCell {
 }

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -26,8 +27,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Ig-noA">
-                        <rect key="frame" x="10" y="61" width="329" height="80.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="10" y="61" width="329" height="50.5"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,7 +49,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="bottom" secondItem="jMr-Vi-zQM" secondAttribute="bottom" constant="30" id="Cpg-j6-grj"/>
-                <constraint firstItem="jMr-Vi-zQM" firstAttribute="top" secondItem="M6U-Ig-noA" secondAttribute="bottom" constant="15" id="G3S-Z0-125"/>
+                <constraint firstItem="jMr-Vi-zQM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M6U-Ig-noA" secondAttribute="bottom" constant="15" id="G3S-Z0-125"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="DGf-ep-vT2" secondAttribute="trailing" constant="50" id="I5a-wC-GkD"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="centerX" secondItem="agt-nj-YEX" secondAttribute="centerX" id="MSi-N5-YJN"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="M6U-Ig-noA" secondAttribute="trailing" constant="10" id="SBa-4x-sNJ"/>
