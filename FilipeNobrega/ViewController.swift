@@ -21,6 +21,12 @@ class ViewController: UIViewController {
 
   fileprivate var expanded = false
   fileprivate let disposeBag = DisposeBag()
+  fileprivate var cell: UICollectionViewCell? {
+    didSet {
+      cellCenter = cell?.center
+    }
+  }
+  fileprivate var cellCenter: CGPoint?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,6 +47,7 @@ class ViewController: UIViewController {
 
     mainView.collectionView.rx.itemSelected.subscribe(onNext: { [unowned self] indexPath in
       let viewController: UIViewController
+      self.cell = self.mainView.collectionView.cellForItem(at: indexPath)
       if indexPath.row % 3 == 0 {
         guard let vc = StoryboardUtils.viewController(for: .freeText) else { return }
         viewController = vc
@@ -52,7 +59,6 @@ class ViewController: UIViewController {
         viewController = vc
       }
       viewController.transitioningDelegate = self
-      viewController.modalPresentationStyle = .custom
       self.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
   }
@@ -82,19 +88,27 @@ extension ViewController: UIViewControllerTransitioningDelegate {
                            presenting: UIViewController,
                            source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let frame = mainView.collectionView.frame
-    let transition = GrowthTransition()
-    transition.transitionType = .present
-    transition.startFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
+    guard let cell = cell, let cellCenter = cellCenter else { return nil }
+    let cellAbsoluteFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
                                    size: CGSize(width: frame.width - 40, height: frame.height))
+    let transition = GrowthTransition(cell: cell,
+                                      cellRelativeCenter: cellCenter,
+                                      cellAbsoluteFrame: cellAbsoluteFrame,
+                                      duration: 0.4,
+                                      transitionType: .present)
     return transition
   }
 
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let frame = mainView.collectionView.frame
-    let transition = GrowthTransition()
-    transition.transitionType = .dismiss
-    transition.startFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
+    guard let cell = cell, let cellCenter = cellCenter else { return nil }
+    let cellAbsoluteFrame = CGRect(origin: CGPoint(x: 20, y: infoView.frame.origin.y),
                                    size: CGSize(width: frame.width - 40, height: frame.height))
+    let transition = GrowthTransition(cell: cell,
+                                      cellRelativeCenter: cellCenter,
+                                      cellAbsoluteFrame: cellAbsoluteFrame,
+                                      duration: 0.4,
+                                      transitionType: .dismiss)
     return transition
   }
 }

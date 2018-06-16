@@ -100,13 +100,13 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqh-bV-8Eo" userLabel="MainView" customClass="MainView" customModule="FilipeNobrega" customModuleProvider="target">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="403"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="431"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-od-LpV">
-                                                <rect key="frame" x="167.5" y="366" width="39" height="37"/>
+                                                <rect key="frame" x="167.5" y="394" width="39" height="37"/>
                                             </pageControl>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-Un-KPJ">
-                                                <rect key="frame" x="-0.5" y="0.0" width="375" height="366"/>
+                                                <rect key="frame" x="-0.5" y="0.0" width="375" height="394"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="17t-tF-LzI">
                                                     <size key="itemSize" width="326" height="352"/>
@@ -116,7 +116,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="collectionCell" id="vrl-Kj-rNC">
-                                                        <rect key="frame" x="20" y="7" width="326" height="352"/>
+                                                        <rect key="frame" x="20" y="21" width="326" height="352"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="326" height="352"/>
@@ -142,10 +142,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSu-Ag-DSb" customClass="FooterView" customModule="FilipeNobrega" customModuleProvider="target">
-                                        <rect key="frame" x="-0.5" y="413" width="375" height="128"/>
+                                        <rect key="frame" x="-0.5" y="441" width="375" height="100"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmy-h0-hxn">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Ylx-ZH-XgG">
                                                     <size key="itemSize" width="115" height="115"/>
@@ -155,13 +155,29 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footerCell" id="NHF-Cf-dTo">
-                                                        <rect key="frame" x="20" y="6.5" width="115" height="115"/>
+                                                        <rect key="frame" x="20" y="-7.5" width="115" height="115"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABC-iOS" translatesAutoresizingMaskIntoConstraints="NO" id="dir-w4-xRE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                                </imageView>
+                                                            </subviews>
                                                         </view>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="dir-w4-xRE" firstAttribute="top" secondItem="NHF-Cf-dTo" secondAttribute="top" id="0XK-hi-nfn"/>
+                                                            <constraint firstItem="dir-w4-xRE" firstAttribute="leading" secondItem="NHF-Cf-dTo" secondAttribute="leading" id="ASB-TI-RhG"/>
+                                                            <constraint firstAttribute="bottom" secondItem="dir-w4-xRE" secondAttribute="bottom" id="SI2-y3-Zy2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="dir-w4-xRE" secondAttribute="trailing" id="YW4-yh-trq"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -172,7 +188,7 @@
                                             <constraint firstItem="rmy-h0-hxn" firstAttribute="width" secondItem="nSu-Ag-DSb" secondAttribute="width" id="NPC-lH-oif"/>
                                             <constraint firstItem="rmy-h0-hxn" firstAttribute="height" secondItem="nSu-Ag-DSb" secondAttribute="height" id="TJ8-gq-eCE"/>
                                             <constraint firstItem="rmy-h0-hxn" firstAttribute="centerX" secondItem="nSu-Ag-DSb" secondAttribute="centerX" id="ZCw-9k-kB7"/>
-                                            <constraint firstAttribute="width" secondItem="nSu-Ag-DSb" secondAttribute="height" multiplier="375:128" id="luT-ms-JeZ"/>
+                                            <constraint firstAttribute="width" secondItem="nSu-Ag-DSb" secondAttribute="height" multiplier="375:100" id="luT-ms-JeZ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="footerCollectionView" destination="rmy-h0-hxn" id="DIz-mI-4Xo"/>
@@ -230,4 +246,7 @@
             <point key="canvasLocation" x="36" y="32.833583208395808"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ABC-iOS" width="60" height="60"/>
+    </resources>
 </document>

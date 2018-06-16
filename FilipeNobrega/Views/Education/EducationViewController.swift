@@ -11,6 +11,7 @@ import UIKit
 class EducationViewController: UIViewController {
   @IBOutlet weak var headerImageView: UIImageView!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var containerView: UIView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,23 +19,16 @@ class EducationViewController: UIViewController {
     tableView.delegate = self
   }
 
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    guard let headerView = tableView.tableHeaderView else { return }
+    headerView.frame = containerView.frame
+    tableView.tableHeaderView = headerView
+    tableView.setNeedsLayout()
+  }
+
   @IBAction func close(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.tableView.contentOffset = CGPoint(x: 0, y: self.headerImageView.frame.height)
-    UIView.animate(withDuration: 0.25) {
-      self.tableView.contentOffset = .zero
-    }
-  }
-
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    UIView.animate(withDuration: 0.25) {
-      self.tableView.contentOffset = CGPoint(x: 0, y: self.headerImageView.frame.height)
-    }
   }
 }
 

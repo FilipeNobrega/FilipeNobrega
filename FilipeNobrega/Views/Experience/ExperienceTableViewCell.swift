@@ -14,9 +14,11 @@ class ExperienceTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    containerView.layer.borderColor = UIColor.lightGray.cgColor
+    containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+    containerView.layer.shadowColor = UIColor.darkGray.cgColor
     containerView.layer.cornerRadius = 5
-    containerView.layer.borderWidth = 1
+    containerView.layer.shadowRadius = 5
+    containerView.layer.shadowOpacity = 0.25
     let loren = " • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin."
     let rand = arc4random() % 4
     var text = loren
