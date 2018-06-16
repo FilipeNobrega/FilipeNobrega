@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Experience View Controller-->
         <scene sceneID="yTo-sj-Bdc">
@@ -86,8 +94,8 @@
                                                     <rect key="frame" x="15" y="5" width="384" height="149.66666666666666"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software enginereer @ UFRN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
-                                                            <rect key="frame" x="65" y="20" width="304" height="14.666666666666664"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="65" y="17" width="304" height="17.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -101,13 +109,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlR-Wv-fZl">
                                                             <rect key="frame" x="15" y="75" width="354" height="59.666666666666657"/>
                                                             <string key="text"> • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.   • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.   • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.  </string>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jun 2010 - Jun 2011 (1 year)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-ax-xPo">
-                                                            <rect key="frame" x="65" y="38" width="304" height="12"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <rect key="frame" x="65" y="39" width="304" height="14"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -123,9 +131,9 @@
                                                         <constraint firstItem="ZW6-u7-jCn" firstAttribute="leading" secondItem="JYZ-Mm-Zp7" secondAttribute="trailing" constant="10" id="jNx-eA-WAh"/>
                                                         <constraint firstAttribute="bottom" secondItem="TlR-Wv-fZl" secondAttribute="bottom" constant="15" id="qGF-AF-iqd"/>
                                                         <constraint firstAttribute="trailing" secondItem="TlR-Wv-fZl" secondAttribute="trailing" constant="15" id="qQC-9T-BV1"/>
-                                                        <constraint firstItem="JYZ-Mm-Zp7" firstAttribute="bottom" secondItem="hCa-ax-xPo" secondAttribute="bottom" constant="5" id="spg-lL-2Cc"/>
+                                                        <constraint firstItem="JYZ-Mm-Zp7" firstAttribute="bottom" secondItem="hCa-ax-xPo" secondAttribute="bottom" constant="2" id="spg-lL-2Cc"/>
                                                         <constraint firstItem="TlR-Wv-fZl" firstAttribute="leading" secondItem="rdS-WQ-Rr8" secondAttribute="leading" constant="15" id="tsl-VU-8LL"/>
-                                                        <constraint firstItem="ZW6-u7-jCn" firstAttribute="top" secondItem="JYZ-Mm-Zp7" secondAttribute="top" constant="5" id="zBH-A9-X7C"/>
+                                                        <constraint firstItem="ZW6-u7-jCn" firstAttribute="top" secondItem="JYZ-Mm-Zp7" secondAttribute="top" constant="2" id="zBH-A9-X7C"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
