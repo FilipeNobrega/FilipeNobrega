@@ -10,10 +10,15 @@ import UIKit
 
 class ExperienceTableViewCell: UITableViewCell {
   @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    titleLabel.textColor = StyleGuides.primaryTextColor
+    subtitleLabel.textColor = StyleGuides.secundaryTextColor
+    descriptionLabel.textColor = StyleGuides.primaryTextColor
     containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
     containerView.layer.shadowColor = UIColor.darkGray.cgColor
     containerView.layer.cornerRadius = 5

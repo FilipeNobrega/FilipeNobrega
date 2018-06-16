@@ -11,6 +11,7 @@ import UIKit
 
 class InfoView: UIView {
   @IBOutlet weak var infoTableView: UITableView!
+  @IBOutlet weak var avatarImageView: UIImageView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -19,6 +20,8 @@ class InfoView: UIView {
     infoTableView.showsVerticalScrollIndicator = false
     infoTableView.showsHorizontalScrollIndicator = false
     infoTableView.isUserInteractionEnabled = false
+    avatarImageView.clipsToBounds = true
+    avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height / 2
   }
 
   public func getHeight() -> CGFloat {

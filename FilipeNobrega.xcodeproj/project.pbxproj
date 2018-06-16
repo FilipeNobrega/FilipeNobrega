@@ -46,6 +46,7 @@
 		D78BE6F620D54BF30020CAEB /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6CA20D54BC20020CAEB /* Lato-Light.ttf */; };
 		D78BE6F720D54BF30020CAEB /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C620D54BC20020CAEB /* Lato-LightItalic.ttf */; };
 		D78BE6F820D54BF30020CAEB /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C720D54BC20020CAEB /* Lato-Regular.ttf */; };
+		D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BE6F920D563EB0020CAEB /* StyleGuides.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		D78BE6C820D54BC20020CAEB /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		D78BE6C920D54BC20020CAEB /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		D78BE6CA20D54BC20020CAEB /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		D78BE6F920D563EB0020CAEB /* StyleGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuides.swift; sourceTree = "<group>"; };
 		EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 				D74D152020CBDFC300400F7C /* Info.plist */,
 				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
 				D72178B720CD353B000D819A /* StoryboardUtils.swift */,
+				D78BE6F920D563EB0020CAEB /* StyleGuides.swift */,
 			);
 			path = FilipeNobrega;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
 				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
+				D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */,
 				D72178A820CC5818000D819A /* FooterView.swift in Sources */,
 				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,

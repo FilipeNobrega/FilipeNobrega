@@ -29,9 +29,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldw-ta-pmS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-wl-4sq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-wl-4sq">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="165.66666666666666"/>
-                                                    <color key="backgroundColor" red="1" green="0.15663461540000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7MQ-wl-4sq" secondAttribute="height" multiplier="5:2" id="aoV-hk-XnL"/>
                                                     </constraints>
@@ -162,5 +161,6 @@
     </scenes>
     <resources>
         <image name="UFRN" width="100" height="100"/>
+        <image name="expandedview-placeholder" width="250" height="100"/>
     </resources>
 </document>

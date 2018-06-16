@@ -22,9 +22,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgU-89-ap4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sE6-uz-qph">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="sE6-uz-qph">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sE6-uz-qph" secondAttribute="height" multiplier="5:2" id="46a-Bp-F8p"/>
                                         </constraints>
@@ -85,4 +84,7 @@
             <point key="canvasLocation" x="-92" y="58"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="expandedview-placeholder" width="250" height="100"/>
+    </resources>
 </document>

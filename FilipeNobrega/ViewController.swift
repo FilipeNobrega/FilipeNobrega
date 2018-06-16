@@ -12,6 +12,7 @@ import RxSwift
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var mainView: MainView!
@@ -19,7 +20,15 @@ class ViewController: UIViewController {
   @IBOutlet weak var touchContractView: UIView!
   @IBOutlet weak var expandButton: UIButton!
 
-  fileprivate var expanded = false
+  fileprivate var expanded = false {
+    didSet {
+      if expanded {
+        expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
+      } else {
+        expandButton.setImage(UIImage(named: "arrowdown"), for: .normal)
+      }
+    }
+  }
   fileprivate let disposeBag = DisposeBag()
   fileprivate var cell: UICollectionViewCell? {
     didSet {
@@ -31,6 +40,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     prepareSubscriptions()
+    view.backgroundColor = StyleGuides.primaryColor
+    nameLabel.textColor = StyleGuides.secundaryColor
+    expandButton.tintColor = StyleGuides.secundaryColor
   }
 
   func prepareSubscriptions() {

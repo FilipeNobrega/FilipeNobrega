@@ -38,9 +38,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-CQ-wez">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196.33333333333334"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-t9-nzA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-t9-nzA">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="165.33333333333334"/>
-                                                    <color key="backgroundColor" red="1" green="0.15663461538461537" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="PRa-t9-nzA" secondAttribute="height" multiplier="5:2" id="Ne4-XF-B3d"/>
                                                     </constraints>
@@ -94,7 +93,7 @@
                                                     <rect key="frame" x="15" y="5" width="384" height="149.66666666666666"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software enginereer @ UFRN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
-                                                            <rect key="frame" x="65" y="17" width="304" height="17.666666666666671"/>
+                                                            <rect key="frame" x="65" y="17" width="304" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -147,6 +146,8 @@
                                         <connections>
                                             <outlet property="containerView" destination="rdS-WQ-Rr8" id="CkP-71-rBY"/>
                                             <outlet property="descriptionLabel" destination="TlR-Wv-fZl" id="AQU-m8-VsE"/>
+                                            <outlet property="subtitleLabel" destination="hCa-ax-xPo" id="beL-M8-3Lz"/>
+                                            <outlet property="titleLabel" destination="ZW6-u7-jCn" id="B1j-GB-Fs7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -174,5 +175,6 @@
     </scenes>
     <resources>
         <image name="UFRN" width="100" height="100"/>
+        <image name="expandedview-placeholder" width="250" height="100"/>
     </resources>
 </document>
