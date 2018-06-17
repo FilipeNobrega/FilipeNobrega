@@ -9,8 +9,4 @@
 import UIKit
 
 class FreeTextCollectionViewCell: BaseCollectionViewCell {
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    layer.cornerRadius = 5
-  }
 }

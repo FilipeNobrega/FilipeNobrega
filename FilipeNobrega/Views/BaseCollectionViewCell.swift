@@ -13,6 +13,4 @@ class BaseCollectionViewCell: UICollectionViewCell {
     super.awakeFromNib()
     layer.cornerRadius = 5
   }
-
-  func hideViews() {}
 }
