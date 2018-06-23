@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FooterView: UIView {
+final class FooterView: UIView {
   @IBOutlet weak var footerCollectionView: UICollectionView!
 
   override func awakeFromNib() {

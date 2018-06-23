@@ -6,44 +6,48 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import RxDataSources
+import RxSwift
 
-class InfoView: UIView {
-  @IBOutlet weak var infoTableView: UITableView!
-  @IBOutlet weak var avatarImageView: UIImageView!
+final class InfoView: UIView {
+  @IBOutlet weak private var infoTableView: UITableView!
+  @IBOutlet weak private var avatarImageView: UIImageView!
+
+  private let disposeBag = DisposeBag()
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    infoTableView.dataSource = self
-    infoTableView.delegate = self
     infoTableView.showsVerticalScrollIndicator = false
     infoTableView.showsHorizontalScrollIndicator = false
     infoTableView.isUserInteractionEnabled = false
     avatarImageView.clipsToBounds = true
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height / 2
+
+    prepareBinds()
   }
 
   public func getHeight() -> CGFloat {
     return infoTableView.contentSize.height + infoTableView.frame.origin.y
   }
+
+  private func prepareBinds() {
+    let sections = ContactInfo.mockInfo()
+
+    let dataSource = InfoView.dataSource()
+
+    Observable.just(sections)
+      .bind(to: infoTableView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
+  }
 }
 
-extension InfoView: UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return CGFloat(44)
-  }
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
-  }
-
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
-    return cell
+private extension InfoView {
+  static func dataSource() -> RxTableViewSectionedReloadDataSource<ContactInfo> {
+    return RxTableViewSectionedReloadDataSource<ContactInfo>(configureCell:
+      { (dataSource, tableView, indexPath, contactField) -> UITableViewCell in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        return cell
+    })
   }
 }

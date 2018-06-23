@@ -10,7 +10,7 @@ import UIKit
 import RxDataSources
 import RxSwift
 
-class MainView: UIView {
+final class MainView: UIView {
   @IBOutlet weak private var collectionView: UICollectionView!
   @IBOutlet weak private var pageControl: UIPageControl!
 
@@ -52,7 +52,7 @@ class MainView: UIView {
     prepareBinds()
   }
 
-  func prepareBinds() {
+  private func prepareBinds() {
     let sections = TileSection.mockTiles()
 
     let dataSource = MainView.dataSource()
@@ -71,7 +71,7 @@ class MainView: UIView {
   }
 }
 
-extension MainView {
+private extension MainView {
   static func dataSource() -> RxCollectionViewSectionedReloadDataSource<TileSection> {
     return RxCollectionViewSectionedReloadDataSource<TileSection>(configureCell: {
       (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
