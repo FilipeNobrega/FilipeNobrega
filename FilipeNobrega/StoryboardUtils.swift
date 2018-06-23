@@ -14,19 +14,13 @@ enum FilipeNib: String {
   case experienceCollectionViewCell = "ExperienceCollectionViewCell"
 }
 
-enum FilipeStoryboard: String {
-  case freeText = "FreeText"
-  case education = "Education"
-  case experience = "Experience"
-}
-
 class StoryboardUtils {
 
   static func nib(for identifier: FilipeNib) -> UINib {
     return UINib(nibName: identifier.rawValue, bundle: nil)
   }
 
-  static func viewController(for identifier: FilipeStoryboard) -> UIViewController? {
+  static func viewController(for identifier: TileType) -> UIViewController? {
     let storyboard = UIStoryboard(name: identifier.rawValue, bundle: nil)
     return storyboard.instantiateInitialViewController()
   }

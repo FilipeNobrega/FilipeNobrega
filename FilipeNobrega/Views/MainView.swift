@@ -7,54 +7,86 @@
 //
 
 import UIKit
+import RxDataSources
 import RxSwift
 
 class MainView: UIView {
-  @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var pageControl: UIPageControl!
+  @IBOutlet weak private var collectionView: UICollectionView!
+  @IBOutlet weak private var pageControl: UIPageControl!
 
-  fileprivate var scrollVelocity: CGFloat?
-  fileprivate let numberOfPages = 4
-  fileprivate let disposeBag = DisposeBag()
+  private weak var selectedCell: UICollectionViewCell? {
+    didSet {
+      cellCenter = selectedCell?.center
+      guard let superviewFrame = superview?.frame,
+        let cellFrame = selectedCell?.frame else { return }
+
+      let originY = superviewFrame.origin.y + cellFrame.origin.y
+      let originX = cellFrame.origin.x - collectionView.contentOffset.x
+      cellAbsoluteFrame = CGRect(origin: CGPoint(x: originX, y: originY),
+                                 size: cellFrame.size)
+    }
+  }
+  private var cellCenter: CGPoint?
+  private var cellAbsoluteFrame: CGRect?
+
+  private var scrollVelocity: CGFloat?
+  private let disposeBag = DisposeBag()
+
+  let presentViewSubject = PublishSubject<UIViewController>()
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    
+
     collectionView.delegate = self
-    collectionView.dataSource = self
     collectionView.showsVerticalScrollIndicator = false
     collectionView.showsHorizontalScrollIndicator = false
-    pageControl.numberOfPages = numberOfPages
+    pageControl.numberOfPages = 4
     pageControl.isUserInteractionEnabled = false
 
-    collectionView.register(StoryboardUtils.nib(for: .freeTextCollectionViewCell), forCellWithReuseIdentifier: "FreeTextCollectionViewCell")
-    collectionView.register(StoryboardUtils.nib(for: .educationCollectionViewCell), forCellWithReuseIdentifier: "EducationCollectionViewCell")
-    collectionView.register(StoryboardUtils.nib(for: .experienceCollectionViewCell), forCellWithReuseIdentifier: "ExperienceCollectionViewCell")
+    collectionView.register(StoryboardUtils.nib(for: .freeTextCollectionViewCell),
+                            forCellWithReuseIdentifier: TileType.freeText.rawValue)
+    collectionView.register(StoryboardUtils.nib(for: .educationCollectionViewCell),
+                            forCellWithReuseIdentifier: TileType.education.rawValue)
+    collectionView.register(StoryboardUtils.nib(for: .experienceCollectionViewCell),
+                            forCellWithReuseIdentifier: TileType.experience.rawValue)
+    prepareBinds()
+  }
+
+  func prepareBinds() {
+    let sections = TileSection.mockTiles()
+
+    let dataSource = MainView.dataSource()
+
+    Observable.just(sections)
+      .bind(to: collectionView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
+
+    collectionView.rx.modelSelected(Tile.self).subscribe(onNext: { [unowned self] tile in
+      guard let viewController = StoryboardUtils.viewController(for: tile.type) else { return }
+      let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
+      self.selectedCell = self.collectionView.cellForItem(at: indexPath)
+      viewController.transitioningDelegate = self
+      self.presentViewSubject.onNext(viewController)
+    }).disposed(by: disposeBag)
   }
 }
 
-extension MainView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 1
+extension MainView {
+  static func dataSource() -> RxCollectionViewSectionedReloadDataSource<TileSection> {
+    return RxCollectionViewSectionedReloadDataSource<TileSection>(configureCell: {
+      (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
+      let cell =
+        collection.dequeueReusableCell(withReuseIdentifier: cellType.type.rawValue,
+                                       for: indexPath)
+      return cell
+    })
   }
+}
 
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return numberOfPages
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: UICollectionViewCell
-    if indexPath.row % 3 == 0 {
-      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreeTextCollectionViewCell", for: indexPath)
-    } else if indexPath.row % 3 == 1 {
-      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EducationCollectionViewCell", for: indexPath)
-    } else {
-      cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExperienceCollectionViewCell", for: indexPath)
-    }
-    return cell
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+extension MainView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height)
   }
 
@@ -74,7 +106,9 @@ extension MainView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     self.scrollVelocity = nil
   }
 
-  func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+  func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                 withVelocity velocity: CGPoint,
+                                 targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     scrollVelocity = velocity.x
   }
 
@@ -119,3 +153,35 @@ extension MainView: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     pageControl.currentPage = indexPath.row
   }
 }
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension MainView: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController,
+                           presenting: UIViewController,
+                           source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    guard let cell = selectedCell,
+      let cellCenter = cellCenter,
+      let cellAbsoluteFrame = cellAbsoluteFrame else { return nil }
+
+    let transition = GrowthTransition(cell: cell,
+                                      cellRelativeCenter: cellCenter,
+                                      cellAbsoluteFrame: cellAbsoluteFrame,
+                                      duration: 0.4,
+                                      transitionType: .present)
+    return transition
+  }
+
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    guard let cell = selectedCell,
+      let cellCenter = cellCenter,
+      let cellAbsoluteFrame = cellAbsoluteFrame else { return nil }
+
+    let transition = GrowthTransition(cell: cell,
+                                      cellRelativeCenter: cellCenter,
+                                      cellAbsoluteFrame: cellAbsoluteFrame,
+                                      duration: 0.4,
+                                      transitionType: .dismiss)
+    return transition
+  }
+}
+
