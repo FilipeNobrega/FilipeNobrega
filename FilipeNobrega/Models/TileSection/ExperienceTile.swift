@@ -10,11 +10,12 @@ import Foundation
 
 struct ExperienceTile: Tile, Decodable {
   let shortDescription: String
-  let type: TileType = .experience
+  let type: TileType
   let headerImage: String
 
   init(shortDescription: String, headerImage: String) {
     self.shortDescription = shortDescription
     self.headerImage = headerImage
+    self.type = .experience
   }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct FreeTextTile: Tile, Decodable {
   let shortDescription: String
-  let type: TileType = .freeText
+  let type: TileType
   let headerImage: String
   
   var longDescription: String?
@@ -18,5 +18,6 @@ struct FreeTextTile: Tile, Decodable {
   init(shortDescription: String, headerImage: String) {
     self.shortDescription = shortDescription
     self.headerImage = headerImage
+    self.type = .freeText
   }
 }

@@ -29,11 +29,11 @@ struct FailableTile: Decodable {
 
   init(from decoder: Decoder) throws {
     let container = try decoder.singleValueContainer()
-    if let tile = try? container.decode(FreeTextTile.self) {
+    if let tile = try? container.decode(FreeTextTile.self), tile.type == .freeText {
       self.tile = tile
-    } else if let tile = try? container.decode(EducationTile.self) {
+    } else if let tile = try? container.decode(EducationTile.self), tile.type == .education {
       self.tile = tile
-    } else if let tile = try? container.decode(ExperienceTile.self) {
+    } else if let tile = try? container.decode(ExperienceTile.self), tile.type == .experience {
       self.tile = tile
     } else {
       throw TileError.unhandled
