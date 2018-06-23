@@ -9,6 +9,6 @@
 import Foundation
 
 struct ContactField: Decodable {
-  var icon: String?
-  var text: String?
+  let icon: String
+  let text: String
 }
