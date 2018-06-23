@@ -10,6 +10,8 @@
 		8EBD15D4F837F9316A7FEE45 /* Pods_FilipeNobregaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */; };
 		A34C6E56A62511B2416F3A9A /* Pods_FilipeNobregaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */; };
 		BA7FE05450D8548DB7EEC16F /* Pods_FilipeNobrega.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1C6B7A02F489B2BC6DE43 /* Pods_FilipeNobrega.framework */; };
+		D70E872D20DEC2EC0026FD58 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E872C20DEC2EC0026FD58 /* ContactInfo.swift */; };
+		D70E872F20DEC3930026FD58 /* ContactField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E872E20DEC3930026FD58 /* ContactField.swift */; };
 		D72178A620CC56F2000D819A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A520CC56F2000D819A /* InfoView.swift */; };
 		D72178A820CC5818000D819A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A720CC5818000D819A /* FooterView.swift */; };
 		D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178AA20CCB638000D819A /* GrowthTransition.swift */; };
@@ -75,6 +77,8 @@
 		7DB2472754F68C42B97AD713 /* Pods_FilipeNobregaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF82BA6A5B98AC676DAD45E /* Pods_FilipeNobregaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilipeNobregaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78FA5477E89249E8D8ACD57 /* Pods-FilipeNobregaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D70E872C20DEC2EC0026FD58 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		D70E872E20DEC3930026FD58 /* ContactField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactField.swift; sourceTree = "<group>"; };
 		D72178A520CC56F2000D819A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D72178A720CC5818000D819A /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		D72178AA20CCB638000D819A /* GrowthTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTransition.swift; sourceTree = "<group>"; };
@@ -172,6 +176,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D70E872B20DEC1740026FD58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D70E873020DEC42B0026FD58 /* ContactSection */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D70E873020DEC42B0026FD58 /* ContactSection */ = {
+			isa = PBXGroup;
+			children = (
+				D70E872C20DEC2EC0026FD58 /* ContactInfo.swift */,
+				D70E872E20DEC3930026FD58 /* ContactField.swift */,
+			);
+			path = ContactSection;
+			sourceTree = "<group>";
+		};
 		D72178A920CCB25B000D819A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +266,7 @@
 		D74D151320CBDFC200400F7C /* FilipeNobrega */ = {
 			isa = PBXGroup;
 			children = (
+				D70E872B20DEC1740026FD58 /* Models */,
 				D78BE6B220D54B260020CAEB /* Fonts */,
 				D72178A920CCB25B000D819A /* Views */,
 				D74D151420CBDFC200400F7C /* AppDelegate.swift */,
@@ -527,6 +549,8 @@
 				D73ECC5F20D0618C0074E1D7 /* BaseCollectionViewCell.swift in Sources */,
 				D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
+				D70E872D20DEC2EC0026FD58 /* ContactInfo.swift in Sources */,
+				D70E872F20DEC3930026FD58 /* ContactField.swift in Sources */,
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
 				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
