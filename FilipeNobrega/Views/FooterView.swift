@@ -7,35 +7,41 @@
 //
 
 import UIKit
+import RxDataSources
+import RxSwift
 
 final class FooterView: UIView {
   @IBOutlet weak var footerCollectionView: UICollectionView!
 
+  private let disposeBag = DisposeBag()
+
   override func awakeFromNib() {
     super.awakeFromNib()
-    footerCollectionView.delegate = self
-    footerCollectionView.dataSource = self
     footerCollectionView.showsVerticalScrollIndicator = false
     footerCollectionView.showsHorizontalScrollIndicator = false
+
+    prepareBinds()
+  }
+
+  private func prepareBinds() {
+    let sections = FooterSection.mockInfo()
+
+    let dataSource = InfoView.dataSource()
+
+    Observable.just(sections)
+      .bind(to: footerCollectionView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
   }
 }
 
-extension FooterView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 1
-  }
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "footerCell", for: indexPath)
-
-    return cell
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.height - 20, height: collectionView.frame.height - 20)
+private extension InfoView {
+  static func dataSource() -> RxCollectionViewSectionedReloadDataSource<FooterSection> {
+    return RxCollectionViewSectionedReloadDataSource<FooterSection>(configureCell: {
+      (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
+      let cell =
+        collection.dequeueReusableCell(withReuseIdentifier: "footerCell",
+                                       for: indexPath)
+      return cell
+    })
   }
 }

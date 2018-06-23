@@ -1,5 +1,5 @@
 //
-//  ContactField.swift
+//  AppTile.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 23/06/18.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct ContactField: Decodable {
-  let icon: String
-  let text: String
+struct AppTile: Decodable {
+  let appIcon: String
 }
