@@ -1,5 +1,5 @@
 //
-//  ContactCell.swift
+//  ContactTableViewCell.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 24/06/18.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-final class ContactCell: UITableViewCell {
+final class ContactTableViewCell: UITableViewCell, GenericCellType {
+  typealias Item = ContactField
+
   @IBOutlet weak private var iconView: UIImageView!
   @IBOutlet weak private var descriptionLabel: UILabel!
-  @IBOutlet weak var separatorView: UIView!
+  @IBOutlet weak private var separatorView: UIView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -20,8 +22,8 @@ final class ContactCell: UITableViewCell {
     separatorView.alpha = StyleGuides.tableViewSeparatorAlpha
   }
 
-  func prepare(with field: ContactField) {
-    descriptionLabel.text = field.text
+  func prepare(with item: Item) {
+    descriptionLabel.text = item.text
   }
 
   override func prepareForReuse() {

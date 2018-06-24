@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct ContactField: Decodable {
+struct ContactField: Decodable, GenericItemType {
+  var identifier: String {
+    return String(describing: ContactField.self)
+  }
+  
   let icon: String
   let text: String
 }

@@ -26,22 +26,11 @@ final class FooterSectionView: UIView {
   private func prepareBinds() {
     let sections = FooterSection.mockInfo()
 
-    let dataSource = InfoSectionView.dataSource()
+    let dataSource = CollectionViewDataSource<AppCollectionViewCell, FooterSection>
+      .dataSource()
 
     Observable.just(sections)
       .bind(to: footerCollectionView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
-  }
-}
-
-private extension InfoSectionView {
-  static func dataSource() -> RxCollectionViewSectionedReloadDataSource<FooterSection> {
-    return RxCollectionViewSectionedReloadDataSource<FooterSection>(configureCell: {
-      (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
-      let cell =
-        collection.dequeueReusableCell(withReuseIdentifier: "footerCell",
-                                       for: indexPath)
-      return cell
-    })
   }
 }

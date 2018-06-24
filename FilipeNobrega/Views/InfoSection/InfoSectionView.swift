@@ -36,23 +36,10 @@ final class InfoSectionView: UIView {
   private func prepareBinds() {
     let sections = ContactInfo.mockInfo()
 
-    let dataSource = InfoSectionView.dataSource()
+    let dataSource = TablewViewDataSource<ContactTableViewCell, ContactInfo>.dataSource()
 
     Observable.just(sections)
       .bind(to: infoTableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
-  }
-}
-
-private extension InfoSectionView {
-  static func dataSource() -> RxTableViewSectionedReloadDataSource<ContactInfo> {
-    return RxTableViewSectionedReloadDataSource<ContactInfo>(configureCell:
-      { (dataSource, tableView, indexPath, contactField) -> UITableViewCell in
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
-        if let cell = cell as? ContactCell {
-          cell.prepare(with: contactField)
-        }
-        return cell
-    })
   }
 }

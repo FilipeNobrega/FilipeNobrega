@@ -43,6 +43,8 @@
 		D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */; };
 		D74D153520CBDFC300400F7C /* FilipeNobregaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */; };
 		D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* TileSectionView.swift */; };
+		D771FBB920E02EBC00354861 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */; };
+		D771FBBB20E036C600354861 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */; };
 		D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C420D54BC20020CAEB /* Lato-Black.ttf */; };
 		D78BE6F020D54BF30020CAEB /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */; };
 		D78BE6F120D54BF30020CAEB /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C920D54BC20020CAEB /* Lato-Bold.ttf */; };
@@ -57,7 +59,8 @@
 		D7F02CAF20DED71600E504D3 /* TileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CAE20DED71600E504D3 /* TileSection.swift */; };
 		D7F02CB520DEE6FB00E504D3 /* FooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB420DEE67D00E504D3 /* FooterSection.swift */; };
 		D7F02CB620DEE6FE00E504D3 /* AppTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB320DEE67D00E504D3 /* AppTile.swift */; };
-		D7F02CB820DF49CC00E504D3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB720DF49CC00E504D3 /* ContactCell.swift */; };
+		D7F02CB820DF49CC00E504D3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB720DF49CC00E504D3 /* ContactTableViewCell.swift */; };
+		D7F02CBF20DFD85700E504D3 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CBE20DFD85700E504D3 /* GenericDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,8 @@
 		D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaUITests.swift; sourceTree = "<group>"; };
 		D74D153620CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D158320CC540A00400F7C /* TileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSectionView.swift; sourceTree = "<group>"; };
+		D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
+		D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
 		D78BE6C120D54BC10020CAEB /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C320D54BC10020CAEB /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -139,7 +144,8 @@
 		D7F02CAE20DED71600E504D3 /* TileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSection.swift; sourceTree = "<group>"; };
 		D7F02CB320DEE67D00E504D3 /* AppTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTile.swift; sourceTree = "<group>"; };
 		D7F02CB420DEE67D00E504D3 /* FooterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSection.swift; sourceTree = "<group>"; };
-		D7F02CB720DF49CC00E504D3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		D7F02CB720DF49CC00E504D3 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		D7F02CBE20DFD85700E504D3 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -358,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				D72178A720CC5818000D819A /* FooterSectionView.swift */,
+				D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */,
 			);
 			path = FooterSection;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 				D72178B920CD4D19000D819A /* Education */,
 				D72178B420CD33DC000D819A /* SimpleText */,
 				D74D158320CC540A00400F7C /* TileSectionView.swift */,
+				D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */,
 			);
 			path = TileSection;
 			sourceTree = "<group>";
@@ -377,7 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				D72178A520CC56F2000D819A /* InfoSectionView.swift */,
-				D7F02CB720DF49CC00E504D3 /* ContactCell.swift */,
+				D7F02CB720DF49CC00E504D3 /* ContactTableViewCell.swift */,
 			);
 			path = InfoSection;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 				D72178B720CD353B000D819A /* StoryboardUtils.swift */,
 				D78BE6F920D563EB0020CAEB /* StyleGuides.swift */,
 				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
+				D7F02CBE20DFD85700E504D3 /* GenericDataSource.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -635,22 +644,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72178A620CC56F2000D819A /* InfoSectionView.swift in Sources */,
+				D771FBBB20E036C600354861 /* TileCollectionViewCell.swift in Sources */,
 				D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */,
 				D70E873E20DEC4D20026FD58 /* Tile.swift in Sources */,
 				D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */,
 				D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */,
 				D7F02CB620DEE6FE00E504D3 /* AppTile.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
+				D771FBB920E02EBC00354861 /* AppCollectionViewCell.swift in Sources */,
 				D70E872D20DEC2EC0026FD58 /* ContactInfo.swift in Sources */,
 				D70E873F20DEC4D20026FD58 /* FreeTextTile.swift in Sources */,
 				D70E872F20DEC3930026FD58 /* ContactField.swift in Sources */,
+				D7F02CBF20DFD85700E504D3 /* GenericDataSource.swift in Sources */,
 				D7F02CAF20DED71600E504D3 /* TileSection.swift in Sources */,
 				D7F02CB520DEE6FB00E504D3 /* FooterSection.swift in Sources */,
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
 				D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */,
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
 				D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */,
-				D7F02CB820DF49CC00E504D3 /* ContactCell.swift in Sources */,
+				D7F02CB820DF49CC00E504D3 /* ContactTableViewCell.swift in Sources */,
 				D70E874020DEC4D20026FD58 /* EducationTile.swift in Sources */,
 				D72178A820CC5818000D819A /* FooterSectionView.swift in Sources */,
 				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,

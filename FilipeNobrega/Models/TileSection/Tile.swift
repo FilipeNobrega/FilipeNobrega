@@ -18,10 +18,16 @@ enum TileType: String, Decodable {
   case experience = "Experience"
 }
 
-protocol Tile {
+protocol Tile: GenericItemType {
   var shortDescription: String { get }
   var type: TileType { get }
   var headerImage: String  { get }
+}
+
+extension Tile {
+  var identifier: String {
+    return String(describing: type.rawValue)
+  }
 }
 
 struct FailableTile: Decodable {

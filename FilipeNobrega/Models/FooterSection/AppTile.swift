@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct AppTile: Decodable {
+struct AppTile: Decodable, GenericItemType {
+  var identifier: String {
+    return String(describing: AppTile.self)
+  }
+
   let appIcon: String
 }
