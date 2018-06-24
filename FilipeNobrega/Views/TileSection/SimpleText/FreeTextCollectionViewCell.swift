@@ -8,5 +8,9 @@
 
 import UIKit
 
-class FreeTextCollectionViewCell: BaseCollectionViewCell {
+class FreeTextCollectionViewCell: UICollectionViewCell {
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    roundedCorners()
+  }
 }

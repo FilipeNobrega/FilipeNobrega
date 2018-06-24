@@ -14,8 +14,8 @@ final class ViewController: UIViewController {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
-  @IBOutlet weak var mainView: MainView!
-  @IBOutlet weak var infoView: InfoView!
+  @IBOutlet weak var TileSectionView: TileSectionView!
+  @IBOutlet weak var InfoSectionView: InfoSectionView!
   @IBOutlet weak var touchContractView: UIView!
   @IBOutlet weak var expandButton: UIButton!
   
@@ -40,26 +40,26 @@ final class ViewController: UIViewController {
     touchContractView.addGestureRecognizer(tapGesture)
 
     tapGesture.rx.event.subscribe(onNext: { [unowned self] _ in
-      self.showHideInfoView()
+      self.showHideInfoSectionView()
     }).disposed(by: disposeBag)
 
     expandButton.rx.tap.subscribe(onNext: { [unowned self] _ in
-      self.showHideInfoView()
+      self.showHideInfoSectionView()
     }).disposed(by: disposeBag)
 
-    mainView.presentViewSubject.subscribe(onNext: { [unowned self] viewController in
+    TileSectionView.presentViewSubject.subscribe(onNext: { [unowned self] viewController in
       self.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
   }
 
-  private func showHideInfoView() {
+  private func showHideInfoSectionView() {
     if expanded {
       expandButton.setImage(UIImage(named: "arrowdown"), for: .normal)
       containerTopConstraint.constant = 20
       containerBottomConstraint.constant = 0
     } else {
       expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
-      let expandHeight = infoView.getHeight() + 10
+      let expandHeight = InfoSectionView.getHeight() + 10
       containerTopConstraint.constant += expandHeight
       containerBottomConstraint.constant += expandHeight
     }
@@ -67,14 +67,14 @@ final class ViewController: UIViewController {
     expanded = !expanded
 
     touchContractView.isUserInteractionEnabled = expanded
-    infoView.alpha = expanded ? 0.0 : 1.0
-    infoView.isHidden = false
+    InfoSectionView.alpha = expanded ? 0.0 : 1.0
+    InfoSectionView.isHidden = false
 
     UIView.animate(withDuration: 0.25, animations: {
       self.view.layoutIfNeeded()
-      self.infoView.alpha = self.expanded ? 1.0 : 0.0
+      self.InfoSectionView.alpha = self.expanded ? 1.0 : 0.0
     }, completion: { _ in
-      self.infoView.isHidden = !self.expanded
+      self.InfoSectionView.isHidden = !self.expanded
     })
   }
 }

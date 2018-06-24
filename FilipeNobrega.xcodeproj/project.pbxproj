@@ -17,8 +17,8 @@
 		D70E874020DEC4D20026FD58 /* EducationTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E873C20DEC4D20026FD58 /* EducationTile.swift */; };
 		D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E873D20DEC4D20026FD58 /* ExperienceTile.swift */; };
 		D70E874420DEC4F80026FD58 /* TileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E874320DEC4F80026FD58 /* TileTests.swift */; };
-		D72178A620CC56F2000D819A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A520CC56F2000D819A /* InfoView.swift */; };
-		D72178A820CC5818000D819A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A720CC5818000D819A /* FooterView.swift */; };
+		D72178A620CC56F2000D819A /* InfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A520CC56F2000D819A /* InfoSectionView.swift */; };
+		D72178A820CC5818000D819A /* FooterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178A720CC5818000D819A /* FooterSectionView.swift */; };
 		D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178AA20CCB638000D819A /* GrowthTransition.swift */; };
 		D72178AF20CD2F3A000D819A /* FreeText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72178AE20CD2F3A000D819A /* FreeText.storyboard */; };
 		D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178B020CD3126000D819A /* FreeTextCollectionViewCell.swift */; };
@@ -33,7 +33,7 @@
 		D72178CA20CDB453000D819A /* ExperienceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72178C720CDB3C1000D819A /* ExperienceCollectionViewCell.xib */; };
 		D72178CB20CDB453000D819A /* ExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178C620CDB3C1000D819A /* ExperienceCollectionViewCell.swift */; };
 		D72178CC20CDB453000D819A /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178C820CDB3C2000D819A /* ExperienceViewController.swift */; };
-		D73ECC5F20D0618C0074E1D7 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */; };
+		D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */; };
 		D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* ViewController.swift */; };
@@ -42,7 +42,7 @@
 		D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */; };
 		D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */; };
 		D74D153520CBDFC300400F7C /* FilipeNobregaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */; };
-		D74D158420CC540A00400F7C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* MainView.swift */; };
+		D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* TileSectionView.swift */; };
 		D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C420D54BC20020CAEB /* Lato-Black.ttf */; };
 		D78BE6F020D54BF30020CAEB /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */; };
 		D78BE6F120D54BF30020CAEB /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C920D54BC20020CAEB /* Lato-Bold.ttf */; };
@@ -57,6 +57,7 @@
 		D7F02CAF20DED71600E504D3 /* TileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CAE20DED71600E504D3 /* TileSection.swift */; };
 		D7F02CB520DEE6FB00E504D3 /* FooterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB420DEE67D00E504D3 /* FooterSection.swift */; };
 		D7F02CB620DEE6FE00E504D3 /* AppTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB320DEE67D00E504D3 /* AppTile.swift */; };
+		D7F02CB820DF49CC00E504D3 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F02CB720DF49CC00E504D3 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,8 +93,8 @@
 		D70E873C20DEC4D20026FD58 /* EducationTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationTile.swift; sourceTree = "<group>"; };
 		D70E873D20DEC4D20026FD58 /* ExperienceTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceTile.swift; sourceTree = "<group>"; };
 		D70E874320DEC4F80026FD58 /* TileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileTests.swift; sourceTree = "<group>"; };
-		D72178A520CC56F2000D819A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		D72178A720CC5818000D819A /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		D72178A520CC56F2000D819A /* InfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSectionView.swift; sourceTree = "<group>"; };
+		D72178A720CC5818000D819A /* FooterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSectionView.swift; sourceTree = "<group>"; };
 		D72178AA20CCB638000D819A /* GrowthTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthTransition.swift; sourceTree = "<group>"; };
 		D72178AE20CD2F3A000D819A /* FreeText.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FreeText.storyboard; sourceTree = "<group>"; };
 		D72178B020CD3126000D819A /* FreeTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTextCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -108,7 +109,7 @@
 		D72178C620CDB3C1000D819A /* ExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
 		D72178C720CDB3C1000D819A /* ExperienceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCollectionViewCell.xib; sourceTree = "<group>"; };
 		D72178C820CDB3C2000D819A /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
-		D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayerManipulation.swift"; sourceTree = "<group>"; };
 		D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +124,7 @@
 		D74D153020CBDFC300400F7C /* FilipeNobregaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilipeNobregaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaUITests.swift; sourceTree = "<group>"; };
 		D74D153620CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D74D158320CC540A00400F7C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D74D158320CC540A00400F7C /* TileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSectionView.swift; sourceTree = "<group>"; };
 		D78BE6C120D54BC10020CAEB /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C320D54BC10020CAEB /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 		D7F02CAE20DED71600E504D3 /* TileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSection.swift; sourceTree = "<group>"; };
 		D7F02CB320DEE67D00E504D3 /* AppTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTile.swift; sourceTree = "<group>"; };
 		D7F02CB420DEE67D00E504D3 /* FooterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSection.swift; sourceTree = "<group>"; };
+		D7F02CB720DF49CC00E504D3 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		EE139333C174879867D1785A /* Pods-FilipeNobregaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilipeNobregaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilipeNobregaUITests/Pods-FilipeNobregaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,13 +228,9 @@
 		D72178A920CCB25B000D819A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D72178C420CDAE55000D819A /* Experience */,
-				D72178B920CD4D19000D819A /* Education */,
-				D72178B420CD33DC000D819A /* SimpleText */,
-				D74D158320CC540A00400F7C /* MainView.swift */,
-				D72178A520CC56F2000D819A /* InfoView.swift */,
-				D72178A720CC5818000D819A /* FooterView.swift */,
-				D73ECC5E20D0618C0074E1D7 /* BaseCollectionViewCell.swift */,
+				D7F02CBB20DFC69300E504D3 /* InfoSection */,
+				D7F02CBA20DFC67F00E504D3 /* TileSection */,
+				D7F02CB920DFC67500E504D3 /* FooterSection */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +294,8 @@
 		D74D151320CBDFC200400F7C /* FilipeNobrega */ = {
 			isa = PBXGroup;
 			children = (
+				D7F02CBD20DFD2F700E504D3 /* Utils */,
+				D7F02CBC20DFD2F000E504D3 /* Extensions */,
 				D70E872B20DEC1740026FD58 /* Models */,
 				D78BE6B220D54B260020CAEB /* Fonts */,
 				D72178A920CCB25B000D819A /* Views */,
@@ -305,9 +305,6 @@
 				D74D151B20CBDFC300400F7C /* Assets.xcassets */,
 				D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */,
 				D74D152020CBDFC300400F7C /* Info.plist */,
-				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
-				D72178B720CD353B000D819A /* StoryboardUtils.swift */,
-				D78BE6F920D563EB0020CAEB /* StyleGuides.swift */,
 			);
 			path = FilipeNobrega;
 			sourceTree = "<group>";
@@ -355,6 +352,52 @@
 				D7F02CB320DEE67D00E504D3 /* AppTile.swift */,
 			);
 			path = FooterSection;
+			sourceTree = "<group>";
+		};
+		D7F02CB920DFC67500E504D3 /* FooterSection */ = {
+			isa = PBXGroup;
+			children = (
+				D72178A720CC5818000D819A /* FooterSectionView.swift */,
+			);
+			path = FooterSection;
+			sourceTree = "<group>";
+		};
+		D7F02CBA20DFC67F00E504D3 /* TileSection */ = {
+			isa = PBXGroup;
+			children = (
+				D72178C420CDAE55000D819A /* Experience */,
+				D72178B920CD4D19000D819A /* Education */,
+				D72178B420CD33DC000D819A /* SimpleText */,
+				D74D158320CC540A00400F7C /* TileSectionView.swift */,
+			);
+			path = TileSection;
+			sourceTree = "<group>";
+		};
+		D7F02CBB20DFC69300E504D3 /* InfoSection */ = {
+			isa = PBXGroup;
+			children = (
+				D72178A520CC56F2000D819A /* InfoSectionView.swift */,
+				D7F02CB720DF49CC00E504D3 /* ContactCell.swift */,
+			);
+			path = InfoSection;
+			sourceTree = "<group>";
+		};
+		D7F02CBC20DFD2F000E504D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D7F02CBD20DFD2F700E504D3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D72178B720CD353B000D819A /* StoryboardUtils.swift */,
+				D78BE6F920D563EB0020CAEB /* StyleGuides.swift */,
+				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,10 +634,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72178A620CC56F2000D819A /* InfoView.swift in Sources */,
+				D72178A620CC56F2000D819A /* InfoSectionView.swift in Sources */,
 				D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */,
 				D70E873E20DEC4D20026FD58 /* Tile.swift in Sources */,
-				D73ECC5F20D0618C0074E1D7 /* BaseCollectionViewCell.swift in Sources */,
+				D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */,
 				D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */,
 				D7F02CB620DEE6FE00E504D3 /* AppTile.swift in Sources */,
 				D74D151720CBDFC200400F7C /* ViewController.swift in Sources */,
@@ -604,11 +647,12 @@
 				D7F02CAF20DED71600E504D3 /* TileSection.swift in Sources */,
 				D7F02CB520DEE6FB00E504D3 /* FooterSection.swift in Sources */,
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
-				D74D158420CC540A00400F7C /* MainView.swift in Sources */,
+				D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */,
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
 				D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */,
+				D7F02CB820DF49CC00E504D3 /* ContactCell.swift in Sources */,
 				D70E874020DEC4D20026FD58 /* EducationTile.swift in Sources */,
-				D72178A820CC5818000D819A /* FooterView.swift in Sources */,
+				D72178A820CC5818000D819A /* FooterSectionView.swift in Sources */,
 				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,
 				D72178CC20CDB453000D819A /* ExperienceViewController.swift in Sources */,

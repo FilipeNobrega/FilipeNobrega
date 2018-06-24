@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  TileSectionView.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 09/06/18.
@@ -10,7 +10,7 @@ import UIKit
 import RxDataSources
 import RxSwift
 
-final class MainView: UIView {
+final class TileSectionView: UIView {
   @IBOutlet weak private var collectionView: UICollectionView!
   @IBOutlet weak private var pageControl: UIPageControl!
 
@@ -55,7 +55,7 @@ final class MainView: UIView {
   private func prepareBinds() {
     let sections = TileSection.mockTiles()
 
-    let dataSource = MainView.dataSource()
+    let dataSource = TileSectionView.dataSource()
 
     Observable.just(sections)
       .bind(to: collectionView.rx.items(dataSource: dataSource))
@@ -71,7 +71,7 @@ final class MainView: UIView {
   }
 }
 
-private extension MainView {
+private extension TileSectionView {
   static func dataSource() -> RxCollectionViewSectionedReloadDataSource<TileSection> {
     return RxCollectionViewSectionedReloadDataSource<TileSection>(configureCell: {
       (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
@@ -83,7 +83,7 @@ private extension MainView {
   }
 }
 
-extension MainView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension TileSectionView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -155,7 +155,7 @@ extension MainView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
-extension MainView: UIViewControllerTransitioningDelegate {
+extension TileSectionView: UIViewControllerTransitioningDelegate {
   func animationController(forPresented presented: UIViewController,
                            presenting: UIViewController,
                            source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

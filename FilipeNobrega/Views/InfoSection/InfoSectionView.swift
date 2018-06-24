@@ -1,5 +1,5 @@
 //
-//  InfoView.swift
+//  InfoSectionView.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 09/06/18.
@@ -10,7 +10,7 @@ import UIKit
 import RxDataSources
 import RxSwift
 
-final class InfoView: UIView {
+final class InfoSectionView: UIView {
   @IBOutlet weak private var infoTableView: UITableView!
   @IBOutlet weak private var avatarImageView: UIImageView!
   @IBOutlet weak private var topSeparatorView: UIView!
@@ -22,9 +22,7 @@ final class InfoView: UIView {
     infoTableView.showsVerticalScrollIndicator = false
     infoTableView.showsHorizontalScrollIndicator = false
     infoTableView.isUserInteractionEnabled = false
-    avatarImageView.clipsToBounds = true
-    avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height / 2
-
+    avatarImageView.rounded()
     topSeparatorView.backgroundColor = StyleGuides.secundaryColor
     topSeparatorView.alpha = StyleGuides.tableViewSeparatorAlpha
 
@@ -38,7 +36,7 @@ final class InfoView: UIView {
   private func prepareBinds() {
     let sections = ContactInfo.mockInfo()
 
-    let dataSource = InfoView.dataSource()
+    let dataSource = InfoSectionView.dataSource()
 
     Observable.just(sections)
       .bind(to: infoTableView.rx.items(dataSource: dataSource))
@@ -46,7 +44,7 @@ final class InfoView: UIView {
   }
 }
 
-private extension InfoView {
+private extension InfoSectionView {
   static func dataSource() -> RxTableViewSectionedReloadDataSource<ContactInfo> {
     return RxTableViewSectionedReloadDataSource<ContactInfo>(configureCell:
       { (dataSource, tableView, indexPath, contactField) -> UITableViewCell in

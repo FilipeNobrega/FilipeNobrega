@@ -8,5 +8,9 @@
 
 import UIKit
 
-class EducationCollectionViewCell: BaseCollectionViewCell {
+class EducationCollectionViewCell: UICollectionViewCell {
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    roundedCorners()
+  }
 }

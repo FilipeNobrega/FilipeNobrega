@@ -1,5 +1,5 @@
 //
-//  FooterView.swift
+//  FooterSectionView.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 09/06/18.
@@ -10,7 +10,7 @@ import UIKit
 import RxDataSources
 import RxSwift
 
-final class FooterView: UIView {
+final class FooterSectionView: UIView {
   @IBOutlet weak var footerCollectionView: UICollectionView!
 
   private let disposeBag = DisposeBag()
@@ -26,7 +26,7 @@ final class FooterView: UIView {
   private func prepareBinds() {
     let sections = FooterSection.mockInfo()
 
-    let dataSource = InfoView.dataSource()
+    let dataSource = InfoSectionView.dataSource()
 
     Observable.just(sections)
       .bind(to: footerCollectionView.rx.items(dataSource: dataSource))
@@ -34,7 +34,7 @@ final class FooterView: UIView {
   }
 }
 
-private extension InfoView {
+private extension InfoSectionView {
   static func dataSource() -> RxCollectionViewSectionedReloadDataSource<FooterSection> {
     return RxCollectionViewSectionedReloadDataSource<FooterSection>(configureCell: {
       (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in

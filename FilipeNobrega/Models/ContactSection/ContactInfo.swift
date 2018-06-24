@@ -34,9 +34,11 @@ extension ContactInfo: SectionModelType {
 extension ContactInfo {
   static func mockInfo() -> [ContactInfo] {
     var fields = [ContactField]()
-    fields.append(ContactField(icon: "some", text: "some"))
-    fields.append(ContactField(icon: "some", text: "some"))
-    fields.append(ContactField(icon: "some", text: "some"))
+    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Skype"))
+    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Tel"))
+    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Email"))
+    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Github"))
+    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Linkedin"))
     return [ContactInfo(avatar: "avatar", fields: fields)]
   }
 }
