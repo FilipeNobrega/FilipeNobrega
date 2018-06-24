@@ -8,9 +8,13 @@
 
 import UIKit
 
-class FreeTextCollectionViewCell: UICollectionViewCell {
+final class FreeTextCollectionViewCell: UICollectionViewCell, TileCollectionViewCellProtocol {
   override func awakeFromNib() {
     super.awakeFromNib()
     roundedCorners()
+  }
+
+  func prepare(with item: Tile) {
+    //
   }
 }

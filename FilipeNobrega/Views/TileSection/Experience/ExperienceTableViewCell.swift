@@ -8,25 +8,27 @@
 
 import UIKit
 
-class ExperienceTableViewCell: UITableViewCell {
-  @IBOutlet weak var containerView: UIView!
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var subtitleLabel: UILabel!
-  @IBOutlet weak var descriptionLabel: UILabel!
+final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
+  typealias Item = Company
+
+  @IBOutlet weak private var containerView: UIView!
+  @IBOutlet weak private var imageVIew: UIImageView!
+  @IBOutlet weak private var titleLabel: UILabel!
+  @IBOutlet weak private var subtitleLabel: UILabel!
+  @IBOutlet weak private var descriptionLabel: UILabel!
 
   override func awakeFromNib() {
     super.awakeFromNib()
     titleLabel.textColor = StyleGuides.primaryTextColor
-    subtitleLabel.textColor = StyleGuides.secundaryTextColor
+    subtitleLabel.textColor = StyleGuides.primaryTextColor
     descriptionLabel.textColor = StyleGuides.primaryTextColor
     containerView.addShadow()
     containerView.roundedCorners()
-    let loren = " • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin."
-    let rand = arc4random() % 4
-    var text = loren
-    for _ in 0...rand {
-      text += "\n\n\(loren)"
-    }
-    descriptionLabel.text = text
+  }
+
+  func prepare(with item: Company) {
+    titleLabel.text = item.title
+    subtitleLabel.text = item.subtitle
+    descriptionLabel.text = item.description
   }
 }

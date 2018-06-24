@@ -11,13 +11,13 @@ import RxSwift
 
 final class ViewController: UIViewController {
 
-  @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
-  @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
-  @IBOutlet weak var TileSectionView: TileSectionView!
-  @IBOutlet weak var InfoSectionView: InfoSectionView!
-  @IBOutlet weak var touchContractView: UIView!
-  @IBOutlet weak var expandButton: UIButton!
+  @IBOutlet weak private var nameLabel: UILabel!
+  @IBOutlet weak private var containerBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak private var containerTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak private var TileSectionView: TileSectionView!
+  @IBOutlet weak private var InfoSectionView: InfoSectionView!
+  @IBOutlet weak private var touchContractView: UIView!
+  @IBOutlet weak private var expandButton: UIButton!
   
   private let disposeBag = DisposeBag()
 

@@ -36,16 +36,16 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-CQ-wez">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="196.33333333333334"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="196.66666666666666"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-t9-nzA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="165.33333333333334"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="165.66666666666666"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="PRa-t9-nzA" secondAttribute="height" multiplier="5:2" id="Ne4-XF-B3d"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="368-aU-On2">
-                                                    <rect key="frame" x="186" y="175.33333333333334" width="42" height="21"/>
+                                                    <rect key="frame" x="186" y="175.66666666666666" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Gib-UD-qkI"/>
                                                     </constraints>
@@ -82,7 +82,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="experienceTableViewCell" rowHeight="160" id="xUF-D6-IbX" customClass="ExperienceTableViewCell" customModule="FilipeNobrega" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Company" rowHeight="160" id="xUF-D6-IbX" customClass="ExperienceTableViewCell" customModule="FilipeNobrega" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xUF-D6-IbX" id="PUv-Re-kUJ">
@@ -90,10 +90,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-WQ-Rr8">
-                                                    <rect key="frame" x="15" y="5" width="384" height="149.66666666666666"/>
+                                                    <rect key="frame" x="15" y="10" width="384" height="140"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software enginereer @ UFRN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
-                                                            <rect key="frame" x="65" y="17" width="304" height="19.333333333333329"/>
+                                                            <rect key="frame" x="65" y="17" width="304" height="19"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlR-Wv-fZl">
-                                                            <rect key="frame" x="15" y="75" width="354" height="59.666666666666657"/>
+                                                            <rect key="frame" x="15" y="75" width="354" height="50"/>
                                                             <string key="text"> • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.   • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.   • Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue dolor, semper quis aliquet sed, porta sit amet nunc. Pellentesque non arcu a sapien dictum sollicitudin.  </string>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -137,15 +137,16 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="rdS-WQ-Rr8" secondAttribute="bottom" constant="5" id="0Z0-DC-GTx"/>
+                                                <constraint firstAttribute="bottom" secondItem="rdS-WQ-Rr8" secondAttribute="bottom" constant="10" id="0Z0-DC-GTx"/>
                                                 <constraint firstAttribute="trailing" secondItem="rdS-WQ-Rr8" secondAttribute="trailing" constant="15" id="60h-bG-69a"/>
-                                                <constraint firstItem="rdS-WQ-Rr8" firstAttribute="top" secondItem="PUv-Re-kUJ" secondAttribute="top" constant="5" id="mer-QX-8iZ"/>
+                                                <constraint firstItem="rdS-WQ-Rr8" firstAttribute="top" secondItem="PUv-Re-kUJ" secondAttribute="top" constant="10" id="mer-QX-8iZ"/>
                                                 <constraint firstItem="rdS-WQ-Rr8" firstAttribute="leading" secondItem="PUv-Re-kUJ" secondAttribute="leading" constant="15" id="yQO-0Y-gG7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerView" destination="rdS-WQ-Rr8" id="CkP-71-rBY"/>
                                             <outlet property="descriptionLabel" destination="TlR-Wv-fZl" id="AQU-m8-VsE"/>
+                                            <outlet property="imageVIew" destination="JYZ-Mm-Zp7" id="7lo-El-4FJ"/>
                                             <outlet property="subtitleLabel" destination="hCa-ax-xPo" id="beL-M8-3Lz"/>
                                             <outlet property="titleLabel" destination="ZW6-u7-jCn" id="B1j-GB-Fs7"/>
                                         </connections>

@@ -74,10 +74,13 @@ final class TileSectionView: UIView {
 private extension TileSectionView {
   static func dataSource() -> RxCollectionViewSectionedReloadDataSource<TileSection> {
     return RxCollectionViewSectionedReloadDataSource<TileSection>(configureCell: {
-      (dataSource, collection, indexPath, cellType) -> UICollectionViewCell in
+      (dataSource, collection, indexPath, item) -> UICollectionViewCell in
       let cell =
-        collection.dequeueReusableCell(withReuseIdentifier: cellType.type.rawValue,
+        collection.dequeueReusableCell(withReuseIdentifier: item.identifier,
                                        for: indexPath)
+      if let cell = cell as? TileCollectionViewCellProtocol {
+        cell.prepare(with: item)
+      }
       return cell
     })
   }

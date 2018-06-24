@@ -44,7 +44,12 @@
 		D74D153520CBDFC300400F7C /* FilipeNobregaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */; };
 		D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* TileSectionView.swift */; };
 		D771FBB920E02EBC00354861 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */; };
-		D771FBBB20E036C600354861 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */; };
+		D771FBBB20E036C600354861 /* TileCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */; };
+		D771FBBD20E042BC00354861 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBC20E042BC00354861 /* College.swift */; };
+		D771FBBF20E042E500354861 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBE20E042E500354861 /* Company.swift */; };
+		D771FBC120E0452C00354861 /* CompanySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC020E0452C00354861 /* CompanySection.swift */; };
+		D771FBC320E0452D00354861 /* CollegeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC220E0452D00354861 /* CollegeSection.swift */; };
+		D771FBC620E0488400354861 /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC520E0488400354861 /* EducationTableViewCell.swift */; };
 		D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C420D54BC20020CAEB /* Lato-Black.ttf */; };
 		D78BE6F020D54BF30020CAEB /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */; };
 		D78BE6F120D54BF30020CAEB /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C920D54BC20020CAEB /* Lato-Bold.ttf */; };
@@ -129,7 +134,12 @@
 		D74D153620CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D158320CC540A00400F7C /* TileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSectionView.swift; sourceTree = "<group>"; };
 		D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
-		D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
+		D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		D771FBBC20E042BC00354861 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		D771FBBE20E042E500354861 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		D771FBC020E0452C00354861 /* CompanySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySection.swift; sourceTree = "<group>"; };
+		D771FBC220E0452D00354861 /* CollegeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeSection.swift; sourceTree = "<group>"; };
+		D771FBC520E0488400354861 /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
 		D78BE6C120D54BC10020CAEB /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C320D54BC10020CAEB /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -222,11 +232,12 @@
 		D70E874220DEC4D40026FD58 /* TileSection */ = {
 			isa = PBXGroup;
 			children = (
-				D70E873C20DEC4D20026FD58 /* EducationTile.swift */,
-				D70E873D20DEC4D20026FD58 /* ExperienceTile.swift */,
-				D70E873B20DEC4D20026FD58 /* FreeTextTile.swift */,
-				D70E873A20DEC4D10026FD58 /* Tile.swift */,
+				D771FBC420E0454900354861 /* Tile */,
 				D7F02CAE20DED71600E504D3 /* TileSection.swift */,
+				D771FBBC20E042BC00354861 /* College.swift */,
+				D771FBC220E0452D00354861 /* CollegeSection.swift */,
+				D771FBBE20E042E500354861 /* Company.swift */,
+				D771FBC020E0452C00354861 /* CompanySection.swift */,
 			);
 			path = TileSection;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 				D72178C020CD8A09000D819A /* EducationCollectionViewCell.xib */,
 				D72178BA20CD4D28000D819A /* EducationCollectionViewCell.swift */,
 				D72178BB20CD4D28000D819A /* EducationViewController.swift */,
+				D771FBC520E0488400354861 /* EducationTableViewCell.swift */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -334,6 +346,17 @@
 			path = FilipeNobregaUITests;
 			sourceTree = "<group>";
 		};
+		D771FBC420E0454900354861 /* Tile */ = {
+			isa = PBXGroup;
+			children = (
+				D70E873C20DEC4D20026FD58 /* EducationTile.swift */,
+				D70E873D20DEC4D20026FD58 /* ExperienceTile.swift */,
+				D70E873B20DEC4D20026FD58 /* FreeTextTile.swift */,
+				D70E873A20DEC4D10026FD58 /* Tile.swift */,
+			);
+			path = Tile;
+			sourceTree = "<group>";
+		};
 		D78BE6B220D54B260020CAEB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +399,7 @@
 				D72178B920CD4D19000D819A /* Education */,
 				D72178B420CD33DC000D819A /* SimpleText */,
 				D74D158320CC540A00400F7C /* TileSectionView.swift */,
-				D771FBBA20E036C600354861 /* TileCollectionViewCell.swift */,
+				D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */,
 			);
 			path = TileSection;
 			sourceTree = "<group>";
@@ -644,7 +667,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72178A620CC56F2000D819A /* InfoSectionView.swift in Sources */,
-				D771FBBB20E036C600354861 /* TileCollectionViewCell.swift in Sources */,
+				D771FBBB20E036C600354861 /* TileCollectionViewCellProtocol.swift in Sources */,
+				D771FBC320E0452D00354861 /* CollegeSection.swift in Sources */,
 				D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */,
 				D70E873E20DEC4D20026FD58 /* Tile.swift in Sources */,
 				D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */,
@@ -654,8 +678,11 @@
 				D771FBB920E02EBC00354861 /* AppCollectionViewCell.swift in Sources */,
 				D70E872D20DEC2EC0026FD58 /* ContactInfo.swift in Sources */,
 				D70E873F20DEC4D20026FD58 /* FreeTextTile.swift in Sources */,
+				D771FBBF20E042E500354861 /* Company.swift in Sources */,
+				D771FBBD20E042BC00354861 /* College.swift in Sources */,
 				D70E872F20DEC3930026FD58 /* ContactField.swift in Sources */,
 				D7F02CBF20DFD85700E504D3 /* GenericDataSource.swift in Sources */,
+				D771FBC120E0452C00354861 /* CompanySection.swift in Sources */,
 				D7F02CAF20DED71600E504D3 /* TileSection.swift in Sources */,
 				D7F02CB520DEE6FB00E504D3 /* FooterSection.swift in Sources */,
 				D72178B120CD3126000D819A /* FreeTextCollectionViewCell.swift in Sources */,
@@ -664,6 +691,7 @@
 				D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */,
 				D7F02CB820DF49CC00E504D3 /* ContactTableViewCell.swift in Sources */,
 				D70E874020DEC4D20026FD58 /* EducationTile.swift in Sources */,
+				D771FBC620E0488400354861 /* EducationTableViewCell.swift in Sources */,
 				D72178A820CC5818000D819A /* FooterSectionView.swift in Sources */,
 				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,

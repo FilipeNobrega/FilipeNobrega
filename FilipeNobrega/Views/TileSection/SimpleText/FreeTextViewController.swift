@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FreeTextViewController: UIViewController {
-  @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var headerImageView: UIImageView!
+final class FreeTextViewController: UIViewController {
+  @IBOutlet weak private var scrollView: UIScrollView!
+  @IBOutlet weak private var headerImageView: UIImageView!
 
   @IBAction func close(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)

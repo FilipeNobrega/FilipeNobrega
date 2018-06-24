@@ -6,17 +6,22 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
+import RxDataSources
+import RxSwift
 import UIKit
 
-class EducationViewController: UIViewController {
-  @IBOutlet weak var headerImageView: UIImageView!
-  @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var containerView: UIView!
+final class EducationViewController: UIViewController {
+  @IBOutlet weak private var headerImageView: UIImageView!
+  @IBOutlet weak private var tableView: UITableView!
+  @IBOutlet weak private var containerView: UIView!
 
+  private let disposeBag = DisposeBag()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.dataSource = self
-    tableView.delegate = self
+    tableView.rowHeight = UITableViewAutomaticDimension
+    
+    prepareBinds()
   }
 
   override func viewWillLayoutSubviews() {
@@ -30,20 +35,15 @@ class EducationViewController: UIViewController {
   @IBAction func close(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
   }
-}
 
+  private func prepareBinds() {
+    let sections = CollegeSection.mockInfo()
 
-extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
+    let dataSource = TablewViewDataSource<EducationTableViewCell, CollegeSection>
+      .dataSource()
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath)
-    return cell
+    Observable.just(sections)
+      .bind(to: tableView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
   }
 }

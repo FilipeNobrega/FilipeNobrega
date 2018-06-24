@@ -6,22 +6,22 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
+import RxDataSources
+import RxSwift
 import UIKit
 
-class ExperienceViewController: UIViewController {
-  @IBOutlet weak var headerImageView: UIImageView!
-  @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var containerView: UIView!
+final class ExperienceViewController: UIViewController {
+  @IBOutlet weak private var headerImageView: UIImageView!
+  @IBOutlet weak private var tableView: UITableView!
+  @IBOutlet weak private var containerView: UIView!
+
+  private let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.dataSource = self
-    tableView.delegate = self
     tableView.rowHeight = UITableViewAutomaticDimension
-  }
 
-  @IBAction func close(_ sender: Any) {
-    self.dismiss(animated: true, completion: nil)
+    prepareBinds()
   }
 
   override func viewWillLayoutSubviews() {
@@ -31,20 +31,19 @@ class ExperienceViewController: UIViewController {
     tableView.tableHeaderView = headerView
     tableView.setNeedsLayout()
   }
-}
 
-
-extension ExperienceViewController: UITableViewDataSource, UITableViewDelegate {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+  @IBAction func close(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
   }
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
-  }
+  private func prepareBinds() {
+    let sections = CompanySection.mockInfo()
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "experienceTableViewCell", for: indexPath)
-    return cell
+    let dataSource = TablewViewDataSource<ExperienceTableViewCell, CompanySection>
+      .dataSource()
+
+    Observable.just(sections)
+      .bind(to: tableView.rx.items(dataSource: dataSource))
+      .disposed(by: disposeBag)
   }
 }

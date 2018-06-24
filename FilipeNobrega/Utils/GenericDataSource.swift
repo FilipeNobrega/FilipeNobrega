@@ -9,7 +9,7 @@
 import Foundation
 import RxDataSources
 
-class TablewViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item == S.Item {
+final class TablewViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item == S.Item {
   static func dataSource() -> RxTableViewSectionedReloadDataSource<S> {
     return RxTableViewSectionedReloadDataSource<S>(configureCell:
       { (_, tableView, indexPath, item) -> UITableViewCell in
@@ -23,7 +23,7 @@ class TablewViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item
   }
 }
 
-class CollectionViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item == S.Item {
+final class CollectionViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item == S.Item {
   static func dataSource() -> RxCollectionViewSectionedReloadDataSource<S> {
     return RxCollectionViewSectionedReloadDataSource<S>(configureCell: {
       (_, collection, indexPath, item) -> UICollectionViewCell in

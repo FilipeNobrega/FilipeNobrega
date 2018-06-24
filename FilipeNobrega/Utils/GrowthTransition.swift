@@ -14,7 +14,7 @@ enum TransitionType {
   case present
 }
 
-class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
+final class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
   private var cell: UICollectionViewCell
   private var cellRelativeCenter: CGPoint
   private var cellAbsoluteFrame: CGRect

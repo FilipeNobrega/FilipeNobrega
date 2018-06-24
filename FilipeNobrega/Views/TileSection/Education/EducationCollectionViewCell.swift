@@ -8,9 +8,13 @@
 
 import UIKit
 
-class EducationCollectionViewCell: UICollectionViewCell {
+final class EducationCollectionViewCell: UICollectionViewCell, TileCollectionViewCellProtocol {
   override func awakeFromNib() {
     super.awakeFromNib()
     roundedCorners()
+  }
+
+  func prepare(with item: Tile) {
+    //
   }
 }

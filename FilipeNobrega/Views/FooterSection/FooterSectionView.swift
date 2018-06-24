@@ -11,7 +11,7 @@ import RxDataSources
 import RxSwift
 
 final class FooterSectionView: UIView {
-  @IBOutlet weak var footerCollectionView: UICollectionView!
+  @IBOutlet weak private var footerCollectionView: UICollectionView!
 
   private let disposeBag = DisposeBag()
 

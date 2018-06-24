@@ -14,8 +14,7 @@ enum FilipeNib: String {
   case experienceCollectionViewCell = "ExperienceCollectionViewCell"
 }
 
-class StoryboardUtils {
-
+struct StoryboardUtils {
   static func nib(for identifier: FilipeNib) -> UINib {
     return UINib(nibName: identifier.rawValue, bundle: nil)
   }
