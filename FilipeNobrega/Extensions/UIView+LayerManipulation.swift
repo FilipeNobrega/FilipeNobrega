@@ -8,9 +8,12 @@
 
 import UIKit
 
-class BaseCollectionViewCell: UICollectionViewCell {
-  override func awakeFromNib() {
-    super.awakeFromNib()
+extension UIView {
+  func roundedCorners() {
     layer.cornerRadius = 5
+  }
+
+  func circle() {
+
   }
 }

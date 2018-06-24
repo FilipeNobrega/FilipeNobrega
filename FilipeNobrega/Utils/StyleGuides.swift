@@ -13,6 +13,8 @@ struct StyleGuides {
   static var secundaryColor = UIColor(red: 255, green: 255, blue: 255)
   static var primaryTextColor = UIColor(red: 60, green: 60, blue: 60)
   static var secundaryTextColor = UIColor(red: 140, green: 140, blue: 140)
+
+  static var tableViewSeparatorAlpha: CGFloat = 0.3
 }
 
 extension UIColor {

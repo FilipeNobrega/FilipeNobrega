@@ -13,6 +13,7 @@ import RxSwift
 final class InfoView: UIView {
   @IBOutlet weak private var infoTableView: UITableView!
   @IBOutlet weak private var avatarImageView: UIImageView!
+  @IBOutlet weak private var topSeparatorView: UIView!
 
   private let disposeBag = DisposeBag()
 
@@ -23,6 +24,9 @@ final class InfoView: UIView {
     infoTableView.isUserInteractionEnabled = false
     avatarImageView.clipsToBounds = true
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height / 2
+
+    topSeparatorView.backgroundColor = StyleGuides.secundaryColor
+    topSeparatorView.alpha = StyleGuides.tableViewSeparatorAlpha
 
     prepareBinds()
   }
@@ -47,6 +51,9 @@ private extension InfoView {
     return RxTableViewSectionedReloadDataSource<ContactInfo>(configureCell:
       { (dataSource, tableView, indexPath, contactField) -> UITableViewCell in
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        if let cell = cell as? ContactCell {
+          cell.prepare(with: contactField)
+        }
         return cell
     })
   }
