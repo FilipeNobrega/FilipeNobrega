@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 09/06/18.
@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-final class ViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
   @IBOutlet weak private var nameLabel: UILabel!
   @IBOutlet weak private var containerBottomConstraint: NSLayoutConstraint!

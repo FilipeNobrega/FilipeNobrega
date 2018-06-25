@@ -1,12 +1,15 @@
 PODS:
+  - Alamofire (4.7.2)
   - Differentiator (3.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Result (3.2.4)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
-  - RxCocoaNetworking (0.2.0):
-    - RxCocoa (~> 4.0)
-    - RxCocoaNetworking/Core (= 0.2.0)
-  - RxCocoaNetworking/Core (0.2.0):
-    - RxCocoa (~> 4.0)
   - RxDataSources (3.0.2):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
@@ -14,26 +17,30 @@ PODS:
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - Moya/RxSwift (~> 11.0)
   - RxCocoa (~> 4.0)
-  - RxCocoaNetworking
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - Differentiator
+    - Moya
+    - Result
     - RxCocoa
-    - RxCocoaNetworking
     - RxDataSources
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxCocoaNetworking: d845b8633478e763ce338b1dceac65628d71f4f2
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: df499b7996c7928c2a40a1b2d923857d39ba4978
+PODFILE CHECKSUM: 65deedd2225715cca2a61c180cb15ff6d68d2242
 
 COCOAPODS: 1.5.0
