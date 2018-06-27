@@ -6,9 +6,10 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import UIKit
+import RxCocoa
 import RxDataSources
 import RxSwift
+import UIKit
 
 final class FooterSectionView: UIView {
   @IBOutlet weak private var footerCollectionView: UICollectionView!
@@ -19,18 +20,14 @@ final class FooterSectionView: UIView {
     super.awakeFromNib()
     footerCollectionView.showsVerticalScrollIndicator = false
     footerCollectionView.showsHorizontalScrollIndicator = false
-
-    prepareBinds()
   }
 
-  private func prepareBinds() {
-    let sections = FooterSection.mockInfo()
-
+  func prepareBind(_ driver: Driver<[FooterSection]>) {
     let dataSource = CollectionViewDataSource<AppCollectionViewCell, FooterSection>
       .dataSource()
 
-    Observable.just(sections)
-      .bind(to: footerCollectionView.rx.items(dataSource: dataSource))
+    driver
+      .drive(footerCollectionView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
   }
 }

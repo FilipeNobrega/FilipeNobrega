@@ -13,8 +13,8 @@ struct College: Decodable, GenericItemType {
     return String(describing: College.self)
   }
   
-  let image: String
-  let name: String
+  let image: URL
+  let title: String
   let major: String
   let observation: String?
 }

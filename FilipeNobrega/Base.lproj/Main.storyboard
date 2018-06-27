@@ -141,6 +141,9 @@
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-od-LpV">
                                                 <rect key="frame" x="167.5" y="396" width="39" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="TlM-lc-zhE"/>
+                                                </constraints>
                                             </pageControl>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-Un-KPJ">
                                                 <rect key="frame" x="-0.5" y="0.0" width="375" height="396"/>
@@ -273,12 +276,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="InfoSectionView" destination="LwZ-YI-EiB" id="zJY-qR-4mh"/>
-                        <outlet property="TileSectionView" destination="Cqh-bV-8Eo" id="FOx-53-NX3"/>
                         <outlet property="containerBottomConstraint" destination="9aM-JU-rri" id="KcQ-zA-scX"/>
                         <outlet property="containerTopConstraint" destination="5cn-9S-wxx" id="DJh-jz-vQf"/>
                         <outlet property="expandButton" destination="Id3-ed-rmR" id="rU6-te-kka"/>
+                        <outlet property="footerSectionView" destination="nSu-Ag-DSb" id="POl-E2-OOl"/>
+                        <outlet property="infoSectionView" destination="LwZ-YI-EiB" id="NcW-h9-HAV"/>
                         <outlet property="nameLabel" destination="nKN-YB-dsv" id="rEq-jv-NRK"/>
+                        <outlet property="tileSectionView" destination="Cqh-bV-8Eo" id="SJi-k7-JZa"/>
                         <outlet property="touchContractView" destination="nXF-7q-o9s" id="1Lv-VT-MZd"/>
                     </connections>
                 </viewController>

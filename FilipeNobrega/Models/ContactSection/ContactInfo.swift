@@ -10,12 +10,8 @@ import Foundation
 import RxDataSources
 
 struct ContactInfo: Decodable {
-  let avatar: String
+  let avatar: URL
   let fields: [ContactField]
-
-  var avatarUrl: URL? {
-    return URL(string: avatar)
-  }
 }
 
 extension ContactInfo: SectionModelType {
@@ -28,17 +24,5 @@ extension ContactInfo: SectionModelType {
   init(original: ContactInfo, items: [ContactField]) {
     fields = items
     self.avatar = original.avatar
-  }
-}
-
-extension ContactInfo {
-  static func mockInfo() -> [ContactInfo] {
-    var fields = [ContactField]()
-    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Skype"))
-    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Tel"))
-    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Email"))
-    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Github"))
-    fields.append(ContactField(icon: "https://via.placeholder.com/50x50", text: "Linkedin"))
-    return [ContactInfo(avatar: "avatar", fields: fields)]
   }
 }

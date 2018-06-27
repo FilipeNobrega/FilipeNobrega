@@ -6,9 +6,10 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import UIKit
+import RxCocoa
 import RxDataSources
 import RxSwift
+import UIKit
 
 final class TileSectionView: UIView {
   @IBOutlet weak private var collectionView: UICollectionView!
@@ -40,8 +41,8 @@ final class TileSectionView: UIView {
     collectionView.delegate = self
     collectionView.showsVerticalScrollIndicator = false
     collectionView.showsHorizontalScrollIndicator = false
-    pageControl.numberOfPages = 4
     pageControl.isUserInteractionEnabled = false
+    pageControl.numberOfPages = 0
 
     collectionView.register(StoryboardUtils.nib(for: .freeTextCollectionViewCell),
                             forCellWithReuseIdentifier: TileType.freeText.rawValue)
@@ -52,17 +53,30 @@ final class TileSectionView: UIView {
     prepareBinds()
   }
 
-  private func prepareBinds() {
-    let sections = TileSection.mockTiles()
-
+  func prepareBind(_ driver: Driver<[TileSection]>) {
     let dataSource = TileSectionView.dataSource()
 
-    Observable.just(sections)
-      .bind(to: collectionView.rx.items(dataSource: dataSource))
+    driver
+      .do(onNext: { [unowned self] sections in
+        self.pageControl.numberOfPages = sections.first?.items.count ?? 0
+      })
+      .drive(collectionView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+  }
 
+  private func prepareBinds() {
     collectionView.rx.modelSelected(Tile.self).subscribe(onNext: { [unowned self] tile in
       guard let viewController = StoryboardUtils.viewController(for: tile.type) else { return }
+      if let controller = viewController as? ExperienceViewController,
+        let tile = tile as? ExperienceTile {
+        let companySection = CompanySection(items: tile.companies)
+        controller.sections.accept([companySection])
+      }
+      if let controller = viewController as? EducationViewController,
+        let tile = tile as? EducationTile {
+        let collegeSection = CollegeSection(items: tile.colleges)
+        controller.sections.accept([collegeSection])
+      }
       let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
       self.selectedCell = self.collectionView.cellForItem(at: indexPath)
       viewController.transitioningDelegate = self

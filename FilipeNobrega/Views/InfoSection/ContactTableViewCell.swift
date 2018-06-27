@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class ContactTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = ContactField
@@ -14,6 +16,8 @@ final class ContactTableViewCell: UITableViewCell, GenericCellType {
   @IBOutlet weak private var iconView: UIImageView!
   @IBOutlet weak private var descriptionLabel: UILabel!
   @IBOutlet weak private var separatorView: UIView!
+
+  private var imageDisposable: Disposable?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -24,9 +28,18 @@ final class ContactTableViewCell: UITableViewCell, GenericCellType {
 
   func prepare(with item: Item) {
     descriptionLabel.text = item.text
+    imageDisposable = ImageServiceAPI.image(from: item.icon)
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+      .asDriver(onErrorDriveWith: Driver.empty())
+      .drive(onNext: { [weak self] image in
+        self?.iconView.image = image
+      })
   }
 
   override func prepareForReuse() {
+    super.prepareForReuse()
+    imageDisposable?.dispose()
+    imageDisposable = nil
     descriptionLabel.text = nil
   }
 }

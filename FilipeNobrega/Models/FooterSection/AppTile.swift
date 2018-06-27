@@ -13,5 +13,5 @@ struct AppTile: Decodable, GenericItemType {
     return String(describing: AppTile.self)
   }
 
-  let appIcon: String
+  let appIcon: URL
 }

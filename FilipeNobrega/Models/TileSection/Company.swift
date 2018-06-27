@@ -13,7 +13,7 @@ struct Company: Decodable, GenericItemType {
     return String(describing: Company.self)
   }
   
-  let image: String
+  let image: URL
   let title: String
   let subtitle: String
   let description: String

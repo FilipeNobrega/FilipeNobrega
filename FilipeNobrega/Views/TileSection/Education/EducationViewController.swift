@@ -7,6 +7,7 @@
 //
 
 import RxDataSources
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -16,6 +17,7 @@ final class EducationViewController: UIViewController {
   @IBOutlet weak private var containerView: UIView!
 
   private let disposeBag = DisposeBag()
+  let sections = BehaviorRelay<[CollegeSection]>(value: [])
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,12 +39,10 @@ final class EducationViewController: UIViewController {
   }
 
   private func prepareBinds() {
-    let sections = CollegeSection.mockInfo()
-
     let dataSource = TablewViewDataSource<EducationTableViewCell, CollegeSection>
       .dataSource()
 
-    Observable.just(sections)
+    sections
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
   }

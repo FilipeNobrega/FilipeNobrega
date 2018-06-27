@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class EducationTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = College
@@ -17,6 +19,8 @@ final class EducationTableViewCell: UITableViewCell, GenericCellType {
   @IBOutlet weak private var observationLabel: UILabel!
   @IBOutlet weak private var observationBaselineConstraint: NSLayoutConstraint!
 
+  private var imageDisposable: Disposable?
+
   override func awakeFromNib() {
     super.awakeFromNib()
     nameLabel.textColor = StyleGuides.primaryTextColor
@@ -25,8 +29,14 @@ final class EducationTableViewCell: UITableViewCell, GenericCellType {
   }
 
   func prepare(with item: College) {
-    nameLabel.text = item.name
+    nameLabel.text = item.title
     majorLabel.text = item.major
+    imageDisposable = ImageServiceAPI.image(from: item.image)
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+      .asDriver(onErrorDriveWith: Driver.empty())
+      .drive(onNext: { [weak self] image in
+        self?.collegeImageView.image = image
+      })
     if let observation = item.observation {
       observationLabel.text = observation
       observationBaselineConstraint.constant = 25
@@ -35,5 +45,14 @@ final class EducationTableViewCell: UITableViewCell, GenericCellType {
       observationBaselineConstraint.constant = 0
     }
     setNeedsLayout()
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    nameLabel.text = nil
+    majorLabel.text = nil
+    observationLabel.text = nil
+    imageDisposable?.dispose()
+    imageDisposable = nil
   }
 }

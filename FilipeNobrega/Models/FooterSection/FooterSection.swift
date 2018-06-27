@@ -20,17 +20,3 @@ extension FooterSection: SectionModelType {
     self.items = items
   }
 }
-
-extension FooterSection {
-  static func mockInfo() -> [FooterSection] {
-    var appTiles = [AppTile]()
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    appTiles.append(AppTile(appIcon: "some"))
-    return [FooterSection(items: appTiles)]
-  }
-}

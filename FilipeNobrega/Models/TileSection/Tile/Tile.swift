@@ -21,7 +21,7 @@ enum TileType: String, Decodable {
 protocol Tile: GenericItemType {
   var shortDescription: String { get }
   var type: TileType { get }
-  var headerImage: String  { get }
+  var headerImage: URL { get }
 }
 
 extension Tile {

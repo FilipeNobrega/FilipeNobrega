@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = Company
@@ -17,6 +19,8 @@ final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
   @IBOutlet weak private var subtitleLabel: UILabel!
   @IBOutlet weak private var descriptionLabel: UILabel!
 
+  private var imageDisposable: Disposable?
+
   override func awakeFromNib() {
     super.awakeFromNib()
     titleLabel.textColor = StyleGuides.primaryTextColor
@@ -26,9 +30,25 @@ final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
     containerView.roundedCorners()
   }
 
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    titleLabel.text = nil
+    subtitleLabel.text = nil
+    descriptionLabel.text = nil
+    imageDisposable?.dispose()
+    imageDisposable = nil
+    imageVIew.image = nil
+  }
+
   func prepare(with item: Company) {
     titleLabel.text = item.title
     subtitleLabel.text = item.subtitle
     descriptionLabel.text = item.description
+    imageDisposable = ImageServiceAPI.image(from: item.image)
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+      .asDriver(onErrorDriveWith: Driver.empty())
+      .drive(onNext: { [weak self] image in
+        self?.imageVIew.image = image
+      })
   }
 }

@@ -20,16 +20,3 @@ extension CompanySection: SectionModelType {
     self.items = items
   }
 }
-
-extension CompanySection {
-  static func mockInfo() -> [CompanySection] {
-    var companies = [Company]()
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    companies.append(Company(image: "some", title: "some", subtitle: "some", description: "some"))
-    return [CompanySection(items: companies)]
-  }
-}

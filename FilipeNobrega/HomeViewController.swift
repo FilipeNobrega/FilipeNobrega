@@ -6,21 +6,24 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import UIKit
+import RxCocoa
 import RxSwift
+import UIKit
 
 final class HomeViewController: UIViewController {
 
   @IBOutlet weak private var nameLabel: UILabel!
   @IBOutlet weak private var containerBottomConstraint: NSLayoutConstraint!
   @IBOutlet weak private var containerTopConstraint: NSLayoutConstraint!
-  @IBOutlet weak private var TileSectionView: TileSectionView!
-  @IBOutlet weak private var InfoSectionView: InfoSectionView!
+  @IBOutlet weak private var tileSectionView: TileSectionView!
+  @IBOutlet weak private var infoSectionView: InfoSectionView!
+  @IBOutlet weak private var footerSectionView: FooterSectionView!
   @IBOutlet weak private var touchContractView: UIView!
   @IBOutlet weak private var expandButton: UIButton!
-  
-  private let disposeBag = DisposeBag()
 
+  private lazy var viewModel = HomeViewModel(layoutRequester: self.requester.asObservable())
+  private let requester = PublishSubject<URL>()
+  private let disposeBag = DisposeBag()
   private var expanded = false
 
   override func viewDidLoad() {
@@ -47,9 +50,16 @@ final class HomeViewController: UIViewController {
       self.showHideInfoSectionView()
     }).disposed(by: disposeBag)
 
-    TileSectionView.presentViewSubject.subscribe(onNext: { [unowned self] viewController in
+    tileSectionView.presentViewSubject.subscribe(onNext: { [unowned self] viewController in
       self.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
+
+    viewModel.layoutDriver.drive().disposed(by: disposeBag)
+    tileSectionView.prepareBind(viewModel.tileSectionDriver)
+    infoSectionView.prepareBind(viewModel.contactInfoSectionDriver)
+    footerSectionView.prepareBind(viewModel.footerSectionDriver)
+
+    requester.onNext(URL(string: "https://dl.dropboxusercontent.com/s/v9fsww6dgajeul0/mock.json?dl=0")!)
   }
 
   private func showHideInfoSectionView() {
@@ -59,7 +69,7 @@ final class HomeViewController: UIViewController {
       containerBottomConstraint.constant = 0
     } else {
       expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
-      let expandHeight = InfoSectionView.getHeight() + 10
+      let expandHeight = infoSectionView.getHeight() + 10
       containerTopConstraint.constant += expandHeight
       containerBottomConstraint.constant += expandHeight
     }
@@ -67,14 +77,14 @@ final class HomeViewController: UIViewController {
     expanded = !expanded
 
     touchContractView.isUserInteractionEnabled = expanded
-    InfoSectionView.alpha = expanded ? 0.0 : 1.0
-    InfoSectionView.isHidden = false
+    infoSectionView.alpha = expanded ? 0.0 : 1.0
+    infoSectionView.isHidden = false
 
     UIView.animate(withDuration: 0.25, animations: {
       self.view.layoutIfNeeded()
-      self.InfoSectionView.alpha = self.expanded ? 1.0 : 0.0
+      self.infoSectionView.alpha = self.expanded ? 1.0 : 0.0
     }, completion: { _ in
-      self.InfoSectionView.isHidden = !self.expanded
+      self.infoSectionView.isHidden = !self.expanded
     })
   }
 }

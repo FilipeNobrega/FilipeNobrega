@@ -11,13 +11,7 @@ import Foundation
 struct FreeTextTile: Tile, Decodable {
   let shortDescription: String
   let type: TileType
-  let headerImage: String
+  let headerImage: URL
   
   var longDescription: String?
-
-  init(shortDescription: String, headerImage: String) {
-    self.shortDescription = shortDescription
-    self.headerImage = headerImage
-    self.type = .freeText
-  }
 }

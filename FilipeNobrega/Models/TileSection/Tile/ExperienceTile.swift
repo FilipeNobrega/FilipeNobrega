@@ -11,11 +11,6 @@ import Foundation
 struct ExperienceTile: Tile, Decodable {
   let shortDescription: String
   let type: TileType
-  let headerImage: String
-
-  init(shortDescription: String, headerImage: String) {
-    self.shortDescription = shortDescription
-    self.headerImage = headerImage
-    self.type = .experience
-  }
+  let headerImage: URL
+  let companies: [Company]
 }

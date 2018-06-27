@@ -20,20 +20,3 @@ extension CollegeSection: SectionModelType {
     self.items = items
   }
 }
-
-extension CollegeSection {
-  static func mockInfo() -> [CollegeSection] {
-    var colleges = [College]()
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: "some"))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: nil))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: nil))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: nil))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: "some"))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: nil))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: "some"))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: nil))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: "some"))
-    colleges.append(College(image: "some", name: "Universidade Federal do Rio Grande do Norte", major: "Universidade Federal do Rio Grande do Norte", observation: "some"))
-    return [CollegeSection(items: colleges)]
-  }
-}

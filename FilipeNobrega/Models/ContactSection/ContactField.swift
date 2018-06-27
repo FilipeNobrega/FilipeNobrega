@@ -13,6 +13,6 @@ struct ContactField: Decodable, GenericItemType {
     return String(describing: ContactField.self)
   }
   
-  let icon: String
+  let icon: URL
   let text: String
 }
