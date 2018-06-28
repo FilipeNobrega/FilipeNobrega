@@ -6,7 +6,6 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 enum TransitionType {

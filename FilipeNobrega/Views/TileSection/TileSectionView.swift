@@ -67,15 +67,8 @@ final class TileSectionView: UIView {
   private func prepareBinds() {
     collectionView.rx.modelSelected(Tile.self).subscribe(onNext: { [unowned self] tile in
       guard let viewController = StoryboardUtils.viewController(for: tile.type) else { return }
-      if let controller = viewController as? ExperienceViewController,
-        let tile = tile as? ExperienceTile {
-        let companySection = CompanySection(items: tile.companies)
-        controller.sections.accept([companySection])
-      }
-      if let controller = viewController as? EducationViewController,
-        let tile = tile as? EducationTile {
-        let collegeSection = CollegeSection(items: tile.colleges)
-        controller.sections.accept([collegeSection])
+      if let controller = viewController as? TilableViewProtocol {
+        controller.prepare(with: tile)
       }
       let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
       self.selectedCell = self.collectionView.cellForItem(at: indexPath)
@@ -92,7 +85,7 @@ private extension TileSectionView {
       let cell =
         collection.dequeueReusableCell(withReuseIdentifier: item.identifier,
                                        for: indexPath)
-      if let cell = cell as? TileCollectionViewCellProtocol {
+      if let cell = cell as? TilableViewProtocol {
         cell.prepare(with: item)
       }
       return cell

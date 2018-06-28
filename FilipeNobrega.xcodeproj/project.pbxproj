@@ -45,7 +45,7 @@
 		D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* TileSectionView.swift */; };
 		D76A56C820E4511700257F7B /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A56C720E4511700257F7B /* ImageService.swift */; };
 		D771FBB920E02EBC00354861 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */; };
-		D771FBBB20E036C600354861 /* TileCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */; };
+		D771FBBB20E036C600354861 /* TilableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBA20E036C600354861 /* TilableViewProtocol.swift */; };
 		D771FBBD20E042BC00354861 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBC20E042BC00354861 /* College.swift */; };
 		D771FBBF20E042E500354861 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBBE20E042E500354861 /* Company.swift */; };
 		D771FBC120E0452C00354861 /* CompanySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC020E0452C00354861 /* CompanySection.swift */; };
@@ -139,7 +139,7 @@
 		D74D158320CC540A00400F7C /* TileSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSectionView.swift; sourceTree = "<group>"; };
 		D76A56C720E4511700257F7B /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D771FBB820E02EBC00354861 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
-		D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		D771FBBA20E036C600354861 /* TilableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilableViewProtocol.swift; sourceTree = "<group>"; };
 		D771FBBC20E042BC00354861 /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		D771FBBE20E042E500354861 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		D771FBC020E0452C00354861 /* CompanySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySection.swift; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 				D72178B920CD4D19000D819A /* Education */,
 				D72178B420CD33DC000D819A /* SimpleText */,
 				D74D158320CC540A00400F7C /* TileSectionView.swift */,
-				D771FBBA20E036C600354861 /* TileCollectionViewCellProtocol.swift */,
+				D771FBBA20E036C600354861 /* TilableViewProtocol.swift */,
 			);
 			path = TileSection;
 			sourceTree = "<group>";
@@ -691,7 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72178A620CC56F2000D819A /* InfoSectionView.swift in Sources */,
-				D771FBBB20E036C600354861 /* TileCollectionViewCellProtocol.swift in Sources */,
+				D771FBBB20E036C600354861 /* TilableViewProtocol.swift in Sources */,
 				D771FBC320E0452D00354861 /* CollegeSection.swift in Sources */,
 				D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */,
 				D70E873E20DEC4D20026FD58 /* Tile.swift in Sources */,

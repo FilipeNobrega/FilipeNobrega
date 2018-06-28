@@ -11,13 +11,14 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-final class ExperienceViewController: UIViewController {
+final class ExperienceViewController: UIViewController, TilableViewProtocol {
   @IBOutlet weak private var headerImageView: UIImageView!
   @IBOutlet weak private var tableView: UITableView!
   @IBOutlet weak private var containerView: UIView!
 
   private let disposeBag = DisposeBag()
-  let sections = BehaviorRelay<[CompanySection]>(value: [])
+  private var section: CompanySection?
+  private var image: Single<UIImage?>?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,11 +40,26 @@ final class ExperienceViewController: UIViewController {
   }
 
   private func prepareBinds() {
+    guard let section = section else { return }
     let dataSource = TablewViewDataSource<ExperienceTableViewCell, CompanySection>
       .dataSource()
 
-    sections
+    Observable.just([section])
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+
+    image?
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+      .asDriver(onErrorDriveWith: Driver.empty())
+      .drive(onNext: { [unowned self] image in
+        self.headerImageView.image = image
+      }).disposed(by: disposeBag)
+  }
+
+  func prepare(with tile: Tile) {
+    guard let tile = tile as? ExperienceTile else { return }
+    let companySection = CompanySection(items: tile.companies)
+    self.section = companySection
+    self.image = ImageServiceAPI.image(from: tile.headerImage)
   }
 }

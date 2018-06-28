@@ -8,13 +8,15 @@
 
 import UIKit
 
-final class EducationCollectionViewCell: UICollectionViewCell, TileCollectionViewCellProtocol {
+final class EducationCollectionViewCell: UICollectionViewCell, TilableViewProtocol {
+  @IBOutlet weak var descriptionLabel: UILabel!
+
   override func awakeFromNib() {
     super.awakeFromNib()
     roundedCorners()
   }
 
-  func prepare(with item: Tile) {
-    //
+  func prepare(with tile: Tile) {
+    descriptionLabel.text = tile.shortDescription
   }
 }

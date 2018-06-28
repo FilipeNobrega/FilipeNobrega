@@ -11,18 +11,19 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class EducationViewController: UIViewController {
+final class EducationViewController: UIViewController, TilableViewProtocol {
   @IBOutlet weak private var headerImageView: UIImageView!
   @IBOutlet weak private var tableView: UITableView!
   @IBOutlet weak private var containerView: UIView!
 
   private let disposeBag = DisposeBag()
-  let sections = BehaviorRelay<[CollegeSection]>(value: [])
-  
+  private var section: CollegeSection?
+  private var image: Single<UIImage?>?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.rowHeight = UITableViewAutomaticDimension
-    
+
     prepareBinds()
   }
 
@@ -39,11 +40,27 @@ final class EducationViewController: UIViewController {
   }
 
   private func prepareBinds() {
+    guard let section = section else { return }
+    
     let dataSource = TablewViewDataSource<EducationTableViewCell, CollegeSection>
       .dataSource()
 
-    sections
+    Observable.just([section])
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+
+    image?
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+      .asDriver(onErrorDriveWith: Driver.empty())
+      .drive(onNext: { [unowned self] image in
+        self.headerImageView.image = image
+      }).disposed(by: disposeBag)
+  }
+
+  func prepare(with tile: Tile) {
+    guard let tile = tile as? EducationTile else { return }
+    let collegeSection = CollegeSection(items: tile.colleges)
+    self.section = collegeSection
+    self.image = ImageServiceAPI.image(from: tile.headerImage)
   }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Filipe. All rights reserved.
 //
 
-import Foundation
 import RxDataSources
 
 final class TablewViewDataSource<C: GenericCellType, S: SectionModelType> where C.Item == S.Item {

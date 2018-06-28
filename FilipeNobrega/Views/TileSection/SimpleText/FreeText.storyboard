@@ -76,7 +76,7 @@
                     </view>
                     <connections>
                         <outlet property="headerImageView" destination="sE6-uz-qph" id="ce3-cS-QDS"/>
-                        <outlet property="scrollView" destination="kgU-89-ap4" id="jMG-d7-mYW"/>
+                        <outlet property="longDescriptionLabel" destination="oaW-fn-8jr" id="Ikl-l4-M83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXP-d2-n2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
