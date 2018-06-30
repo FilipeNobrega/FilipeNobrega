@@ -8,6 +8,7 @@ target 'FilipeNobrega' do
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxDataSources', '~> 3.0'
   pod 'Moya/RxSwift', '~> 11.0'
+  pod 'lottie-ios'
 
   target 'FilipeNobregaTests' do
     inherit! :search_paths
