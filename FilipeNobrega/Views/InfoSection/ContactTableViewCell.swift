@@ -13,7 +13,7 @@ import RxSwift
 final class ContactTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = ContactField
 
-  @IBOutlet weak private var iconView: UIImageView!
+  @IBOutlet weak private var iconView: LoadingImageView!
   @IBOutlet weak private var descriptionLabel: UILabel!
   @IBOutlet weak private var separatorView: UIView!
 

@@ -38,7 +38,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-CQ-wez">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-t9-nzA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-t9-nzA" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="165.66666666666666"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="PRa-t9-nzA" secondAttribute="height" multiplier="5:2" id="Ne4-XF-B3d"/>
@@ -98,7 +98,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-Mm-Zp7">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-Mm-Zp7" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                             <rect key="frame" x="15" y="15" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="FfX-c0-h1r"/>
@@ -176,6 +176,5 @@
     </scenes>
     <resources>
         <image name="UFRN" width="100" height="100"/>
-        <image name="expandedview-placeholder" width="250" height="100"/>
     </resources>
 </document>

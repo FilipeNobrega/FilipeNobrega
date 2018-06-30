@@ -38,7 +38,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldw-ta-pmS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expandedview-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-wl-4sq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-wl-4sq" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="165.66666666666666"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7MQ-wl-4sq" secondAttribute="height" multiplier="5:2" id="aoV-hk-XnL"/>
@@ -92,7 +92,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDb-ds-gXF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-0i-azL">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-0i-azL" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                             <rect key="frame" x="15" y="15" width="90" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Fdj-0i-azL" secondAttribute="height" multiplier="1:1" id="fgG-vO-7Fm"/>
@@ -191,6 +191,5 @@
     </scenes>
     <resources>
         <image name="UFRN" width="100" height="100"/>
-        <image name="expandedview-placeholder" width="250" height="100"/>
     </resources>
 </document>

@@ -134,13 +134,6 @@ final class GrowthTransition: NSObject, UIViewControllerAnimatedTransitioning {
   }
 }
 
-private extension CGRect {
-  var center: CGPoint {
-    return CGPoint(x: origin.x + size.width / 2,
-                   y: origin.y + size.height / 2)
-  }
-}
-
 private extension UIView {
   func transformSize(to size: CGSize) {
     let scaleX = size.width / self.frame.size.width

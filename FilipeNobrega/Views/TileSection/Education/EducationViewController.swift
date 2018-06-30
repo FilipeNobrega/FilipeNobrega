@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 final class EducationViewController: UIViewController, TilableViewProtocol {
-  @IBOutlet weak private var headerImageView: UIImageView!
+  @IBOutlet weak private var headerImageView: LoadingImageView!
   @IBOutlet weak private var tableView: UITableView!
   @IBOutlet weak private var containerView: UIView!
 

@@ -13,7 +13,7 @@ import UIKit
 
 final class InfoSectionView: UIView {
   @IBOutlet weak private var infoTableView: UITableView!
-  @IBOutlet weak private var avatarImageView: UIImageView!
+  @IBOutlet weak private var avatarImageView: LoadingImageView!
   @IBOutlet weak private var topSeparatorView: UIView!
 
   private var imageDisposable: Disposable?

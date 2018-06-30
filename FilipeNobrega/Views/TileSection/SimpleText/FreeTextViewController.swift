@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 final class FreeTextViewController: UIViewController, TilableViewProtocol {
-  @IBOutlet weak private var headerImageView: UIImageView!
+  @IBOutlet weak private var headerImageView: LoadingImageView!
   @IBOutlet weak private var longDescriptionLabel: UILabel!
 
   private let disposeBag = DisposeBag()

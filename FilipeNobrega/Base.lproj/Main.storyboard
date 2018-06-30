@@ -45,7 +45,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-YI-EiB" customClass="InfoSectionView" customModule="FilipeNobrega" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-kT-6j0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-kT-6j0" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                         <rect key="frame" x="137.5" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="ceY-Qs-HSm"/>
@@ -74,7 +74,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="295" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YCk-te-HJl">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YCk-te-HJl" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="5" width="33.5" height="33.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="YCk-te-HJl" secondAttribute="height" multiplier="1:1" id="cbJ-25-42W"/>
@@ -200,7 +200,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dir-w4-xRE">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dir-w4-xRE" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                 </imageView>
                                                             </subviews>
@@ -292,6 +292,5 @@
     </scenes>
     <resources>
         <image name="arrowdown" width="75" height="75"/>
-        <image name="avatar-placeholder" width="100" height="100"/>
     </resources>
 </document>

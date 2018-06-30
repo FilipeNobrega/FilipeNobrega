@@ -53,6 +53,9 @@
 		D771FBC620E0488400354861 /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC520E0488400354861 /* EducationTableViewCell.swift */; };
 		D771FBC920E0F7C700354861 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC820E0F7C700354861 /* Service.swift */; };
 		D771FBD320E18FDB00354861 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBD220E18FDB00354861 /* Layout.swift */; };
+		D7798B6C20E7D3860047EC97 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */; };
+		D7798B6E20E7D4440047EC97 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D7798B6D20E7D4440047EC97 /* loading.json */; };
+		D7798B7020E7DEAA0047EC97 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7798B6F20E7DEAA0047EC97 /* CGRect+Center.swift */; };
 		D784C47120E316C900043B88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D784C47020E316C900043B88 /* HomeViewModel.swift */; };
 		D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C420D54BC20020CAEB /* Lato-Black.ttf */; };
 		D78BE6F020D54BF30020CAEB /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */; };
@@ -147,6 +150,9 @@
 		D771FBC520E0488400354861 /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
 		D771FBC820E0F7C700354861 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D771FBD220E18FDB00354861 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		D7798B6D20E7D4440047EC97 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		D7798B6F20E7DEAA0047EC97 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
 		D784C47020E316C900043B88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D78BE6C120D54BC10020CAEB /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 		D74D151320CBDFC200400F7C /* FilipeNobrega */ = {
 			isa = PBXGroup;
 			children = (
+				D7798B6920E7D27C0047EC97 /* Resources */,
 				D771FBC720E0F79F00354861 /* Service */,
 				D7F02CBD20DFD2F700E504D3 /* Utils */,
 				D7F02CBC20DFD2F000E504D3 /* Extensions */,
@@ -375,6 +382,22 @@
 				D76A56C720E4511700257F7B /* ImageService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D7798B6920E7D27C0047EC97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7798B6A20E7D2870047EC97 /* Lottie */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7798B6A20E7D2870047EC97 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				D7798B6D20E7D4440047EC97 /* loading.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		D78BE6B220D54B260020CAEB /* Fonts */ = {
@@ -437,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */,
+				D7798B6F20E7DEAA0047EC97 /* CGRect+Center.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,6 +472,7 @@
 				D78BE6F920D563EB0020CAEB /* StyleGuides.swift */,
 				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
 				D7F02CBE20DFD85700E504D3 /* GenericDataSource.swift */,
+				D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -574,6 +599,7 @@
 				D78BE6F120D54BF30020CAEB /* Lato-Bold.ttf in Resources */,
 				D78BE6F320D54BF30020CAEB /* Lato-Hairline.ttf in Resources */,
 				D72178CA20CDB453000D819A /* ExperienceCollectionViewCell.xib in Resources */,
+				D7798B6E20E7D4440047EC97 /* loading.json in Resources */,
 				D72178C220CD8A3C000D819A /* EducationCollectionViewCell.xib in Resources */,
 				D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */,
 				D72178AF20CD2F3A000D819A /* FreeText.storyboard in Resources */,
@@ -697,6 +723,7 @@
 				D771FBC320E0452D00354861 /* CollegeSection.swift in Sources */,
 				D70E874120DEC4D20026FD58 /* ExperienceTile.swift in Sources */,
 				D70E873E20DEC4D20026FD58 /* Tile.swift in Sources */,
+				D7798B6C20E7D3860047EC97 /* LoadingImageView.swift in Sources */,
 				D76A56C820E4511700257F7B /* ImageService.swift in Sources */,
 				D771FBD320E18FDB00354861 /* Layout.swift in Sources */,
 				D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */,
@@ -725,6 +752,7 @@
 				D72178B820CD353B000D819A /* StoryboardUtils.swift in Sources */,
 				D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */,
 				D72178CC20CDB453000D819A /* ExperienceViewController.swift in Sources */,
+				D7798B7020E7DEAA0047EC97 /* CGRect+Center.swift in Sources */,
 				D72178BF20CD85AD000D819A /* EducationViewController.swift in Sources */,
 				D771FBC920E0F7C700354861 /* Service.swift in Sources */,
 				D72178BE20CD85AA000D819A /* EducationCollectionViewCell.swift in Sources */,
@@ -907,7 +935,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -923,7 +954,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -939,7 +973,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -956,7 +994,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -972,7 +1014,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -988,7 +1034,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

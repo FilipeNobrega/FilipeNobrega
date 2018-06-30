@@ -14,7 +14,7 @@ final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = Company
 
   @IBOutlet weak private var containerView: UIView!
-  @IBOutlet weak private var imageVIew: UIImageView!
+  @IBOutlet weak private var imageVIew: LoadingImageView!
   @IBOutlet weak private var titleLabel: UILabel!
   @IBOutlet weak private var subtitleLabel: UILabel!
   @IBOutlet weak private var descriptionLabel: UILabel!

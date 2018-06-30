@@ -13,7 +13,7 @@ import RxSwift
 final class AppCollectionViewCell: UICollectionViewCell, GenericCellType {
   typealias Item = AppTile
 
-  @IBOutlet weak private var appIconImageView: UIImageView!
+  @IBOutlet weak private var appIconImageView: LoadingImageView!
 
   private var imageDisposable: Disposable?
 

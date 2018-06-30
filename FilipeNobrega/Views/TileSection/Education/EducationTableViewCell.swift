@@ -13,7 +13,7 @@ import RxSwift
 final class EducationTableViewCell: UITableViewCell, GenericCellType {
   typealias Item = College
 
-  @IBOutlet weak private var collegeImageView: UIImageView!
+  @IBOutlet weak private var collegeImageView: LoadingImageView!
   @IBOutlet weak private var nameLabel: UILabel!
   @IBOutlet weak private var majorLabel: UILabel!
   @IBOutlet weak private var observationLabel: UILabel!
