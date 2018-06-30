@@ -99,43 +99,55 @@
                                                                 <constraint firstAttribute="width" constant="90" id="zMZ-r9-qRI"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universidade Federal do Rio Grande do Norte" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
-                                                            <rect key="frame" x="114.66666666666666" y="14.999999999999996" width="284.33333333333337" height="38.666666666666657"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BS. Computer Engineer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reB-RT-mgm">
-                                                            <rect key="frame" x="114.66666666666666" y="63.666666666666657" width="284.33333333333337" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observation ()" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fm-XR-IJB">
-                                                            <rect key="frame" x="114.66666666666666" y="90.666666666666671" width="284.33333333333337" height="15"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THg-He-mcB">
+                                                            <rect key="frame" x="115" y="26.666666666666664" width="284" height="67.666666666666686"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universidade Federal do Rio Grande do Norte" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="283.33333333333331" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BS. Computer Engineer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reB-RT-mgm">
+                                                                    <rect key="frame" x="0.0" y="26.999999999999996" width="283.33333333333331" height="15.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observation ()" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fm-XR-IJB">
+                                                                    <rect key="frame" x="0.0" y="52.666666666666657" width="283.33333333333331" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="15" id="A6J-Zg-fY0"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="15" id="A6J-Zg-fY0"/>
+                                                                <constraint firstItem="ZW6-u7-jCn" firstAttribute="leading" secondItem="THg-He-mcB" secondAttribute="leading" id="0fK-Dp-2i8"/>
+                                                                <constraint firstItem="8fm-XR-IJB" firstAttribute="leading" secondItem="THg-He-mcB" secondAttribute="leading" id="5Vs-pF-HlI"/>
+                                                                <constraint firstItem="reB-RT-mgm" firstAttribute="leading" secondItem="THg-He-mcB" secondAttribute="leading" id="85y-YE-H4G"/>
+                                                                <constraint firstAttribute="trailing" secondItem="reB-RT-mgm" secondAttribute="trailing" id="B5V-Mf-ON9"/>
+                                                                <constraint firstItem="8fm-XR-IJB" firstAttribute="firstBaseline" secondItem="reB-RT-mgm" secondAttribute="baseline" constant="25" id="HwG-av-zvs"/>
+                                                                <constraint firstItem="ZW6-u7-jCn" firstAttribute="top" secondItem="THg-He-mcB" secondAttribute="top" id="Jq9-Ph-Frz"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZW6-u7-jCn" secondAttribute="trailing" id="O6R-FM-yl1"/>
+                                                                <constraint firstAttribute="bottom" secondItem="8fm-XR-IJB" secondAttribute="bottom" id="eqH-AF-moH"/>
+                                                                <constraint firstItem="reB-RT-mgm" firstAttribute="top" secondItem="ZW6-u7-jCn" secondAttribute="bottom" constant="10" id="hf5-cX-Vhd"/>
+                                                                <constraint firstAttribute="trailing" secondItem="8fm-XR-IJB" secondAttribute="trailing" constant="0.66666666666662877" id="qrZ-mV-vT6"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="ZW6-u7-jCn" secondAttribute="trailing" constant="15" id="Cl2-TR-fcT"/>
                                                         <constraint firstItem="Fdj-0i-azL" firstAttribute="top" secondItem="PDb-ds-gXF" secondAttribute="top" constant="15" id="DeH-n0-o5f"/>
-                                                        <constraint firstItem="8fm-XR-IJB" firstAttribute="leading" secondItem="Fdj-0i-azL" secondAttribute="trailing" constant="10" id="LvW-Hi-CMY"/>
-                                                        <constraint firstAttribute="trailing" secondItem="8fm-XR-IJB" secondAttribute="trailing" constant="15" id="PKy-IP-AZV"/>
-                                                        <constraint firstItem="reB-RT-mgm" firstAttribute="top" secondItem="ZW6-u7-jCn" secondAttribute="bottom" constant="10" id="XlE-rk-OYB"/>
-                                                        <constraint firstItem="8fm-XR-IJB" firstAttribute="firstBaseline" secondItem="reB-RT-mgm" secondAttribute="baseline" constant="25" id="aH2-lG-00t"/>
-                                                        <constraint firstItem="reB-RT-mgm" firstAttribute="leading" secondItem="Fdj-0i-azL" secondAttribute="trailing" constant="10" id="bdt-GY-1OG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="THg-He-mcB" secondAttribute="trailing" constant="15" id="MaE-Fo-DTY"/>
+                                                        <constraint firstItem="THg-He-mcB" firstAttribute="leading" secondItem="Fdj-0i-azL" secondAttribute="trailing" constant="10" id="Udo-25-74s"/>
                                                         <constraint firstItem="Fdj-0i-azL" firstAttribute="leading" secondItem="PDb-ds-gXF" secondAttribute="leading" constant="15" id="hVA-f7-jUe"/>
+                                                        <constraint firstItem="THg-He-mcB" firstAttribute="centerY" secondItem="Fdj-0i-azL" secondAttribute="centerY" id="kj6-dN-Xkz"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="THg-He-mcB" secondAttribute="bottom" constant="15" id="nov-1u-vRf"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fdj-0i-azL" secondAttribute="bottom" constant="15" id="oul-Hq-tnT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="reB-RT-mgm" secondAttribute="trailing" constant="15" id="p9P-GM-eXQ"/>
-                                                        <constraint firstItem="ZW6-u7-jCn" firstAttribute="leading" secondItem="Fdj-0i-azL" secondAttribute="trailing" constant="10" id="t3V-9i-FXq"/>
-                                                        <constraint firstItem="ZW6-u7-jCn" firstAttribute="top" secondItem="Fdj-0i-azL" secondAttribute="top" id="xeR-C2-FmR"/>
-                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8fm-XR-IJB" secondAttribute="bottom" constant="5" id="zqi-d1-DE8"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -150,7 +162,7 @@
                                             <outlet property="collegeImageView" destination="Fdj-0i-azL" id="vqP-tn-qmj"/>
                                             <outlet property="majorLabel" destination="reB-RT-mgm" id="fmu-yG-X50"/>
                                             <outlet property="nameLabel" destination="ZW6-u7-jCn" id="l47-mS-OpS"/>
-                                            <outlet property="observationBaselineConstraint" destination="aH2-lG-00t" id="Qxd-wE-REk"/>
+                                            <outlet property="observationBaselineConstraint" destination="HwG-av-zvs" id="zRn-1V-akD"/>
                                             <outlet property="observationLabel" destination="8fm-XR-IJB" id="1MC-iD-p7q"/>
                                         </connections>
                                     </tableViewCell>
