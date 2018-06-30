@@ -12,3 +12,13 @@ struct Layout: Decodable {
   let tileSection: TileSection
   let footerSection: FooterSection
 }
+
+extension Layout: Equatable {
+  static func == (lhs: Layout, rhs: Layout) -> Bool {
+    guard lhs.contactInfo == rhs.contactInfo else { return false }
+    guard lhs.tileSection == rhs.tileSection else { return false }
+    guard lhs.footerSection == rhs.footerSection else { return false }
+    return true
+  }
+}
+

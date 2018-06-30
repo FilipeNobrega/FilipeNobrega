@@ -22,7 +22,7 @@ struct HomeViewModel {
   let footerSectionDriver: Driver<[FooterSection]>
   let contactInfoSectionDriver: Driver<[ContactInfo]>
 
-  init(layoutRequester: Observable<URL>) {
+  init(layoutRequester: Observable<ServiceType>) {
     let drivers = HomeViewModel.createDrivers(request: layoutRequester,
                                               service: service)
 
@@ -32,7 +32,7 @@ struct HomeViewModel {
     contactInfoSectionDriver = drivers.contactInfo
   }
 
-  private static func createDrivers(request: Observable<URL>,
+  private static func createDrivers(request: Observable<ServiceType>,
                                     service: ServiceAPI) -> Drivers {
 
       let tileSectionRelay = BehaviorRelay<[TileSection]>(value: [])
@@ -40,14 +40,14 @@ struct HomeViewModel {
       let contactInfoRelay = BehaviorRelay<[ContactInfo]>(value: [])
 
       let layoutDriver = request
-        .distinctUntilChanged()
         .flatMapLatest {
-          return service.request(.json(url: $0)) as Single<Layout?>
+          return service.request($0) as Single<Layout?>
         }
         .asDriver { (error) -> SharedSequence<DriverSharingStrategy, Layout?> in
           print("Unexpected error: \(error.localizedDescription)")
           return Driver.just(nil)
         }
+        .distinctUntilChanged()
         .do(onNext: { layout in
           guard let layout = layout else { return }
           tileSectionRelay.accept([layout.tileSection])
@@ -55,9 +55,9 @@ struct HomeViewModel {
           contactInfoRelay.accept([layout.contactInfo])
         })
 
-      let tileSectionDriver = tileSectionRelay.asDriver()
-      let footerSectionDriver = footerSectionRelay.asDriver()
-      let contactInfoDriver = contactInfoRelay.asDriver()
+      let tileSectionDriver = tileSectionRelay.asDriver().distinctUntilChanged()
+      let footerSectionDriver = footerSectionRelay.asDriver().distinctUntilChanged()
+      let contactInfoDriver = contactInfoRelay.asDriver().distinctUntilChanged()
 
       return (layoutDriver, tileSectionDriver, footerSectionDriver, contactInfoDriver)
   }

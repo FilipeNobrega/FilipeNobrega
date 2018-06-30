@@ -14,3 +14,11 @@ struct EducationTile: Tile, Decodable {
   let headerImage: URL
   let colleges: [College]
 }
+
+extension EducationTile: Equatable {
+  static func == (lhs: EducationTile, rhs: EducationTile) -> Bool {
+    guard EducationTile.equals(lhs: lhs, rhs: rhs) else { return false }
+    guard lhs.colleges == rhs.colleges else { return false }
+    return true
+  }
+}

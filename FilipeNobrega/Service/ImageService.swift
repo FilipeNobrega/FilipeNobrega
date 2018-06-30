@@ -35,7 +35,7 @@ extension ImageServiceType: TargetType {
     return .requestPlain
   }
 
-  var headers: [String : String]? { return nil }
+  var headers: [String: String]? { return nil }
 }
 
 struct ImageServiceAPI {

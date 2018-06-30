@@ -23,6 +23,12 @@ struct TileSection: Decodable {
   }
 }
 
+extension TileSection: Equatable {
+  static func == (lhs: TileSection, rhs: TileSection) -> Bool {
+    return lhs.items.map { AnyTile($0) } == rhs.items.map { AnyTile($0) }
+  }
+}
+
 extension TileSection: SectionModelType {
   typealias Item = Tile
 

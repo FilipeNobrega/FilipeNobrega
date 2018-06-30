@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FilipeNobrega(UITests).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>FilipeNobrega.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D74D151020CBDFC200400F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D74D152420CBDFC300400F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D74D152F20CBDFC300400F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -54,8 +54,10 @@
 		D771FBC920E0F7C700354861 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBC820E0F7C700354861 /* Service.swift */; };
 		D771FBD320E18FDB00354861 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771FBD220E18FDB00354861 /* Layout.swift */; };
 		D7798B6C20E7D3860047EC97 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */; };
-		D7798B6E20E7D4440047EC97 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D7798B6D20E7D4440047EC97 /* loading.json */; };
 		D7798B7020E7DEAA0047EC97 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7798B6F20E7DEAA0047EC97 /* CGRect+Center.swift */; };
+		D7798B7520E7EAAD0047EC97 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = D7798B7220E7EAAD0047EC97 /* loading.json */; };
+		D7798B7820E7F0DE0047EC97 /* SequentialLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7798B7720E7F0DE0047EC97 /* SequentialLoadingView.swift */; };
+		D7798B7A20E7F7E60047EC97 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D7798B7920E7F7E60047EC97 /* animation.json */; };
 		D784C47120E316C900043B88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D784C47020E316C900043B88 /* HomeViewModel.swift */; };
 		D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C420D54BC20020CAEB /* Lato-Black.ttf */; };
 		D78BE6F020D54BF30020CAEB /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */; };
@@ -151,8 +153,10 @@
 		D771FBC820E0F7C700354861 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D771FBD220E18FDB00354861 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
-		D7798B6D20E7D4440047EC97 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		D7798B6F20E7DEAA0047EC97 /* CGRect+Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
+		D7798B7220E7EAAD0047EC97 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		D7798B7720E7F0DE0047EC97 /* SequentialLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialLoadingView.swift; sourceTree = "<group>"; };
+		D7798B7920E7F7E60047EC97 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		D784C47020E316C900043B88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D78BE6C120D54BC10020CAEB /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		D78BE6C220D54BC10020CAEB /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -395,7 +399,8 @@
 		D7798B6A20E7D2870047EC97 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				D7798B6D20E7D4440047EC97 /* loading.json */,
+				D7798B7920E7F7E60047EC97 /* animation.json */,
+				D7798B7220E7EAAD0047EC97 /* loading.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				D72178AA20CCB638000D819A /* GrowthTransition.swift */,
 				D7F02CBE20DFD85700E504D3 /* GenericDataSource.swift */,
 				D7798B6B20E7D3860047EC97 /* LoadingImageView.swift */,
+				D7798B7720E7F0DE0047EC97 /* SequentialLoadingView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -586,7 +592,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D78BE6F620D54BF30020CAEB /* Lato-Light.ttf in Resources */,
+				D7798B7A20E7F7E60047EC97 /* animation.json in Resources */,
 				D72178B620CD33F2000D819A /* FreeTextCollectionViewCell.xib in Resources */,
+				D7798B7520E7EAAD0047EC97 /* loading.json in Resources */,
 				D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */,
 				D78BE6F820D54BF30020CAEB /* Lato-Regular.ttf in Resources */,
 				D78BE6F420D54BF30020CAEB /* Lato-HairlineItalic.ttf in Resources */,
@@ -599,7 +607,6 @@
 				D78BE6F120D54BF30020CAEB /* Lato-Bold.ttf in Resources */,
 				D78BE6F320D54BF30020CAEB /* Lato-Hairline.ttf in Resources */,
 				D72178CA20CDB453000D819A /* ExperienceCollectionViewCell.xib in Resources */,
-				D7798B6E20E7D4440047EC97 /* loading.json in Resources */,
 				D72178C220CD8A3C000D819A /* EducationCollectionViewCell.xib in Resources */,
 				D78BE6EF20D54BF30020CAEB /* Lato-Black.ttf in Resources */,
 				D72178AF20CD2F3A000D819A /* FreeText.storyboard in Resources */,
@@ -746,6 +753,7 @@
 				D72178AB20CCB638000D819A /* GrowthTransition.swift in Sources */,
 				D78BE6FA20D563EB0020CAEB /* StyleGuides.swift in Sources */,
 				D7F02CB820DF49CC00E504D3 /* ContactTableViewCell.swift in Sources */,
+				D7798B7820E7F0DE0047EC97 /* SequentialLoadingView.swift in Sources */,
 				D70E874020DEC4D20026FD58 /* EducationTile.swift in Sources */,
 				D771FBC620E0488400354861 /* EducationTableViewCell.swift in Sources */,
 				D72178A820CC5818000D819A /* FooterSectionView.swift in Sources */,

@@ -30,6 +30,36 @@ extension Tile {
   }
 }
 
+extension Tile {
+  static func equals(lhs: Tile, rhs: Tile) -> Bool {
+    guard lhs.shortDescription == rhs.shortDescription else { return false }
+    guard lhs.headerImage == rhs.headerImage else { return false }
+    return true
+  }
+}
+
+struct AnyTile: Equatable {
+  let tile: Tile
+
+  static func ==(lhs: AnyTile, rhs: AnyTile) -> Bool {
+    guard lhs.tile.type == rhs.tile.type else { return false }
+    switch (lhs.tile, rhs.tile) {
+    case let (lhs as FreeTextTile, rhs as FreeTextTile):
+      return lhs == rhs
+    case let (lhs as EducationTile, rhs as EducationTile):
+      return lhs == rhs
+    case let (lhs as ExperienceTile, rhs as ExperienceTile):
+      return lhs == rhs
+    default:
+      return false
+    }
+  }
+
+  init(_ base: Tile) {
+    tile = base
+  }
+}
+
 struct FailableTile: Decodable {
   let tile: Tile?
 

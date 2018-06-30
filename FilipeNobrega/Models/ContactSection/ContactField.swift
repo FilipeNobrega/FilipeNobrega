@@ -16,3 +16,11 @@ struct ContactField: Decodable, GenericItemType {
   let icon: URL
   let text: String
 }
+
+extension ContactField: Equatable {
+  static func == (lhs: ContactField, rhs: ContactField) -> Bool {
+    guard lhs.icon == rhs.icon else { return false }
+    guard lhs.text == rhs.text else { return false }
+    return true
+  }
+}

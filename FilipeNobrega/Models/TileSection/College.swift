@@ -18,3 +18,13 @@ struct College: Decodable, GenericItemType {
   let major: String
   let observation: String?
 }
+
+extension College: Equatable {
+  static func == (lhs: College, rhs: College) -> Bool {
+    guard lhs.image == rhs.image else { return false }
+    guard lhs.title == rhs.title else { return false }
+    guard lhs.major == rhs.major else { return false }
+    guard lhs.observation == rhs.observation else { return false }
+    return true
+  }
+}

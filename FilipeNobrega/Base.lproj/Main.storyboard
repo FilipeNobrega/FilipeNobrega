@@ -139,7 +139,7 @@
                                         <rect key="frame" x="-0.5" y="0.0" width="375" height="433"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-od-LpV">
-                                                <rect key="frame" x="167.5" y="396" width="39" height="37"/>
+                                                <rect key="frame" x="168.5" y="396" width="39" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="TlM-lc-zhE"/>
                                                 </constraints>

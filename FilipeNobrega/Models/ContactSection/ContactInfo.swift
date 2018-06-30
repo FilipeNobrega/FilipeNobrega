@@ -13,6 +13,14 @@ struct ContactInfo: Decodable {
   let fields: [ContactField]
 }
 
+extension ContactInfo: Equatable {
+  static func == (lhs: ContactInfo, rhs: ContactInfo) -> Bool {
+    guard lhs.avatar == rhs.avatar else { return false }
+    guard lhs.fields == rhs.fields else { return false }
+    return true
+  }
+}
+
 extension ContactInfo: SectionModelType {
   typealias Item = ContactField
 

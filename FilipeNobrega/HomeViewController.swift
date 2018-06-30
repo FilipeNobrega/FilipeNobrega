@@ -21,8 +21,9 @@ final class HomeViewController: UIViewController {
   @IBOutlet weak private var touchContractView: UIView!
   @IBOutlet weak private var expandButton: UIButton!
 
+  private var loadingView: SequentialLoadingView?
   private lazy var viewModel = HomeViewModel(layoutRequester: self.requester.asObservable())
-  private let requester = PublishSubject<URL>()
+  private let requester = PublishSubject<ServiceType>()
   private let disposeBag = DisposeBag()
   private var expanded = false
 
@@ -33,9 +34,19 @@ final class HomeViewController: UIViewController {
   }
 
   private func prepareView() {
+    prepareLoadingView()
     view.backgroundColor = StyleGuides.primaryColor
     nameLabel.textColor = StyleGuides.secundaryColor
     expandButton.tintColor = StyleGuides.secundaryColor
+  }
+
+  private func prepareLoadingView() {
+    let loadingView = SequentialLoadingView()
+    self.loadingView = loadingView
+
+    loadingView.frame = view.frame
+    loadingView.backgroundColor = StyleGuides.primaryColor
+    view.addSubview(loadingView)
   }
 
   private func prepareSubscriptions() {
@@ -54,12 +65,15 @@ final class HomeViewController: UIViewController {
       self.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
 
-    viewModel.layoutDriver.drive().disposed(by: disposeBag)
+    viewModel.layoutDriver.drive(onNext: { [unowned self] layout in
+      guard layout != nil else { return }
+      self.loadingView?.loadFinished()
+    }).disposed(by: disposeBag)
     tileSectionView.prepareBind(viewModel.tileSectionDriver)
     infoSectionView.prepareBind(viewModel.contactInfoSectionDriver)
     footerSectionView.prepareBind(viewModel.footerSectionDriver)
 
-    requester.onNext(URL(string: "https://dl.dropboxusercontent.com/s/v9fsww6dgajeul0/mock.json?dl=0")!)
+    requester.onNext(.home)
   }
 
   private func showHideInfoSectionView() {

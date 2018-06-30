@@ -15,3 +15,9 @@ struct AppTile: Decodable, GenericItemType {
 
   let appIcon: URL
 }
+
+extension AppTile: Equatable {
+  static func == (lhs: AppTile, rhs: AppTile) -> Bool {
+    return lhs.appIcon == rhs.appIcon
+  }
+}

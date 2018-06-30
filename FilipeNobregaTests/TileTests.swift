@@ -33,25 +33,151 @@ class TileTests: XCTestCase {
 
   func testTileWillReturnFreeTextTile() {
     let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
-    let tile = try? JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
 
-    XCTAssertNotNil(tile?.tile)
-    XCTAssert(tile?.tile is FreeTextTile)
+    XCTAssertNotNil(tile.tile)
+    XCTAssert(tile.tile is FreeTextTile)
+    XCTAssertEqual(tile.tile?.identifier, "FreeText")
   }
 
   func testTileWillReturnEducationTile() {
-    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\" }"
-    let tile = try? JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
 
-    XCTAssertNotNil(tile?.tile)
-    XCTAssert(tile?.tile is EducationTile)
+    XCTAssertNotNil(tile.tile)
+    XCTAssert(tile.tile is EducationTile)
+    XCTAssertEqual(tile.tile?.identifier, "Education")
   }
 
   func testTileWillReturnExperienceTile() {
-    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\" }"
-    let tile = try? JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)
 
-    XCTAssertNotNil(tile?.tile)
-    XCTAssert(tile?.tile is ExperienceTile)
+    XCTAssertNotNil(tile.tile)
+    XCTAssert(tile.tile is ExperienceTile)
+    XCTAssertEqual(tile.tile?.identifier, "Experience")
+  }
+
+  // MARK: - Equals
+
+  func testEqualFreeTextTilesAreEqual() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! FreeTextTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! FreeTextTile
+
+    XCTAssertEqual(tile, tile2)
+  }
+
+  func testEqualEducationTilesAreEqual() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! EducationTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! EducationTile
+
+    XCTAssertEqual(tile, tile2)
+  }
+
+  func testEqualExperienceTilesAreEqual() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! ExperienceTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! ExperienceTile
+
+    XCTAssertEqual(tile, tile2)
+  }
+
+  func testFreeTextTileWithDifferenciesTilesAreDifferent() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! FreeTextTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! FreeTextTile
+
+    let tileJSONString3 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription2\" }"
+    let tile3 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString3.data(using: .utf8)!).tile as! FreeTextTile
+
+    let tileJSONString4 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"FreeText\", \"headerImage\": \"image2\", \"longDescription\": \"longDescription2\" }"
+    let tile4 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString4.data(using: .utf8)!).tile as! FreeTextTile
+
+    XCTAssertNotEqual(tile, tile2)
+    XCTAssertNotEqual(tile2, tile3)
+    XCTAssertNotEqual(tile3, tile4)
+  }
+
+  func testEducationTileWithDifferenciesTilesAreDifferent() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! EducationTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! EducationTile
+
+    let tileJSONString3 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [{  \"image\": \"URL\", \"title\": \"title\", \"major\": \"major\"}] }"
+    let tile3 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString3.data(using: .utf8)!).tile as! EducationTile
+
+    XCTAssertNotEqual(tile, tile2)
+    XCTAssertNotEqual(tile2, tile3)
+  }
+
+  func testExperienceTileWithDifferenciesTilesAreDifferent() {
+    let tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let tile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! ExperienceTile
+
+    let tileJSONString2 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let tile2 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString2.data(using: .utf8)!).tile as! ExperienceTile
+
+    let tileJSONString3 = "{ \"shortDescription\": \"shortDescription2\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [{ \"image\": \"URL\", \"title\": \"title\", \"subtitle\": \"subtitle\", \"description\": \"description\"}] }"
+    let tile3 = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString3.data(using: .utf8)!).tile as! ExperienceTile
+
+    XCTAssertNotEqual(tile, tile2)
+    XCTAssertNotEqual(tile2, tile3)
+  }
+
+  func testEqualArrayOfTilesAreEquals() {
+    var tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let freeTextTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! FreeTextTile
+
+    tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let educationTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! EducationTile
+
+    tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let experienceTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! ExperienceTile
+
+    let tilesArray: [Tile] = [freeTextTile, educationTile, experienceTile]
+    let tilesArray2: [Tile] = [freeTextTile, educationTile, experienceTile]
+
+    XCTAssertEqual(tilesArray.map { AnyTile($0) }, tilesArray2.map { AnyTile($0) })
+  }
+
+  func testArrayOfTilesWithSameElementsButDifferentOrderAreDifferent() {
+    var tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let freeTextTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! FreeTextTile
+
+    tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let educationTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! EducationTile
+
+    tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Experience\", \"headerImage\": \"image\", \"companies\": [] }"
+    let experienceTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! ExperienceTile
+
+    let tilesArray: [Tile] = [freeTextTile, experienceTile, educationTile]
+    let tilesArray2: [Tile] = [freeTextTile, educationTile, experienceTile]
+
+    XCTAssertNotEqual(tilesArray.map { AnyTile($0) }, tilesArray2.map { AnyTile($0) })
+  }
+
+  func testDifferentArrayOfTilesAreDifferent() {
+    var tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"FreeText\", \"headerImage\": \"image\", \"longDescription\": \"longDescription\" }"
+    let freeTextTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! FreeTextTile
+
+    tileJSONString = "{ \"shortDescription\": \"shortDescription\", \"type\": \"Education\", \"headerImage\": \"image\", \"colleges\": [] }"
+    let educationTile = try! JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!).tile as! EducationTile
+
+    let tilesArray: [Tile] = [educationTile]
+    let tilesArray2: [Tile] = [freeTextTile]
+
+    XCTAssertNotEqual(tilesArray.map { AnyTile($0) }, tilesArray2.map { AnyTile($0) })
   }
 }

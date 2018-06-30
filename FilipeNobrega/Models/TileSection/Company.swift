@@ -18,3 +18,13 @@ struct Company: Decodable, GenericItemType {
   let subtitle: String
   let description: String
 }
+
+extension Company: Equatable {
+  static func == (lhs: Company, rhs: Company) -> Bool {
+    guard lhs.image == rhs.image else { return false }
+    guard lhs.title == rhs.title else { return false }
+    guard lhs.subtitle == rhs.subtitle else { return false }
+    guard lhs.description == rhs.description else { return false }
+    return true
+  }
+}

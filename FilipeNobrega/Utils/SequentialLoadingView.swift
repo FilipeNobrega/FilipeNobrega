@@ -1,5 +1,5 @@
 //
-//  SequenceLoadingView.swift
+//  SequentialLoadingView.swift
 //  FilipeNobrega
 //
 //  Created by Filipe Nobrega on 30/06/18.
@@ -9,7 +9,7 @@
 import Lottie
 import UIKit
 
-final class SequenceLoadingView: UIView {
+final class SequentialLoadingView: UIView {
   private var animationView = LOTAnimationView(name: "animation")
   private var isLoadingFinished = false
   override var frame: CGRect {

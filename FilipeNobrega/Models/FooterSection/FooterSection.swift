@@ -19,3 +19,9 @@ extension FooterSection: SectionModelType {
     self.items = items
   }
 }
+
+extension FooterSection: Equatable {
+  static func == (lhs: FooterSection, rhs: FooterSection) -> Bool {
+    return lhs.items == rhs.items
+  }
+}

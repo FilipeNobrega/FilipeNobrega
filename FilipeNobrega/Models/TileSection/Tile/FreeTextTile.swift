@@ -15,3 +15,11 @@ struct FreeTextTile: Tile, Decodable {
   
   var longDescription: String?
 }
+
+extension FreeTextTile: Equatable {
+  static func == (lhs: FreeTextTile, rhs: FreeTextTile) -> Bool {
+    guard FreeTextTile.equals(lhs: lhs, rhs: rhs) else { return false }
+    guard lhs.longDescription == rhs.longDescription else { return false }
+    return true
+  }
+}

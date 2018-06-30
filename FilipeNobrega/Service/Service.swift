@@ -10,6 +10,7 @@ import Moya
 import RxSwift
 
 enum ServiceType {
+  case home
   case json(url: URL)
 }
 
@@ -18,6 +19,8 @@ extension ServiceType: TargetType {
     switch self {
     case .json(let url):
       return url
+    case .home:
+      return URL(string: "https://dl.dropboxusercontent.com/s/v9fsww6dgajeul0/mock.json?dl=0")!
     }
   }
 
@@ -35,7 +38,7 @@ extension ServiceType: TargetType {
     return .requestPlain
   }
 
-  var headers: [String : String]? { return nil }
+  var headers: [String: String]? { return nil }
 }
 
 struct ServiceAPI {
