@@ -68,12 +68,32 @@ final class HomeViewController: UIViewController {
     viewModel.layoutDriver.drive(onNext: { [unowned self] layout in
       guard layout != nil else { return }
       self.loadingView?.loadFinished()
+      self.loadingView = nil
     }).disposed(by: disposeBag)
+
+    viewModel.errorSubject.subscribe(onNext: { [unowned self] error in
+      guard self.loadingView != nil else { return }
+      self.presentAlertView(with: error)
+    }).disposed(by: disposeBag)
+
     tileSectionView.prepareBind(viewModel.tileSectionDriver)
     infoSectionView.prepareBind(viewModel.contactInfoSectionDriver)
     footerSectionView.prepareBind(viewModel.footerSectionDriver)
 
     requester.onNext(.home)
+  }
+
+  private func presentAlertView(with error: Error) {
+    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+
+    let retryAction = UIAlertAction(title: "Retry",
+                                    style: .default) { [weak self] _ in
+                                      self?.requester.onNext(.home)
+    }
+
+    alert.addAction(retryAction)
+
+    present(alert, animated: false, completion: nil)
   }
 
   private func showHideInfoSectionView() {

@@ -21,9 +21,11 @@ struct HomeViewModel {
   let tileSectionDriver: Driver<[TileSection]>
   let footerSectionDriver: Driver<[FooterSection]>
   let contactInfoSectionDriver: Driver<[ContactInfo]>
+  let errorSubject = PublishSubject<Error>()
 
   init(layoutRequester: Observable<ServiceType>) {
     let drivers = HomeViewModel.createDrivers(request: layoutRequester,
+                                              errorSubject: errorSubject,
                                               service: service)
 
     layoutDriver = drivers.layout
@@ -33,6 +35,7 @@ struct HomeViewModel {
   }
 
   private static func createDrivers(request: Observable<ServiceType>,
+                                    errorSubject: PublishSubject<Error>,
                                     service: ServiceAPI) -> Drivers {
 
       let tileSectionRelay = BehaviorRelay<[TileSection]>(value: [])
@@ -41,7 +44,11 @@ struct HomeViewModel {
 
       let layoutDriver = request
         .flatMapLatest {
-          return service.request($0) as Single<Layout?>
+          return service.request($0)
+            .catchError({ error -> Single<Layout?> in
+              errorSubject.onNext(error)
+              return Single.just(nil)
+            })
         }
         .asDriver { (error) -> SharedSequence<DriverSharingStrategy, Layout?> in
           print("Unexpected error: \(error.localizedDescription)")
