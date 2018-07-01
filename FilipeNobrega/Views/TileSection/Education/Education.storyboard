@@ -92,7 +92,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDb-ds-gXF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-0i-azL" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-0i-azL" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                             <rect key="frame" x="15" y="15" width="90" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Fdj-0i-azL" secondAttribute="height" multiplier="1:1" id="fgG-vO-7Fm"/>
@@ -189,7 +189,4 @@
             <point key="canvasLocation" x="597.10144927536237" y="55.434782608695656"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="UFRN" width="100" height="100"/>
-    </resources>
 </document>
