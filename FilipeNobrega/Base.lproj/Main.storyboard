@@ -275,8 +275,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="containerBottomConstraint" destination="9aM-JU-rri" id="KcQ-zA-scX"/>
-                        <outlet property="containerTopConstraint" destination="5cn-9S-wxx" id="DJh-jz-vQf"/>
+                        <outlet property="containerView" destination="Snu-Wr-Q1S" id="vz5-lY-bW2"/>
                         <outlet property="expandButton" destination="Id3-ed-rmR" id="rU6-te-kka"/>
                         <outlet property="footerSectionView" destination="nSu-Ag-DSb" id="POl-E2-OOl"/>
                         <outlet property="infoSectionView" destination="LwZ-YI-EiB" id="NcW-h9-HAV"/>

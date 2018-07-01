@@ -53,7 +53,7 @@ final class TileSectionView: UIView {
     prepareBinds()
   }
 
-  func prepareBind(_ driver: Driver<[TileSection]>) {
+  func bind(_ driver: Driver<[TileSection]>) {
     let dataSource = TileSectionView.dataSource()
 
     driver

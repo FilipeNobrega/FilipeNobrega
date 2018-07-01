@@ -13,13 +13,12 @@ import UIKit
 final class HomeViewController: UIViewController {
 
   @IBOutlet weak private var nameLabel: UILabel!
-  @IBOutlet weak private var containerBottomConstraint: NSLayoutConstraint!
-  @IBOutlet weak private var containerTopConstraint: NSLayoutConstraint!
   @IBOutlet weak private var tileSectionView: TileSectionView!
   @IBOutlet weak private var infoSectionView: InfoSectionView!
   @IBOutlet weak private var footerSectionView: FooterSectionView!
   @IBOutlet weak private var touchContractView: UIView!
   @IBOutlet weak private var expandButton: UIButton!
+  @IBOutlet weak private var containerView: UIView!
 
   private var loadingView: SequentialLoadingView?
   private lazy var viewModel = HomeViewModel(layoutRequester: self.requester.asObservable())
@@ -76,9 +75,9 @@ final class HomeViewController: UIViewController {
       self.presentAlertView(with: error)
     }).disposed(by: disposeBag)
 
-    tileSectionView.prepareBind(viewModel.tileSectionDriver)
-    infoSectionView.prepareBind(viewModel.contactInfoSectionDriver)
-    footerSectionView.prepareBind(viewModel.footerSectionDriver)
+    tileSectionView.bind(viewModel.tileSectionDriver)
+    infoSectionView.bind(viewModel.contactInfoSectionDriver)
+    footerSectionView.bind(viewModel.footerSectionDriver)
 
     requester.onNext(.home)
   }
@@ -97,25 +96,22 @@ final class HomeViewController: UIViewController {
   }
 
   private func showHideInfoSectionView() {
-    if expanded {
-      expandButton.setImage(UIImage(named: "arrowdown"), for: .normal)
-      containerTopConstraint.constant = 20
-      containerBottomConstraint.constant = 0
-    } else {
-      expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
-      let expandHeight = infoSectionView.getHeight() + 10
-      containerTopConstraint.constant += expandHeight
-      containerBottomConstraint.constant += expandHeight
-    }
-
     expanded = !expanded
+    let expandHeight = infoSectionView.getHeight() + 10
+    if expanded {
+      expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
+    } else {
+      expandButton.setImage(UIImage(named: "arrowdown"), for: .normal)
+    }
 
     touchContractView.isUserInteractionEnabled = expanded
     infoSectionView.alpha = expanded ? 0.0 : 1.0
     infoSectionView.isHidden = false
 
     UIView.animate(withDuration: 0.25, animations: {
-      self.view.layoutIfNeeded()
+      self.containerView.transform = self.expanded ?
+        CGAffineTransform.identity :
+        CGAffineTransform.init(translationX: 0, y: expandHeight)
       self.infoSectionView.alpha = self.expanded ? 1.0 : 0.0
     }, completion: { _ in
       self.infoSectionView.isHidden = !self.expanded

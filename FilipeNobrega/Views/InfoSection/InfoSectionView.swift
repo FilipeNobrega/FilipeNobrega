@@ -33,7 +33,7 @@ final class InfoSectionView: UIView {
     return infoTableView.contentSize.height + infoTableView.frame.origin.y
   }
 
-  func prepareBind(_ driver: Driver<[ContactInfo]>) {
+  func bind(_ driver: Driver<[ContactInfo]>) {
     let dataSource = TablewViewDataSource<ContactTableViewCell, ContactInfo>.dataSource()
 
     driver

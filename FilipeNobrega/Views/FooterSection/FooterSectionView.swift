@@ -22,7 +22,7 @@ final class FooterSectionView: UIView {
     footerCollectionView.showsHorizontalScrollIndicator = false
   }
 
-  func prepareBind(_ driver: Driver<[FooterSection]>) {
+  func bind(_ driver: Driver<[FooterSection]>) {
     let dataSource = CollectionViewDataSource<AppCollectionViewCell, FooterSection>
       .dataSource()
 
