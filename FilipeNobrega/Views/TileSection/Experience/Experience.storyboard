@@ -92,13 +92,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-WQ-Rr8">
                                                     <rect key="frame" x="15" y="10" width="384" height="140"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software enginereer @ UFRN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
-                                                            <rect key="frame" x="65" y="17" width="304" height="19"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software enginereer @ UFRN" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-u7-jCn">
+                                                            <rect key="frame" x="65" y="17" width="304" height="19.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UFRN" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-Mm-Zp7" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-Mm-Zp7" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                             <rect key="frame" x="15" y="15" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="FfX-c0-h1r"/>
@@ -113,7 +113,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jun 2010 - Jun 2011 (1 year)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-ax-xPo">
-                                                            <rect key="frame" x="65" y="39" width="304" height="14"/>
+                                                            <rect key="frame" x="65" y="39.333333333333336" width="304" height="14"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -122,6 +122,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="TlR-Wv-fZl" firstAttribute="top" secondItem="JYZ-Mm-Zp7" secondAttribute="bottom" constant="20" id="2Lu-B7-aRe"/>
+                                                        <constraint firstItem="hCa-ax-xPo" firstAttribute="top" secondItem="ZW6-u7-jCn" secondAttribute="bottom" constant="3" id="87q-Ue-Z1k"/>
                                                         <constraint firstItem="JYZ-Mm-Zp7" firstAttribute="leading" secondItem="rdS-WQ-Rr8" secondAttribute="leading" constant="15" id="SaX-ql-IZF"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZW6-u7-jCn" secondAttribute="trailing" constant="15" id="Tqe-8d-nmR"/>
                                                         <constraint firstAttribute="trailing" secondItem="hCa-ax-xPo" secondAttribute="trailing" constant="15" id="VQX-mN-BIa"/>
@@ -130,7 +131,7 @@
                                                         <constraint firstItem="ZW6-u7-jCn" firstAttribute="leading" secondItem="JYZ-Mm-Zp7" secondAttribute="trailing" constant="10" id="jNx-eA-WAh"/>
                                                         <constraint firstAttribute="bottom" secondItem="TlR-Wv-fZl" secondAttribute="bottom" constant="15" id="qGF-AF-iqd"/>
                                                         <constraint firstAttribute="trailing" secondItem="TlR-Wv-fZl" secondAttribute="trailing" constant="15" id="qQC-9T-BV1"/>
-                                                        <constraint firstItem="JYZ-Mm-Zp7" firstAttribute="bottom" secondItem="hCa-ax-xPo" secondAttribute="bottom" constant="2" id="spg-lL-2Cc"/>
+                                                        <constraint firstItem="JYZ-Mm-Zp7" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="hCa-ax-xPo" secondAttribute="bottom" constant="2" id="spg-lL-2Cc"/>
                                                         <constraint firstItem="TlR-Wv-fZl" firstAttribute="leading" secondItem="rdS-WQ-Rr8" secondAttribute="leading" constant="15" id="tsl-VU-8LL"/>
                                                         <constraint firstItem="ZW6-u7-jCn" firstAttribute="top" secondItem="JYZ-Mm-Zp7" secondAttribute="top" constant="2" id="zBH-A9-X7C"/>
                                                     </constraints>
@@ -174,7 +175,4 @@
             <point key="canvasLocation" x="597.10144927536237" y="55.434782608695656"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="UFRN" width="100" height="100"/>
-    </resources>
 </document>

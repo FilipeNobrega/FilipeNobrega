@@ -24,6 +24,8 @@ final class ContactTableViewCell: UITableViewCell, GenericCellType {
     descriptionLabel.textColor = StyleGuides.secundaryColor
     separatorView.backgroundColor = StyleGuides.secundaryColor
     separatorView.alpha = StyleGuides.tableViewSeparatorAlpha
+    iconView.backgroundColor = StyleGuides.secundaryColor
+    iconView.rounded()
   }
 
   func prepare(with item: Item) {
