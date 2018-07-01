@@ -12,7 +12,7 @@ import RxSwift
 import UIKit
 
 final class TileSectionView: UIView {
-  @IBOutlet weak private var collectionView: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak private var pageControl: UIPageControl!
 
   private weak var selectedCell: UICollectionViewCell? {

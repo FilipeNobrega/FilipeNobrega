@@ -33,13 +33,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-ed-rmR">
-                                <rect key="frame" x="175" y="79" width="25" height="25"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-ed-rmR">
+                                <rect key="frame" x="160" y="69" width="55" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="5Mu-KI-2d5"/>
-                                    <constraint firstAttribute="height" constant="25" id="byz-ab-mxH"/>
+                                    <constraint firstAttribute="width" constant="55" id="5Mu-KI-2d5"/>
+                                    <constraint firstAttribute="height" constant="55" id="byz-ab-mxH"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="20"/>
                                 <state key="normal" image="arrowdown"/>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-YI-EiB" customClass="InfoSectionView" customModule="FilipeNobrega" customModuleProvider="target">
@@ -259,15 +260,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Snu-Wr-Q1S" firstAttribute="top" secondItem="Id3-ed-rmR" secondAttribute="bottom" constant="20" id="5cn-9S-wxx"/>
+                            <constraint firstItem="Snu-Wr-Q1S" firstAttribute="top" secondItem="Id3-ed-rmR" secondAttribute="bottom" id="5cn-9S-wxx"/>
                             <constraint firstItem="Snu-Wr-Q1S" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5fp-4c-2Co"/>
                             <constraint firstItem="Snu-Wr-Q1S" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9aM-JU-rri"/>
                             <constraint firstItem="Id3-ed-rmR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="A5j-Yn-JUT"/>
                             <constraint firstItem="LwZ-YI-EiB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CyX-IX-59a"/>
                             <constraint firstItem="LwZ-YI-EiB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ida-e3-rFt"/>
-                            <constraint firstItem="Id3-ed-rmR" firstAttribute="top" secondItem="nKN-YB-dsv" secondAttribute="bottom" constant="10" id="MNn-1S-rzB"/>
+                            <constraint firstItem="Id3-ed-rmR" firstAttribute="top" secondItem="nKN-YB-dsv" secondAttribute="bottom" id="MNn-1S-rzB"/>
                             <constraint firstItem="nKN-YB-dsv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="NZL-Ii-Krp"/>
-                            <constraint firstItem="LwZ-YI-EiB" firstAttribute="top" secondItem="Id3-ed-rmR" secondAttribute="bottom" constant="20" id="RAV-Ym-P4o"/>
+                            <constraint firstItem="LwZ-YI-EiB" firstAttribute="top" secondItem="Id3-ed-rmR" secondAttribute="bottom" id="RAV-Ym-P4o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LwZ-YI-EiB" secondAttribute="bottom" id="aUo-aW-NDH"/>
                             <constraint firstItem="nKN-YB-dsv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="czd-Nd-HMv"/>
                             <constraint firstItem="Snu-Wr-Q1S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kbV-Be-gUU"/>

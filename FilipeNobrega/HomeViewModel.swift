@@ -22,6 +22,7 @@ struct HomeViewModel {
   let footerSectionDriver: Driver<[FooterSection]>
   let contactInfoSectionDriver: Driver<[ContactInfo]>
   let errorSubject = PublishSubject<Error>()
+  let contactInfoExpanded = BehaviorRelay<Bool>(value: false)
 
   init(layoutRequester: Observable<ServiceType>) {
     let drivers = HomeViewModel.createDrivers(request: layoutRequester,
@@ -32,6 +33,10 @@ struct HomeViewModel {
     tileSectionDriver = drivers.tile
     footerSectionDriver = drivers.footer
     contactInfoSectionDriver = drivers.contactInfo
+  }
+
+  public func toggleContactInfoExpansion() {
+    contactInfoExpanded.accept(!contactInfoExpanded.value)
   }
 
   private static func createDrivers(request: Observable<ServiceType>,

@@ -7,6 +7,7 @@
 //
 
 import RxCocoa
+import RxGesture
 import RxSwift
 import UIKit
 
@@ -24,7 +25,6 @@ final class HomeViewController: UIViewController {
   private lazy var viewModel = HomeViewModel(layoutRequester: self.requester.asObservable())
   private let requester = PublishSubject<ServiceType>()
   private let disposeBag = DisposeBag()
-  private var expanded = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,16 +49,7 @@ final class HomeViewController: UIViewController {
   }
 
   private func prepareSubscriptions() {
-    let tapGesture = UITapGestureRecognizer()
-    touchContractView.addGestureRecognizer(tapGesture)
-
-    tapGesture.rx.event.subscribe(onNext: { [unowned self] _ in
-      self.showHideInfoSectionView()
-    }).disposed(by: disposeBag)
-
-    expandButton.rx.tap.subscribe(onNext: { [unowned self] _ in
-      self.showHideInfoSectionView()
-    }).disposed(by: disposeBag)
+    prepareGestureSubscriptions()
 
     tileSectionView.presentViewSubject.subscribe(onNext: { [unowned self] viewController in
       self.present(viewController, animated: true, completion: nil)
@@ -75,11 +66,42 @@ final class HomeViewController: UIViewController {
       self.presentAlertView(with: error)
     }).disposed(by: disposeBag)
 
+    viewModel.contactInfoExpanded.subscribe(onNext: { [unowned self] error in
+      self.showHideInfoSectionView()
+    }).disposed(by: disposeBag)
+
     tileSectionView.bind(viewModel.tileSectionDriver)
     infoSectionView.bind(viewModel.contactInfoSectionDriver)
     footerSectionView.bind(viewModel.footerSectionDriver)
 
     requester.onNext(.home)
+  }
+
+  private func prepareGestureSubscriptions() {
+    touchContractView.rx.anyGesture(.tap(), .swipe(.up))
+      .when(.recognized)
+      .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.toggleContactInfoExpansion()
+      }).disposed(by: disposeBag)
+
+    expandButton.rx.tapGesture()
+      .when(.recognized)
+      .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.toggleContactInfoExpansion()
+      }).disposed(by: disposeBag)
+
+    guard let collectionView = tileSectionView.collectionView else { return }
+
+    viewModel.contactInfoExpanded
+      .map { !$0 }
+      .bind(to: collectionView.rx.isScrollEnabled)
+      .disposed(by: disposeBag)
+
+    collectionView.rx.swipeGesture(.down)
+      .when(.recognized)
+      .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.toggleContactInfoExpansion()
+      }).disposed(by: disposeBag)
   }
 
   private func presentAlertView(with error: Error) {
@@ -96,8 +118,9 @@ final class HomeViewController: UIViewController {
   }
 
   private func showHideInfoSectionView() {
-    expanded = !expanded
+    let expanded = viewModel.contactInfoExpanded.value
     let expandHeight = infoSectionView.getHeight() + 10
+
     if expanded {
       expandButton.setImage(UIImage(named: "arrowup"), for: .normal)
     } else {
@@ -109,12 +132,12 @@ final class HomeViewController: UIViewController {
     infoSectionView.isHidden = false
 
     UIView.animate(withDuration: 0.25, animations: {
-      self.containerView.transform = self.expanded ?
-        CGAffineTransform.identity :
-        CGAffineTransform.init(translationX: 0, y: expandHeight)
-      self.infoSectionView.alpha = self.expanded ? 1.0 : 0.0
+      self.containerView.transform = expanded ?
+        CGAffineTransform.init(translationX: 0, y: expandHeight) :
+        CGAffineTransform.identity
+      self.infoSectionView.alpha = expanded ? 1.0 : 0.0
     }, completion: { _ in
-      self.infoSectionView.isHidden = !self.expanded
+      self.infoSectionView.isHidden = !expanded
     })
   }
 }
