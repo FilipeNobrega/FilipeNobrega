@@ -35,6 +35,8 @@ final class FreeTextViewController: UIViewController, TilableViewProtocol {
       .drive(onNext: { [unowned self] image in
         self.headerImageView.image = image
       }).disposed(by: disposeBag)
+
+    longDescriptionLabel.text = longDescription
   }
 
   func prepare(with tile: Tile) {
