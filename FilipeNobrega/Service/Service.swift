@@ -11,14 +11,11 @@ import RxSwift
 
 enum ServiceType {
   case home
-  case json(url: URL)
 }
 
 extension ServiceType: TargetType {
   var baseURL: URL {
     switch self {
-    case .json(let url):
-      return url
     case .home:
       return URL(string: "https://dl.dropboxusercontent.com/s/v9fsww6dgajeul0/mock.json?dl=0")!
     }
@@ -31,7 +28,10 @@ extension ServiceType: TargetType {
   }
 
   var sampleData: Data {
-    return Data()
+    switch self {
+    case .home:
+      return try! Data(contentsOf: Bundle.main.url(forResource: "LayoutSample", withExtension: "json")!)
+    }
   }
 
   var task: Task {
@@ -42,11 +42,19 @@ extension ServiceType: TargetType {
 }
 
 struct ServiceAPI {
-  let provider = MoyaProvider<ServiceType>()
+  let provider: MoyaProvider<ServiceType>
+  let scheduler: SchedulerType
+
+  init(provider: MoyaProvider<ServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub),
+       scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
+    self.provider = provider
+    self.scheduler = scheduler
+  }
 
   func request<T: Decodable>(_ request: ServiceType) -> Single<T?> {
     return provider.rx
       .request(request)
+      .observeOn(scheduler)
       .map { response -> Data in
         return response.data
       }

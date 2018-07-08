@@ -65,6 +65,6 @@ final class EducationViewController: UIViewController, TilableViewProtocol {
     let collegeSection = CollegeSection(items: tile.colleges)
     self.title = tile.title
     self.section = collegeSection
-    self.image = ImageServiceAPI.image(from: tile.headerImage)
+    self.image = ImageServiceAPI.shared.image(from: tile.headerImage)
   }
 }

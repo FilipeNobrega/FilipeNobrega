@@ -64,6 +64,6 @@ final class ExperienceViewController: UIViewController, TilableViewProtocol {
     self.title = tile.title
     let companySection = CompanySection(items: tile.companies)
     self.section = companySection
-    self.image = ImageServiceAPI.image(from: tile.headerImage)
+    self.image = ImageServiceAPI.shared.image(from: tile.headerImage)
   }
 }

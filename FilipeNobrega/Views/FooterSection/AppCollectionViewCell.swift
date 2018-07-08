@@ -25,7 +25,7 @@ final class AppCollectionViewCell: UICollectionViewCell, GenericCellType {
   }
 
   func prepare(with item: Item) {
-    imageDisposable = ImageServiceAPI.image(from: item.appIcon)
+    imageDisposable = ImageServiceAPI.shared.image(from: item.appIcon)
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .asDriver(onErrorDriveWith: Driver.empty())
       .drive(onNext: { [weak self] image in

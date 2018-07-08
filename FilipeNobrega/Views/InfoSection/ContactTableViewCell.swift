@@ -30,7 +30,7 @@ final class ContactTableViewCell: UITableViewCell, GenericCellType {
 
   func prepare(with item: Item) {
     descriptionLabel.text = item.text
-    imageDisposable = ImageServiceAPI.image(from: item.icon)
+    imageDisposable = ImageServiceAPI.shared.image(from: item.icon)
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .asDriver(onErrorDriveWith: Driver.empty())
       .drive(onNext: { [weak self] image in

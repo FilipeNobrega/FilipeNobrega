@@ -46,7 +46,7 @@ final class InfoSectionView: UIView {
   private func fetchAvatarImage(from contactInfo: ContactInfo?) {
     guard let contactInfo = contactInfo else { return }
     imageDisposable?.dispose()
-    imageDisposable = ImageServiceAPI.image(from: contactInfo.avatar)
+    imageDisposable = ImageServiceAPI.shared.image(from: contactInfo.avatar)
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .asDriver(onErrorDriveWith: Driver.empty())
       .drive(onNext: { [weak self] image in

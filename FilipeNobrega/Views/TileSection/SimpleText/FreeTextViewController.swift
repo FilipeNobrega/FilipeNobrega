@@ -47,6 +47,6 @@ final class FreeTextViewController: UIViewController, TilableViewProtocol {
     guard let tile = tile as? FreeTextTile else { return }
     self.title = tile.title
     self.longDescription = tile.longDescription ?? tile.shortDescription
-    self.image = ImageServiceAPI.image(from: tile.headerImage)
+    self.image = ImageServiceAPI.shared.image(from: tile.headerImage)
   }
 }

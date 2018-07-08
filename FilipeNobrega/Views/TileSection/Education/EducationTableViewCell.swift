@@ -31,7 +31,7 @@ final class EducationTableViewCell: UITableViewCell, GenericCellType {
   func prepare(with item: College) {
     nameLabel.text = item.title
     majorLabel.text = item.major
-    imageDisposable = ImageServiceAPI.image(from: item.image)
+    imageDisposable = ImageServiceAPI.shared.image(from: item.image)
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .asDriver(onErrorDriveWith: Driver.empty())
       .drive(onNext: { [weak self] image in

@@ -28,7 +28,7 @@ extension ImageServiceType: TargetType {
   }
 
   var sampleData: Data {
-    return Data()
+    return try! Data(contentsOf: Bundle.main.url(forResource: "imagesample", withExtension: "png")!)
   }
 
   var task: Task {
@@ -39,9 +39,17 @@ extension ImageServiceType: TargetType {
 }
 
 struct ImageServiceAPI {
-  static let provider = MoyaProvider<ImageServiceType>()
+  static let shared = ImageServiceAPI()
+  let provider: MoyaProvider<ImageServiceType>
+  let scheduler: SchedulerType
 
-  static func image(from url: URL) -> Single<UIImage?> {
+  init(provider: MoyaProvider<ImageServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub),
+       scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
+    self.provider = provider
+    self.scheduler = scheduler
+  }
+
+  func image(from url: URL) -> Single<UIImage?> {
     return provider.rx
       .request(.image(url: url))
       .mapImage()

@@ -1,0 +1,102 @@
+{
+  "contactInfo":{
+    "avatar":"http://via.placeholder.com/200x200",
+    "fields":[
+              {
+              "icon": "http://via.placeholder.com/50x50",
+              "text": "bleu"
+              },
+              {
+              "icon": "http://via.placeholder.com/50x50",
+              "text": "bleu"
+              },
+              {
+              "icon": "http://via.placeholder.com/50x50",
+              "text": "bleu"
+              },
+              {
+              "icon": "http://via.placeholder.com/50x50",
+              "text": "bleu"
+              }
+              ]
+  },
+  "tileSection":[
+                 {
+                 "title": "Cover Letter",
+                 "type":"FreeText",
+                 "headerImage":"http://via.placeholder.com/500x200",
+                 "shortDescription":"Short coverletter",
+                 "longDescription":"Long coverletter..."
+                 },
+                 {
+                 "title": "Experiences",
+                 "type":"Experience",
+                 "headerImage":"http://via.placeholder.com/500x200",
+                 "shortDescription":"Short experience",
+                 "companies":[
+                              {
+                              "image":"http://via.placeholder.com/50x50",
+                              "title":"Title",
+                              "subtitle":"Subtitle",
+                              "description":"description3"
+                              },
+                              {
+                              "image":"http://via.placeholder.com/50x50",
+                              "title":"Title",
+                              "subtitle":"Subtitle",
+                              "description":"description2"
+                              },
+                              {
+                              "image":"http://via.placeholder.com/50x50",
+                              "title":"Title",
+                              "subtitle":"Subtitle",
+                              "description":"description1"
+                              }
+                              ]
+                 },
+                 {
+                 "title": "Education",
+                 "type":"Education",
+                 "headerImage":"http://via.placeholder.com/500x200",
+                 "shortDescription":"shortDescription",
+                 "colleges":[
+                             {
+                             "image":"http://via.placeholder.com/50x50",
+                             "title":"title3",
+                             "major":"major3",
+                             },
+                             {
+                             "image":"http://via.placeholder.com/50x50",
+                             "title":"title2",
+                             "major":"major2",
+                             "observation":"observation2"
+                             },
+                             {
+                             "image":"http://via.placeholder.com/50x50",
+                             "title":"title1",
+                             "major":"major1",
+                             "observation":"observation1"
+                             }
+                             ]
+                 }
+                 ],
+  "footerSection":{
+    "items":[
+             {
+             "appIcon": "http://via.placeholder.com/50x50"
+             },
+             {
+             "appIcon": "http://via.placeholder.com/50x50"
+             },
+             {
+             "appIcon": "http://via.placeholder.com/50x50"
+             },
+             {
+             "appIcon": "http://via.placeholder.com/50x50"
+             },
+             {
+             "appIcon": "http://via.placeholder.com/50x50"
+             }
+             ]
+  }
+}
