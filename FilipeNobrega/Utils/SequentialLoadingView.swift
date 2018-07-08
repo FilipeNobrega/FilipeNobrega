@@ -51,13 +51,13 @@ final class SequentialLoadingView: UIView {
   }
 
   private func startSequence() {
-    animationView.play(toProgress: 0.2) { [weak self] _ in
+    animationView.play(toProgress: 0.13) { [weak self] _ in
       self?.animationLoop()
     }
   }
 
   private func animationLoop() {
-    animationView.play(fromProgress: 0.2, toProgress: 0.8) { [weak self] _ in
+    animationView.play(fromProgress: 0.13, toProgress: 0.31) { [weak self] _ in
       guard let strongSelf = self else { return }
       if strongSelf.isLoadingFinished {
         strongSelf.endSequence()
@@ -68,7 +68,7 @@ final class SequentialLoadingView: UIView {
   }
 
   private func endSequence() {
-    animationView.play(fromProgress: 0.8, toProgress: 1) { [weak self] _ in
+    animationView.play(fromProgress: 0.88, toProgress: 1) { [weak self] _ in
       UIView.animate(withDuration: 0.25, animations: { [weak self] in
         self?.alpha = 0
       }) { [weak self] _ in

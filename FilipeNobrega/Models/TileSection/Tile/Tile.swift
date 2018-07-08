@@ -19,6 +19,7 @@ enum TileType: String, Decodable {
 }
 
 protocol Tile: GenericItemType {
+  var title: String { get }
   var shortDescription: String { get }
   var type: TileType { get }
   var headerImage: URL { get }
@@ -32,6 +33,7 @@ extension Tile {
 
 extension Tile {
   static func equals(lhs: Tile, rhs: Tile) -> Bool {
+    guard lhs.title == rhs.title else { return false }
     guard lhs.shortDescription == rhs.shortDescription else { return false }
     guard lhs.headerImage == rhs.headerImage else { return false }
     return true

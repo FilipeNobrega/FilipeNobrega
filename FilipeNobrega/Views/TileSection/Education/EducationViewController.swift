@@ -15,6 +15,7 @@ final class EducationViewController: UIViewController, TilableViewProtocol {
   @IBOutlet weak private var headerImageView: LoadingImageView!
   @IBOutlet weak private var tableView: UITableView!
   @IBOutlet weak private var containerView: UIView!
+  @IBOutlet weak private var titleLabel: UILabel!
 
   private let disposeBag = DisposeBag()
   private var section: CollegeSection?
@@ -23,7 +24,7 @@ final class EducationViewController: UIViewController, TilableViewProtocol {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.rowHeight = UITableViewAutomaticDimension
-
+    titleLabel.textColor = StyleGuides.primaryTextColor
     prepareBinds()
   }
 
@@ -55,11 +56,14 @@ final class EducationViewController: UIViewController, TilableViewProtocol {
       .drive(onNext: { [unowned self] image in
         self.headerImageView.image = image
       }).disposed(by: disposeBag)
+    
+    titleLabel.text = title
   }
 
   func prepare(with tile: Tile) {
     guard let tile = tile as? EducationTile else { return }
     let collegeSection = CollegeSection(items: tile.colleges)
+    self.title = tile.title
     self.section = collegeSection
     self.image = ImageServiceAPI.image(from: tile.headerImage)
   }

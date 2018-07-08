@@ -13,6 +13,7 @@ target 'FilipeNobrega' do
 
   target 'FilipeNobregaTests' do
     inherit! :search_paths
+    pod 'RxTest'
   end
 
   target 'FilipeNobregaUITests' do

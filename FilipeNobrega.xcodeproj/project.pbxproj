@@ -35,6 +35,7 @@
 		D72178CC20CDB453000D819A /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72178C820CDB3C2000D819A /* ExperienceViewController.swift */; };
 		D73ECC5F20D0618C0074E1D7 /* UIView+LayerManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */; };
 		D73ECC6120D06ADB0074E1D7 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */; };
+		D745938520F24F7A000E863E /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745938420F24F7A000E863E /* ServiceTests.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* HomeViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
@@ -128,6 +129,7 @@
 		D72178C820CDB3C2000D819A /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		D73ECC5E20D0618C0074E1D7 /* UIView+LayerManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayerManipulation.swift"; sourceTree = "<group>"; };
 		D73ECC6020D06ADB0074E1D7 /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		D745938420F24F7A000E863E /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */,
 				D74D152B20CBDFC300400F7C /* Info.plist */,
 				D70E874320DEC4F80026FD58 /* TileTests.swift */,
+				D745938420F24F7A000E863E /* ServiceTests.swift */,
 			);
 			path = FilipeNobregaTests;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				D74D152120CBDFC300400F7C /* Sources */,
 				D74D152220CBDFC300400F7C /* Frameworks */,
 				D74D152320CBDFC300400F7C /* Resources */,
+				831F93E412921AC6F6322312 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -684,6 +688,26 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilipeNobrega/Pods-FilipeNobrega-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		831F93E412921AC6F6322312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilipeNobregaTests/Pods-FilipeNobregaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8931D1E824561A515BEE4BDF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -776,6 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */,
+				D745938520F24F7A000E863E /* ServiceTests.swift in Sources */,
 				D70E874420DEC4F80026FD58 /* TileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,7 +970,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -961,7 +989,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5S8XRZH3NL;
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -977,7 +1008,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -994,7 +1029,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1010,7 +1049,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1026,7 +1069,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FilipeNobregaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobregaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

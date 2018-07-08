@@ -13,6 +13,7 @@ import RxSwift
 final class FreeTextViewController: UIViewController, TilableViewProtocol {
   @IBOutlet weak private var headerImageView: LoadingImageView!
   @IBOutlet weak private var longDescriptionLabel: UILabel!
+  @IBOutlet weak private var titleLabel: UILabel!
 
   private let disposeBag = DisposeBag()
   private var image: Single<UIImage?>?
@@ -20,6 +21,8 @@ final class FreeTextViewController: UIViewController, TilableViewProtocol {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    titleLabel.textColor = StyleGuides.primaryTextColor
+    longDescriptionLabel.textColor = StyleGuides.primaryTextColor
 
     prepareBinds()
   }
@@ -37,10 +40,12 @@ final class FreeTextViewController: UIViewController, TilableViewProtocol {
       }).disposed(by: disposeBag)
 
     longDescriptionLabel.text = longDescription
+    titleLabel.text = title
   }
 
   func prepare(with tile: Tile) {
     guard let tile = tile as? FreeTextTile else { return }
+    self.title = tile.title
     self.longDescription = tile.longDescription ?? tile.shortDescription
     self.image = ImageServiceAPI.image(from: tile.headerImage)
   }

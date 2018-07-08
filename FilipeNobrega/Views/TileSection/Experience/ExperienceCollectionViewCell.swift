@@ -9,14 +9,18 @@
 import UIKit
 
 final class ExperienceCollectionViewCell: UICollectionViewCell, TilableViewProtocol {
-  @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak private var descriptionLabel: UILabel!
+  @IBOutlet weak private var titleLabel: UILabel!
 
   override func awakeFromNib() {
     super.awakeFromNib()
+    titleLabel.textColor = StyleGuides.primaryTextColor
+    descriptionLabel.textColor = StyleGuides.primaryTextColor
     roundedCorners()
   }
 
   func prepare(with tile: Tile) {
     descriptionLabel.text = tile.shortDescription
+    titleLabel.text = tile.title
   }
 }

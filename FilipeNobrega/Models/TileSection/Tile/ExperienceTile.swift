@@ -9,6 +9,7 @@
 import Foundation
 
 struct ExperienceTile: Tile, Decodable {
+  let title: String
   let shortDescription: String
   let type: TileType
   let headerImage: URL

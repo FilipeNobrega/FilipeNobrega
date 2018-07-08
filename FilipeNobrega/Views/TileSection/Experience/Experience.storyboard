@@ -64,9 +64,14 @@
                                                 <constraint firstAttribute="bottom" secondItem="368-aU-On2" secondAttribute="bottom" id="rQi-pK-mGn"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axa-Mp-LtQ">
-                                            <rect key="frame" x="147" y="24" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axa-Mp-LtQ">
+                                            <rect key="frame" x="354" y="10" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="3mJ-Gx-inh"/>
+                                                <constraint firstAttribute="width" constant="50" id="bAJ-wi-dhz"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" image="close"/>
                                             <connections>
                                                 <action selector="close:" destination="LR6-yN-j6C" eventType="touchUpInside" id="IIY-4E-AKm"/>
                                             </connections>
@@ -74,11 +79,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Axa-Mp-LtQ" firstAttribute="top" secondItem="LuV-y1-xAI" secondAttribute="top" constant="24" id="9sa-CM-vt0"/>
+                                        <constraint firstItem="Axa-Mp-LtQ" firstAttribute="top" secondItem="LuV-y1-xAI" secondAttribute="top" constant="10" id="9sa-CM-vt0"/>
                                         <constraint firstItem="QIO-CQ-wez" firstAttribute="leading" secondItem="LuV-y1-xAI" secondAttribute="leading" id="OKa-DD-5vI"/>
                                         <constraint firstItem="QIO-CQ-wez" firstAttribute="top" secondItem="LuV-y1-xAI" secondAttribute="top" id="cCs-Cn-sQA"/>
                                         <constraint firstAttribute="trailing" secondItem="QIO-CQ-wez" secondAttribute="trailing" id="ihZ-pA-p1Y"/>
-                                        <constraint firstItem="Axa-Mp-LtQ" firstAttribute="leading" secondItem="LuV-y1-xAI" secondAttribute="leading" constant="147" id="x0o-Ol-m2K"/>
+                                        <constraint firstAttribute="trailing" secondItem="Axa-Mp-LtQ" secondAttribute="trailing" constant="10" id="x0o-Ol-m2K"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -168,6 +173,7 @@
                         <outlet property="containerView" destination="QIO-CQ-wez" id="nUa-v6-4IS"/>
                         <outlet property="headerImageView" destination="PRa-t9-nzA" id="NHJ-Kw-LdP"/>
                         <outlet property="tableView" destination="4gp-7T-EwT" id="Jiv-GO-qpg"/>
+                        <outlet property="titleLabel" destination="368-aU-On2" id="yxt-w4-jqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phf-cs-sZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,4 +181,7 @@
             <point key="canvasLocation" x="597.10144927536237" y="55.434782608695656"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="36" height="36"/>
+    </resources>
 </document>

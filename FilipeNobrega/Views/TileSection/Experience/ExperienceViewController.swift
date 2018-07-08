@@ -15,6 +15,7 @@ final class ExperienceViewController: UIViewController, TilableViewProtocol {
   @IBOutlet weak private var headerImageView: LoadingImageView!
   @IBOutlet weak private var tableView: UITableView!
   @IBOutlet weak private var containerView: UIView!
+  @IBOutlet weak private var titleLabel: UILabel!
 
   private let disposeBag = DisposeBag()
   private var section: CompanySection?
@@ -23,7 +24,7 @@ final class ExperienceViewController: UIViewController, TilableViewProtocol {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.rowHeight = UITableViewAutomaticDimension
-
+    titleLabel.textColor = StyleGuides.primaryTextColor
     prepareBinds()
   }
 
@@ -54,10 +55,13 @@ final class ExperienceViewController: UIViewController, TilableViewProtocol {
       .drive(onNext: { [unowned self] image in
         self.headerImageView.image = image
       }).disposed(by: disposeBag)
+
+    titleLabel.text = title
   }
 
   func prepare(with tile: Tile) {
     guard let tile = tile as? ExperienceTile else { return }
+    self.title = tile.title
     let companySection = CompanySection(items: tile.companies)
     self.section = companySection
     self.image = ImageServiceAPI.image(from: tile.headerImage)

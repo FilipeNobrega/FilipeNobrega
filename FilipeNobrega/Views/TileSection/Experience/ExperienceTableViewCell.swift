@@ -45,7 +45,7 @@ final class ExperienceTableViewCell: UITableViewCell, GenericCellType {
     subtitleLabel.text = item.subtitle
     descriptionLabel.text = item.description
     imageDisposable = ImageServiceAPI.image(from: item.image)
-      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+//      .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
       .asDriver(onErrorDriveWith: Driver.empty())
       .drive(onNext: { [weak self] image in
         self?.imageVIew.image = image

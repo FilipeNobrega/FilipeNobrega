@@ -36,7 +36,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldw-ta-pmS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="196.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216.66666666666666"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-wl-4sq" customClass="LoadingImageView" customModule="FilipeNobrega" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="165.66666666666666"/>
@@ -45,14 +45,26 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydK-kl-YUh">
-                                                    <rect key="frame" x="186" y="175.66666666666666" width="42" height="21"/>
+                                                    <rect key="frame" x="187.66666666666666" y="175.66666666666666" width="38.666666666666657" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="xQ8-FX-0Zd"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-WQ-yri">
+                                                    <rect key="frame" x="354" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="dFH-Sm-0pI"/>
+                                                        <constraint firstAttribute="height" constant="50" id="qmJ-UN-utU"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                    <state key="normal" image="close"/>
+                                                    <connections>
+                                                        <action selector="close:" destination="LR6-yN-j6C" eventType="touchUpInside" id="Ftt-Tl-Ai8"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -61,24 +73,17 @@
                                                 <constraint firstItem="7MQ-wl-4sq" firstAttribute="top" secondItem="Ldw-ta-pmS" secondAttribute="top" id="LqB-LT-BYx"/>
                                                 <constraint firstItem="ydK-kl-YUh" firstAttribute="top" secondItem="7MQ-wl-4sq" secondAttribute="bottom" constant="10" id="S7r-75-8R8"/>
                                                 <constraint firstItem="7MQ-wl-4sq" firstAttribute="leading" secondItem="Ldw-ta-pmS" secondAttribute="leading" id="e0A-nc-lle"/>
-                                                <constraint firstAttribute="bottom" secondItem="ydK-kl-YUh" secondAttribute="bottom" id="i5U-cO-ErA"/>
+                                                <constraint firstAttribute="trailing" secondItem="xg6-WQ-yri" secondAttribute="trailing" constant="10" id="gOn-bw-9n4"/>
+                                                <constraint firstAttribute="bottom" secondItem="ydK-kl-YUh" secondAttribute="bottom" constant="20" id="i5U-cO-ErA"/>
+                                                <constraint firstItem="xg6-WQ-yri" firstAttribute="top" secondItem="Ldw-ta-pmS" secondAttribute="top" constant="10" id="pHR-JM-ivU"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-WQ-yri">
-                                            <rect key="frame" x="147" y="24" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="close:" destination="LR6-yN-j6C" eventType="touchUpInside" id="Ftt-Tl-Ai8"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Ldw-ta-pmS" secondAttribute="trailing" id="4RH-En-FJI"/>
-                                        <constraint firstItem="xg6-WQ-yri" firstAttribute="top" secondItem="OP4-In-vzx" secondAttribute="top" constant="24" id="JB7-QG-1uz"/>
                                         <constraint firstItem="Ldw-ta-pmS" firstAttribute="leading" secondItem="OP4-In-vzx" secondAttribute="leading" id="TxH-HM-tRu"/>
                                         <constraint firstItem="Ldw-ta-pmS" firstAttribute="top" secondItem="OP4-In-vzx" secondAttribute="top" id="YF2-SB-50E"/>
-                                        <constraint firstItem="xg6-WQ-yri" firstAttribute="leading" secondItem="OP4-In-vzx" secondAttribute="leading" constant="147" id="icL-6S-ZeE"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -182,6 +187,7 @@
                         <outlet property="containerView" destination="Ldw-ta-pmS" id="1um-ft-ZZE"/>
                         <outlet property="headerImageView" destination="7MQ-wl-4sq" id="obZ-tU-ohG"/>
                         <outlet property="tableView" destination="4gp-7T-EwT" id="Jiv-GO-qpg"/>
+                        <outlet property="titleLabel" destination="ydK-kl-YUh" id="WhX-3e-Xi1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phf-cs-sZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,4 +195,7 @@
             <point key="canvasLocation" x="597.10144927536237" y="55.434782608695656"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="36" height="36"/>
+    </resources>
 </document>

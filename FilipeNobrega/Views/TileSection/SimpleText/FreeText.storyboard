@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Free Text View Controller-->
         <scene sceneID="sOd-3x-rgk">
@@ -29,13 +34,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKo-4c-FWh">
-                                        <rect key="frame" x="166" y="160" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="168" y="160" width="39" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaW-fn-8jr">
-                                        <rect key="frame" x="10" y="211" width="355" height="685"/>
+                                        <rect key="frame" x="10" y="209.5" width="355" height="685"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -55,9 +60,14 @@
                                     <constraint firstAttribute="trailing" secondItem="oaW-fn-8jr" secondAttribute="trailing" constant="10" id="zg5-vD-mQ9"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSz-B4-vh3">
-                                <rect key="frame" x="15" y="35" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSz-B4-vh3">
+                                <rect key="frame" x="315" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PJN-fB-g5g"/>
+                                    <constraint firstAttribute="width" constant="50" id="rAP-gF-0du"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="close:" destination="Qer-f5-Rhe" eventType="touchUpInside" id="xsf-n4-rHM"/>
                                 </connections>
@@ -66,8 +76,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4LN-eg-uF0" firstAttribute="bottom" secondItem="kgU-89-ap4" secondAttribute="bottom" id="9hE-Jg-F3W"/>
-                            <constraint firstItem="wSz-B4-vh3" firstAttribute="top" secondItem="4LN-eg-uF0" secondAttribute="top" constant="15" id="UvT-t2-k3S"/>
-                            <constraint firstItem="wSz-B4-vh3" firstAttribute="leading" secondItem="4LN-eg-uF0" secondAttribute="leading" constant="15" id="bcz-l9-Ocx"/>
+                            <constraint firstItem="wSz-B4-vh3" firstAttribute="top" secondItem="4LN-eg-uF0" secondAttribute="top" constant="10" id="UvT-t2-k3S"/>
+                            <constraint firstItem="4LN-eg-uF0" firstAttribute="trailing" secondItem="wSz-B4-vh3" secondAttribute="trailing" constant="10" id="bcz-l9-Ocx"/>
                             <constraint firstItem="kgU-89-ap4" firstAttribute="leading" secondItem="4LN-eg-uF0" secondAttribute="leading" id="mZ4-f0-fhD"/>
                             <constraint firstItem="4LN-eg-uF0" firstAttribute="trailing" secondItem="kgU-89-ap4" secondAttribute="trailing" id="n3B-0D-OmN"/>
                             <constraint firstItem="kgU-89-ap4" firstAttribute="top" secondItem="4LN-eg-uF0" secondAttribute="top" id="zhH-Cp-oXf"/>
@@ -77,6 +87,7 @@
                     <connections>
                         <outlet property="headerImageView" destination="sE6-uz-qph" id="ce3-cS-QDS"/>
                         <outlet property="longDescriptionLabel" destination="oaW-fn-8jr" id="Ikl-l4-M83"/>
+                        <outlet property="titleLabel" destination="lKo-4c-FWh" id="wRm-Y2-TzP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXP-d2-n2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,4 +95,7 @@
             <point key="canvasLocation" x="-92" y="58"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="36" height="36"/>
+    </resources>
 </document>

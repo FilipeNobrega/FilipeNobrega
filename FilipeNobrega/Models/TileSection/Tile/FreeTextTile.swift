@@ -9,6 +9,7 @@
 import Foundation
 
 struct FreeTextTile: Tile, Decodable {
+  let title: String
   let shortDescription: String
   let type: TileType
   let headerImage: URL

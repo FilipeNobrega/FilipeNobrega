@@ -19,6 +19,8 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - RxTest (4.2.0):
+    - RxSwift (~> 4.0)
 
 DEPENDENCIES:
   - lottie-ios (~> 2.0)
@@ -27,6 +29,7 @@ DEPENDENCIES:
   - RxDataSources (~> 3.0)
   - RxGesture
   - RxSwift (~> 4.0)
+  - RxTest
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -39,6 +42,7 @@ SPEC REPOS:
     - RxDataSources
     - RxGesture
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -50,7 +54,8 @@ SPEC CHECKSUMS:
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
 
-PODFILE CHECKSUM: ff64492e60f7e52680fa91edf5f9373790af0798
+PODFILE CHECKSUM: 421cec2f0c00268401a3a1659255603f86604a93
 
 COCOAPODS: 1.5.3
