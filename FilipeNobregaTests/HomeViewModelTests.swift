@@ -13,7 +13,7 @@ import RxSwift
 import RxCocoa
 import RxTest
 
-class HomeViewModelTests: XCTestCase {
+final class HomeViewModelTests: XCTestCase {
   var disposeBag: DisposeBag!
   var scheduler: TestScheduler!
   var sampleLayout: Layout!

@@ -9,7 +9,7 @@
 import XCTest
 @testable import FilipeNobrega
 
-class TileTests: XCTestCase {
+final class TileTests: XCTestCase {
   func testTileWillThrowErrorWhenJsonIsEmpty() {
     let tileJSONString = "{}"
     XCTAssertThrowsError(try JSONDecoder().decode(FailableTile.self, from: tileJSONString.data(using: .utf8)!)) { error in

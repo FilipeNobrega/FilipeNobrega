@@ -43,7 +43,7 @@ struct ImageServiceAPI {
   let provider: MoyaProvider<ImageServiceType>
   let scheduler: SchedulerType
 
-  init(provider: MoyaProvider<ImageServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub),
+  init(provider: MoyaProvider<ImageServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub, manager: CacheManage.manager),
        scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
     self.provider = provider
     self.scheduler = scheduler
@@ -54,4 +54,15 @@ struct ImageServiceAPI {
       .request(.image(url: url))
       .mapImage()
   }
+}
+
+private struct CacheManage {
+  static let manager: Manager = {
+    let configuration = URLSessionConfiguration.default
+    let fiftyMB = 50 * 1024 * 1024
+    let twentyMB = 20 * 1024 * 1024
+    let cache = URLCache(memoryCapacity: twentyMB, diskCapacity: fiftyMB, diskPath: "FilipeNobregaCache")
+    configuration.urlCache = cache
+    return Manager(configuration: configuration)
+  }()
 }

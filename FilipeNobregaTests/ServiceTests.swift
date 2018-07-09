@@ -12,7 +12,7 @@ import Moya
 import RxSwift
 import RxTest
 
-class ServiceTests: XCTestCase {
+final class ServiceTests: XCTestCase {
   var disposeBag: DisposeBag!
   var scheduler: TestScheduler!
 

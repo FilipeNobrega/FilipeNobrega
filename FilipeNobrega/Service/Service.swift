@@ -21,7 +21,7 @@ extension ServiceType: TargetType {
   var baseURL: URL {
     switch self {
     case .home:
-      return URL(string: "https://dl.dropboxusercontent.com/s/v9fsww6dgajeul0/mock.json?dl=0")!
+      return URL(string: "https://dl.dropboxusercontent.com/s/xbyzjiq72g5muow/layout.json?dl=0")!
     }
   }
 
@@ -49,7 +49,7 @@ struct ServiceAPI {
   let provider: MoyaProvider<ServiceType>
   let scheduler: SchedulerType
 
-  init(provider: MoyaProvider<ServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub),
+  init(provider: MoyaProvider<ServiceType> = MoyaProvider(stubClosure: MoyaProvider.neverStub, plugins: [IgnoreCachePlugin()]),
        scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .background)) {
     self.provider = provider
     self.scheduler = scheduler
@@ -58,7 +58,6 @@ struct ServiceAPI {
   func request<T: Decodable>(_ request: ServiceType) -> Single<T?> {
     return provider.rx
       .request(request)
-      .debug("wololo")
       .observeOn(scheduler)
       .map { response -> Data in
         return response.data
@@ -69,5 +68,13 @@ struct ServiceAPI {
         }
         return response
     }
+  }
+}
+
+private struct IgnoreCachePlugin: PluginType {
+  public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+    var mutableRequest = request
+    mutableRequest.cachePolicy = .reloadIgnoringCacheData
+    return mutableRequest
   }
 }

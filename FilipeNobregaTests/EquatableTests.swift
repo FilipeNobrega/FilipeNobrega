@@ -9,7 +9,7 @@
 import XCTest
 @testable import FilipeNobrega
 
-class EquatableTests: XCTestCase {
+final class EquatableTests: XCTestCase {
 
   func testContactFieldEquatable() {
     let contactField1 = ContactField(icon: URL(string: "www.url1.com")!, text: "field1")
