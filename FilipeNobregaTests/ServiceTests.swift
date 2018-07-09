@@ -15,7 +15,6 @@ import RxTest
 class ServiceTests: XCTestCase {
   var disposeBag: DisposeBag!
   var scheduler: TestScheduler!
-  let initialTime = 0
 
   override func setUp() {
     super.setUp()
@@ -29,8 +28,8 @@ class ServiceTests: XCTestCase {
     }
 
     let expected = [
-      next(self.initialTime, [3,4,5]),
-      completed(self.initialTime)
+      Recorded.next(0, [3,4,5]),
+      Recorded.completed(0)
     ]
 
     XCTAssertEqual(events, expected)
@@ -42,8 +41,8 @@ class ServiceTests: XCTestCase {
     }
 
     let expected = [
-      next(self.initialTime, [200,200]),
-      completed(self.initialTime)
+      Recorded.next(0, [200,200]),
+      Recorded.completed(0)
     ]
 
     XCTAssertEqual(events, expected)
@@ -55,7 +54,7 @@ class ServiceTests: XCTestCase {
                              scheduler: scheduler)
     let results = scheduler.createObserver(Layout.self)
 
-    scheduler.scheduleAt(self.initialTime) {
+    scheduler.scheduleAt(0) {
       service.request(.home).asObservable().map { $0! }
         .subscribe(results).disposed(by: self.disposeBag)
     }
@@ -70,7 +69,7 @@ class ServiceTests: XCTestCase {
                                   scheduler: scheduler)
     let results = scheduler.createObserver(Image.self)
 
-    scheduler.scheduleAt(self.initialTime) {
+    scheduler.scheduleAt(0) {
       service.image(from: url).asObservable().map { $0! }
         .subscribe(results).disposed(by: self.disposeBag)
     }

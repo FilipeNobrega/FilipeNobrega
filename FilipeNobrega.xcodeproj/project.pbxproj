@@ -38,12 +38,13 @@
 		D745938520F24F7A000E863E /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745938420F24F7A000E863E /* ServiceTests.swift */; };
 		D745938820F259B8000E863E /* LayoutSample.json in Resources */ = {isa = PBXBuildFile; fileRef = D745938720F259B8000E863E /* LayoutSample.json */; };
 		D745938A20F26187000E863E /* imagesample.png in Resources */ = {isa = PBXBuildFile; fileRef = D745938920F26187000E863E /* imagesample.png */; };
+		D745938C20F2BCF5000E863E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745938B20F2BCF5000E863E /* HomeViewModelTests.swift */; };
+		D745938F20F2DC63000E863E /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745938E20F2DC63000E863E /* EquatableTests.swift */; };
 		D74D151520CBDFC200400F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151420CBDFC200400F7C /* AppDelegate.swift */; };
 		D74D151720CBDFC200400F7C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D151620CBDFC200400F7C /* HomeViewController.swift */; };
 		D74D151A20CBDFC200400F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151820CBDFC200400F7C /* Main.storyboard */; };
 		D74D151C20CBDFC300400F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74D151B20CBDFC300400F7C /* Assets.xcassets */; };
 		D74D151F20CBDFC300400F7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74D151D20CBDFC300400F7C /* LaunchScreen.storyboard */; };
-		D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */; };
 		D74D153520CBDFC300400F7C /* FilipeNobregaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */; };
 		D74D158420CC540A00400F7C /* TileSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74D158320CC540A00400F7C /* TileSectionView.swift */; };
 		D76A56C820E4511700257F7B /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A56C720E4511700257F7B /* ImageService.swift */; };
@@ -134,6 +135,8 @@
 		D745938420F24F7A000E863E /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		D745938720F259B8000E863E /* LayoutSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LayoutSample.json; sourceTree = "<group>"; };
 		D745938920F26187000E863E /* imagesample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagesample.png; sourceTree = "<group>"; };
+		D745938B20F2BCF5000E863E /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		D745938E20F2DC63000E863E /* EquatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableTests.swift; sourceTree = "<group>"; };
 		D74D151120CBDFC200400F7C /* FilipeNobrega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilipeNobrega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D151420CBDFC200400F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74D151620CBDFC200400F7C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +145,6 @@
 		D74D151E20CBDFC300400F7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74D152020CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D152520CBDFC300400F7C /* FilipeNobregaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilipeNobregaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaTests.swift; sourceTree = "<group>"; };
 		D74D152B20CBDFC300400F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74D153020CBDFC300400F7C /* FilipeNobregaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilipeNobregaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74D153420CBDFC300400F7C /* FilipeNobregaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilipeNobregaUITests.swift; sourceTree = "<group>"; };
@@ -368,10 +370,11 @@
 		D74D152820CBDFC300400F7C /* FilipeNobregaTests */ = {
 			isa = PBXGroup;
 			children = (
-				D74D152920CBDFC300400F7C /* FilipeNobregaTests.swift */,
 				D74D152B20CBDFC300400F7C /* Info.plist */,
 				D70E874320DEC4F80026FD58 /* TileTests.swift */,
 				D745938420F24F7A000E863E /* ServiceTests.swift */,
+				D745938B20F2BCF5000E863E /* HomeViewModelTests.swift */,
+				D745938E20F2DC63000E863E /* EquatableTests.swift */,
 			);
 			path = FilipeNobregaTests;
 			sourceTree = "<group>";
@@ -815,9 +818,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74D152A20CBDFC300400F7C /* FilipeNobregaTests.swift in Sources */,
 				D745938520F24F7A000E863E /* ServiceTests.swift in Sources */,
 				D70E874420DEC4F80026FD58 /* TileTests.swift in Sources */,
+				D745938C20F2BCF5000E863E /* HomeViewModelTests.swift in Sources */,
+				D745938F20F2DC63000E863E /* EquatableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

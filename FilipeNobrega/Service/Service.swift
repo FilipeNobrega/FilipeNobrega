@@ -13,6 +13,10 @@ enum ServiceType {
   case home
 }
 
+enum NetworkErrorResponse: Error {
+  case unableToParseData
+}
+
 extension ServiceType: TargetType {
   var baseURL: URL {
     switch self {
@@ -54,12 +58,16 @@ struct ServiceAPI {
   func request<T: Decodable>(_ request: ServiceType) -> Single<T?> {
     return provider.rx
       .request(request)
+      .debug("wololo")
       .observeOn(scheduler)
       .map { response -> Data in
         return response.data
       }
       .map { data -> T? in
-        return try? JSONDecoder().decode(T.self, from: data)
+        guard let response = try? JSONDecoder().decode(T.self, from: data) else {
+          throw NetworkErrorResponse.unableToParseData
+        }
+        return response
     }
   }
 }

@@ -4,19 +4,19 @@
     "fields":[
               {
               "icon": "http://via.placeholder.com/50x50",
-              "text": "bleu"
+              "text": "text1"
+              },
+              {
+              "icon": "http://via.placeholder.com/50x500",
+              "text": "text2"
+              },
+              {
+              "icon": "http://via.placeholder.com/50x500",
+              "text": "text3"
               },
               {
               "icon": "http://via.placeholder.com/50x50",
-              "text": "bleu"
-              },
-              {
-              "icon": "http://via.placeholder.com/50x50",
-              "text": "bleu"
-              },
-              {
-              "icon": "http://via.placeholder.com/50x50",
-              "text": "bleu"
+              "text": "text4"
               }
               ]
   },
@@ -42,14 +42,14 @@
                               },
                               {
                               "image":"http://via.placeholder.com/50x50",
-                              "title":"Title",
-                              "subtitle":"Subtitle",
+                              "title":"Title1",
+                              "subtitle":"Subtitle2",
                               "description":"description2"
                               },
                               {
                               "image":"http://via.placeholder.com/50x50",
-                              "title":"Title",
-                              "subtitle":"Subtitle",
+                              "title":"Title1",
+                              "subtitle":"Subtitle2",
                               "description":"description1"
                               }
                               ]
@@ -83,19 +83,19 @@
   "footerSection":{
     "items":[
              {
-             "appIcon": "http://via.placeholder.com/50x50"
+             "appIcon": "http://via.placeholder.com/50x501"
              },
              {
-             "appIcon": "http://via.placeholder.com/50x50"
+             "appIcon": "http://via.placeholder.com/50x502"
              },
              {
-             "appIcon": "http://via.placeholder.com/50x50"
+             "appIcon": "http://via.placeholder.com/50x503"
              },
              {
-             "appIcon": "http://via.placeholder.com/50x50"
+             "appIcon": "http://via.placeholder.com/50x504"
              },
              {
-             "appIcon": "http://via.placeholder.com/50x50"
+             "appIcon": "http://via.placeholder.com/50x505"
              }
              ]
   }

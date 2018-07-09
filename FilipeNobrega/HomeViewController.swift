@@ -63,7 +63,11 @@ final class HomeViewController: UIViewController {
 
     viewModel.errorSubject.subscribe(onNext: { [unowned self] error in
       guard self.loadingView != nil else { return }
-      self.presentAlertView(with: error)
+      guard error is NetworkErrorResponse else {
+        self.presentAlertView(with: error)
+        return
+      }
+      self.presentAlertView(message: "Unable to parse data from the service", allowRetry: false)
     }).disposed(by: disposeBag)
 
     viewModel.contactInfoExpanded.subscribe(onNext: { [unowned self] error in
@@ -104,15 +108,20 @@ final class HomeViewController: UIViewController {
       }).disposed(by: disposeBag)
   }
 
-  private func presentAlertView(with error: Error) {
-    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+  private func presentAlertView(with error: Error? = nil, message: String? = nil, allowRetry: Bool = true) {
+    let alert = UIAlertController(title: nil, message: message ?? error?.localizedDescription, preferredStyle: .alert)
 
-    let retryAction = UIAlertAction(title: "Retry",
-                                    style: .default) { [weak self] _ in
-                                      self?.requester.onNext(.home)
+    let action: UIAlertAction
+    if allowRetry {
+      action = UIAlertAction(title: "Retry",
+                             style: .default) { [weak self] _ in
+                              self?.requester.onNext(.home)
+      }
+    } else {
+      action = UIAlertAction(title: "Ok", style: .default)
     }
 
-    alert.addAction(retryAction)
+    alert.addAction(action)
 
     present(alert, animated: false, completion: nil)
   }

@@ -15,7 +15,7 @@ struct HomeViewModel {
     footer: Driver<[FooterSection]>,
     contactInfo: Driver<[ContactInfo]>)
 
-  private let service = ServiceAPI()
+  private let service: ServiceAPI
 
   let layoutDriver: Driver<Layout?>
   let tileSectionDriver: Driver<[TileSection]>
@@ -24,10 +24,14 @@ struct HomeViewModel {
   let errorSubject = PublishSubject<Error>()
   let contactInfoExpanded = BehaviorRelay<Bool>(value: false)
 
-  init(layoutRequester: Observable<ServiceType>) {
+  init(layoutRequester: Observable<ServiceType>,
+       service: ServiceAPI = ServiceAPI()) {
+
+    self.service = service
+
     let drivers = HomeViewModel.createDrivers(request: layoutRequester,
                                               errorSubject: errorSubject,
-                                              service: service)
+                                              service: self.service)
 
     layoutDriver = drivers.layout
     tileSectionDriver = drivers.tile
