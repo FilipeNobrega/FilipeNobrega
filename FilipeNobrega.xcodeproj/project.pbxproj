@@ -987,8 +987,9 @@
 			baseConfigurationReference = 58508E4DA8AD3805AE8C467F /* Pods-FilipeNobrega.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S8XRZH3NL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -996,6 +997,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1006,8 +1008,9 @@
 			baseConfigurationReference = 04B169811BCADF0371A63D61 /* Pods-FilipeNobrega.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S8XRZH3NL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FilipeNobrega/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1015,6 +1018,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.filipegnobrega.FilipeNobrega;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

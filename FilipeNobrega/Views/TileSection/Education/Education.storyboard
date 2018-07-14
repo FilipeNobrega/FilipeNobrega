@@ -53,18 +53,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-WQ-yri">
-                                                    <rect key="frame" x="354" y="10" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="dFH-Sm-0pI"/>
-                                                        <constraint firstAttribute="height" constant="50" id="qmJ-UN-utU"/>
-                                                    </constraints>
-                                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                    <state key="normal" image="close"/>
-                                                    <connections>
-                                                        <action selector="close:" destination="LR6-yN-j6C" eventType="touchUpInside" id="Ftt-Tl-Ai8"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -73,9 +61,7 @@
                                                 <constraint firstItem="7MQ-wl-4sq" firstAttribute="top" secondItem="Ldw-ta-pmS" secondAttribute="top" id="LqB-LT-BYx"/>
                                                 <constraint firstItem="ydK-kl-YUh" firstAttribute="top" secondItem="7MQ-wl-4sq" secondAttribute="bottom" constant="10" id="S7r-75-8R8"/>
                                                 <constraint firstItem="7MQ-wl-4sq" firstAttribute="leading" secondItem="Ldw-ta-pmS" secondAttribute="leading" id="e0A-nc-lle"/>
-                                                <constraint firstAttribute="trailing" secondItem="xg6-WQ-yri" secondAttribute="trailing" constant="10" id="gOn-bw-9n4"/>
                                                 <constraint firstAttribute="bottom" secondItem="ydK-kl-YUh" secondAttribute="bottom" constant="20" id="i5U-cO-ErA"/>
-                                                <constraint firstItem="xg6-WQ-yri" firstAttribute="top" secondItem="Ldw-ta-pmS" secondAttribute="top" constant="10" id="pHR-JM-ivU"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -173,11 +159,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg6-WQ-yri">
+                                <rect key="frame" x="354" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dFH-Sm-0pI"/>
+                                    <constraint firstAttribute="height" constant="50" id="qmJ-UN-utU"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="close:" destination="LR6-yN-j6C" eventType="touchUpInside" id="Ftt-Tl-Ai8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4gp-7T-EwT" firstAttribute="top" secondItem="ycQ-MC-RWd" secondAttribute="top" id="4fi-Sy-kcK"/>
+                            <constraint firstItem="ycQ-MC-RWd" firstAttribute="trailing" secondItem="xg6-WQ-yri" secondAttribute="trailing" constant="10" id="6JE-IL-0m4"/>
                             <constraint firstItem="4gp-7T-EwT" firstAttribute="leading" secondItem="ycQ-MC-RWd" secondAttribute="leading" id="Ksn-3n-9Br"/>
+                            <constraint firstItem="xg6-WQ-yri" firstAttribute="top" secondItem="ycQ-MC-RWd" secondAttribute="top" constant="10" id="aRd-oh-4Z5"/>
                             <constraint firstItem="ycQ-MC-RWd" firstAttribute="bottom" secondItem="4gp-7T-EwT" secondAttribute="bottom" id="dDk-J5-fUd"/>
                             <constraint firstItem="ycQ-MC-RWd" firstAttribute="trailing" secondItem="4gp-7T-EwT" secondAttribute="trailing" id="nE4-jB-Abu"/>
                         </constraints>
