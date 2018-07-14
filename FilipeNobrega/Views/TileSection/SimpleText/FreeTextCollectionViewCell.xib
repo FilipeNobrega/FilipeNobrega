@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-p7-XzR">
-                        <rect key="frame" x="156" y="10" width="39" height="19.5"/>
+                        <rect key="frame" x="155" y="10" width="39" height="19.5"/>
                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,11 +37,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand" translatesAutoresizingMaskIntoConstraints="NO" id="xb8-EG-Iav">
+                        <rect key="frame" x="319" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="0qt-ge-GWB"/>
+                            <constraint firstAttribute="height" constant="20" id="9VT-8c-0Sd"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="xb8-EG-Iav" secondAttribute="trailing" constant="10" id="EoJ-9t-CLc"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="centerX" secondItem="agt-nj-YEX" secondAttribute="centerX" id="MSi-N5-YJN"/>
+                <constraint firstItem="xb8-EG-Iav" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="MV1-TV-rv3"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="M6U-Ig-noA" secondAttribute="trailing" constant="10" id="SBa-4x-sNJ"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="top" secondItem="Nd3-p7-XzR" secondAttribute="bottom" constant="30" id="i1a-Tr-hKS"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="oNd-Y7-qjK"/>
@@ -57,4 +66,7 @@
             <point key="canvasLocation" x="-70.5" y="-30"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="expand" width="38" height="38"/>
+    </resources>
 </document>

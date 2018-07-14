@@ -36,15 +36,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand" translatesAutoresizingMaskIntoConstraints="NO" id="jXV-jv-UDQ">
+                        <rect key="frame" x="319" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="lDL-hZ-qHb"/>
+                            <constraint firstAttribute="height" constant="20" id="xJs-wI-URf"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="jXV-jv-UDQ" secondAttribute="trailing" constant="10" id="F4o-px-QFb"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="centerX" secondItem="agt-nj-YEX" secondAttribute="centerX" id="MSi-N5-YJN"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="M6U-Ig-noA" secondAttribute="trailing" constant="10" id="SBa-4x-sNJ"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="top" secondItem="Nd3-p7-XzR" secondAttribute="bottom" constant="30" id="i1a-Tr-hKS"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="oNd-Y7-qjK"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="leading" secondItem="agt-nj-YEX" secondAttribute="leading" constant="10" id="q23-Es-rDO"/>
+                <constraint firstItem="jXV-jv-UDQ" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="x0b-em-PAB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="agt-nj-YEX"/>
             <size key="customSize" width="349" height="286"/>
@@ -55,4 +64,7 @@
             <point key="canvasLocation" x="-70.5" y="-30"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="expand" width="38" height="38"/>
+    </resources>
 </document>

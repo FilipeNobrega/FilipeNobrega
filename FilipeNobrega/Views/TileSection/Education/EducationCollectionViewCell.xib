@@ -52,6 +52,13 @@
                             <constraint firstAttribute="width" secondItem="DGf-ep-vT2" secondAttribute="height" multiplier="1:1" id="y7a-oD-2ce" userLabel="aspect = 1:1"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand" translatesAutoresizingMaskIntoConstraints="NO" id="BpA-he-rYX">
+                        <rect key="frame" x="319" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="RN1-VZ-emc"/>
+                            <constraint firstAttribute="width" constant="20" id="aMD-oj-xem"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,6 +68,7 @@
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="DGf-ep-vT2" secondAttribute="trailing" constant="50" id="I5a-wC-GkD"/>
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="centerX" secondItem="agt-nj-YEX" secondAttribute="centerX" id="MSi-N5-YJN"/>
                 <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="M6U-Ig-noA" secondAttribute="trailing" constant="10" id="SBa-4x-sNJ"/>
+                <constraint firstItem="agt-nj-YEX" firstAttribute="trailing" secondItem="BpA-he-rYX" secondAttribute="trailing" constant="10" id="bjx-AR-jfv"/>
                 <constraint firstItem="DGf-ep-vT2" firstAttribute="leading" secondItem="jMr-Vi-zQM" secondAttribute="trailing" constant="50" id="cIG-C1-DQp"/>
                 <constraint firstItem="DGf-ep-vT2" firstAttribute="centerY" secondItem="jMr-Vi-zQM" secondAttribute="centerY" id="gjk-Bi-RAe"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="top" secondItem="Nd3-p7-XzR" secondAttribute="bottom" constant="30" id="i1a-Tr-hKS"/>
@@ -68,6 +76,7 @@
                 <constraint firstItem="Nd3-p7-XzR" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="oNd-Y7-qjK"/>
                 <constraint firstItem="M6U-Ig-noA" firstAttribute="leading" secondItem="agt-nj-YEX" secondAttribute="leading" constant="10" id="q23-Es-rDO"/>
                 <constraint firstItem="jMr-Vi-zQM" firstAttribute="leading" secondItem="agt-nj-YEX" secondAttribute="leading" constant="50" id="umk-bV-YnC"/>
+                <constraint firstItem="BpA-he-rYX" firstAttribute="top" secondItem="agt-nj-YEX" secondAttribute="top" constant="10" id="xRc-XK-6UA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="agt-nj-YEX"/>
             <size key="customSize" width="349" height="286"/>
@@ -81,5 +90,6 @@
     <resources>
         <image name="MST" width="100" height="100"/>
         <image name="UFRN" width="100" height="100"/>
+        <image name="expand" width="38" height="38"/>
     </resources>
 </document>
