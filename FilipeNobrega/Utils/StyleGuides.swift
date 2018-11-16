@@ -9,7 +9,7 @@
 import UIKit
 
 struct StyleGuides {
-  static var primaryColor = UIColor(red: 60, green: 209, blue: 214)
+  static var primaryColor = UIColor(red: 200, green: 200, blue: 200)
   static var secundaryColor = UIColor(red: 255, green: 255, blue: 255)
   static var primaryTextColor = UIColor(red: 60, green: 60, blue: 60)
   static var secundaryTextColor = UIColor(red: 140, green: 140, blue: 140)
